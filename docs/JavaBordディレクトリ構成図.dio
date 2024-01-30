@@ -1,9 +1,12 @@
 <mxfile host="65bd71144e">
     <diagram id="VUF1cZ7XN0DzKbGDe-bg" name="ページ1">
-        <mxGraphModel dx="1189" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1189" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="134" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="22" width="750" height="1768" as="geometry"/>
+                </mxCell>
                 <mxCell id="10" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="2" target="6" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
@@ -295,10 +298,10 @@
                 <mxCell id="122" value="hogeServlet.java" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="570" y="1622" width="70" height="34" as="geometry"/>
                 </mxCell>
-                <mxCell id="124" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;" vertex="1" parent="1">
+                <mxCell id="124" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;" parent="1" vertex="1">
                     <mxGeometry x="210.5" y="1661" width="69" height="56.00000000000001" as="geometry"/>
                 </mxCell>
-                <mxCell id="125" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;endFill=0;" edge="1" parent="1">
+                <mxCell id="125" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;endFill=0;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="103.5" y="1691"/>
@@ -308,10 +311,10 @@
                         <mxPoint x="210.5" y="1691" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="126" value="Build" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="126" value="Build" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="210.5" y="1721" width="70" height="34" as="geometry"/>
                 </mxCell>
-                <mxCell id="127" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;endFill=0;" edge="1" parent="1">
+                <mxCell id="127" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;endFill=0;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="310" y="1690.5900000000001"/>
@@ -320,13 +323,13 @@
                         <mxPoint x="390" y="1691" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="128" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="129" target="130">
+                <mxCell id="128" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;endFill=0;" parent="1" source="129" target="130" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="129" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;" vertex="1" parent="1">
+                <mxCell id="129" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;" parent="1" vertex="1">
                     <mxGeometry x="385" y="1662.5900000000001" width="70" height="56.81" as="geometry"/>
                 </mxCell>
-                <mxCell id="130" value="" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document" vertex="1" parent="1">
+                <mxCell id="130" value="" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document" parent="1" vertex="1">
                     <mxGeometry x="515" y="1661" width="50" height="60" as="geometry"/>
                 </mxCell>
             </root>
