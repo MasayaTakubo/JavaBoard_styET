@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* 
+	<nav>
+			<ul>
+				<li><a href="３">スレッド一覧</a></li>
+				<li><a href="３">検索ページ</a></li>
+				<li><a href="３">スレッド作成</a></li>
+				<li><a href="#page_top">ページの一番上へ</a></li>
+				<li><a href="#content">コメント入力欄へ</a></li>
+			</ul>
+		</nav>
+*/
+
+/* ナビゲーションバーのスタイル */
+nav {
+    position: fixed; 				/* 画面上部に固定 */
+    top: 0; 						/* 画面上端に配置 */
+    width: 100%; 					/* 幅を画面幅いっぱいに */
+    height: 50px; 					/* 高さを50pxに */
+    text-align: center; 			/* 中央寄せ */
+    background-color: darkgray; 	/* 背景色をダークグレーに */
+    color: black; 				/* 文字色を黒に */
+    margin: 0; 						/* 外側の余白を0に */
+    padding: 5px; 					/* 内側の余白を5pxに */
+    border-bottom: 1px solid; 		/* 下線を1pxのソリッド線に */
+    z-index: 1000;					 /* z-indexを設定 */
+}
+
+/* ナビゲーションバー内のリンクのスタイル */
+nav a {
+    color: black; 			/* リンク文字色を黒に */
+    text-decoration: none; 		/* 下線を削除 */
+    display: inline-block; 		/* インラインブロック要素として表示 */
+    padding: 10px; 				/* 内側の余白を10pxに */
+}
+
+/* ナビゲーションバー内のリンクのホバースタイル */
+nav a:hover {
+    background-color: gray; /* ホバー時の背景色をグレーに */
+    color: white; /* ホバー時の文字色を白に */
+}
