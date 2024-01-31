@@ -11,12 +11,12 @@
 </head>
 <body>
 
-<form action='cts' method='post'>
+<form action='createThreadServlet' method='post'>
 <table>
 
-<tr><th>??</th><td><input type='text' name='threadname'></td></tr>
-<tr><th>??</th><td><input type='text' name='username'></td></tr>
-<tr><th>??</th><td><input type='text' name='text'></td></tr>
+<tr><th>??</th><td><input type='text' name='threadName'></td></tr>
+<tr><th>??</th><td><input type='text' name='userName'></td></tr>
+<tr><th>??</th><td><input type='text' name='postText'></td></tr>
 <tr><td></td><td><input type='submit' value='??'></td></tr>
 
 </table>
