@@ -7,8 +7,9 @@ NOCACHE;
 CREATE TABLE THREAD (
 Thread_ID NUMBER(4, 0) DEFAULT Thread_ID_Sequence.NEXTVAL
 ,Thread_Name VARCHAR2(60)  NOT NULL 
-,Creator_name VARCHAR2(100) DEFAULT 'ÂêçÁÑ°„Åó„Åï„Çì'
+,Creator_name VARCHAR2(100) DEFAULT 'ñºñ≥ÇµÇ≥ÇÒ'
 ,Create_time  TIMESTAMP(0) DEFAULT SYSDATE
 ,CONSTRAINT PK_Thread_ID PRIMARY KEY (Thread_ID)
 ,CONSTRAINT UQ_Thread_Name UNIQUE(Thread_Name)
 );
+exit;
