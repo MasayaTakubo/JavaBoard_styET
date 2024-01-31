@@ -13,21 +13,21 @@
 
 
   <servlet>
-   		<servlet-name>cnt</servlet-name>
+   		<servlet-name>create_New_Thread</servlet-name>
     	<jsp-file>/create_New_Thread.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-    	<servlet-name>cnt</servlet-name>
-    	<url-pattern>/cnt</url-pattern>
+    	<servlet-name>create_New_Thread</servlet-name>
+    	<url-pattern>/create_New_Thread</url-pattern>
     </servlet-mapping>
     
     <servlet>
-    	<servlet-name>cts</servlet-name>
+    	<servlet-name>create_Thread_Servlet</servlet-name>
     	<servlet-class>create_Thread_Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
-    	<servlet-name>cts</servlet-name>
-    	<url-pattern>/cts</url-pattern>
+    	<servlet-name>create_Thread_Servlet</servlet-name>
+    	<url-pattern>/create_Thread_Servlet</url-pattern>
     </servlet-mapping>
 
 

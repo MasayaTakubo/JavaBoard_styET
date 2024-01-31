@@ -10,43 +10,43 @@ import javax.servlet.http.HttpServletResponse;
 
 public class create_Thread_Servlet extends HttpServlet {
     private ArrayList<create_Thread_Servlet> sendThread = new ArrayList<>();
-    private String threadname;
-    private String username;
-    private String text;
-    private int threadid;
+    private String threadName;
+    private String userName;
+    private String postText;
+    private int threadId;
 
-    public String getThreadname() {
-		return threadname;
+    public String getThreadName() {
+		return threadName;
 	}
 
-	public void setThreadname(String threadname) {
-		this.threadname = threadname;
+	public void setThreadName(String threadname) {
+		this.threadName = threadname;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String username) {
+		this.userName = username;
 	}
     
     public create_Thread_Servlet(String tname, String uname) {
-		threadname = tname;
-		username = uname;
+		threadName = tname;
+		userName = uname;
 	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-        threadname = request.getParameter("threadname");
-		username = request.getParameter("username");
+        threadName = request.getParameter("threadname");
+		userName = request.getParameter("username");
 
-		create_Thread_Servlet createThread = new create_Thread_Servlet(threadname,username);
+		create_Thread_Servlet createThread = new create_Thread_Servlet(threadName,userName);
 		sendThread.add(createThread);
 
 		request.setAttribute("contents", createThread);
-		request.setAttribute("name", threadname);
-		request.setAttribute("text", username);
+		request.setAttribute("name", threadName);
+		request.setAttribute("text", userName);
         RequestDispatcher dispatcher = request.getRequestDispatcher("sendDB");
 		dispatcher.forward(request, response);
     }
