@@ -9,4 +9,26 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+
+
+
+  <servlet>
+   		<servlet-name>cnt</servlet-name>
+    	<jsp-file>/create_New_Thread.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>cnt</servlet-name>
+    	<url-pattern>/cnt</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>cts</servlet-name>
+    	<servlet-class>create_Thread_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>cts</servlet-name>
+    	<url-pattern>/cts</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
