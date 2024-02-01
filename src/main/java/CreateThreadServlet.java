@@ -15,7 +15,7 @@ public class CreateThreadServlet extends HttpServlet {
     private String postText;
     private int threadId;
 
-    public String getThreadName() {
+	public String getThreadName() {
 		return threadName;
 	}
 
@@ -35,10 +35,10 @@ public class CreateThreadServlet extends HttpServlet {
 		threadName = tname;
 		userName = uname;
 	}
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-        threadName = request.getParameter("threadname");
+		threadName = request.getParameter("threadname");
 		userName = request.getParameter("username");
 
 		CreateThreadServlet createThread = new CreateThreadServlet(threadName,userName);
@@ -47,7 +47,7 @@ public class CreateThreadServlet extends HttpServlet {
 		request.setAttribute("contents", createThread);
 		request.setAttribute("name", threadName);
 		request.setAttribute("text", userName);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("sendDB");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("sendDB");
 		dispatcher.forward(request, response);
     }
 }
