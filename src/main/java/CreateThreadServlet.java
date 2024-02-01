@@ -8,14 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class create_Thread_Servlet extends HttpServlet {
-    private ArrayList<create_Thread_Servlet> sendThread = new ArrayList<>();
+public class CreateThreadServlet extends HttpServlet {
+    private ArrayList<CreateThreadServlet> sendThread = new ArrayList<>();
     private String threadName;
     private String userName;
     private String postText;
     private int threadId;
 
-    public String getThreadName() {
+	public String getThreadName() {
 		return threadName;
 	}
 
@@ -31,23 +31,23 @@ public class create_Thread_Servlet extends HttpServlet {
 		this.userName = username;
 	}
     
-    public create_Thread_Servlet(String tname, String uname) {
+	public CreateThreadServlet(String tname, String uname) {
 		threadName = tname;
 		userName = uname;
 	}
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-        threadName = request.getParameter("threadname");
+		threadName = request.getParameter("threadname");
 		userName = request.getParameter("username");
 
-		create_Thread_Servlet createThread = new create_Thread_Servlet(threadName,userName);
+		CreateThreadServlet createThread = new CreateThreadServlet(threadName,userName);
 		sendThread.add(createThread);
 
 		request.setAttribute("contents", createThread);
 		request.setAttribute("name", threadName);
 		request.setAttribute("text", userName);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("sendDB");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("sendDB");
 		dispatcher.forward(request, response);
     }
 }
