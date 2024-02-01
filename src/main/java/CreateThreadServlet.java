@@ -31,7 +31,7 @@ public class CreateThreadServlet extends HttpServlet {
 		this.userName = username;
 	}
     
-    public CreateThreadServlet(String tname, String uname) {
+	public CreateThreadServlet(String tname, String uname) {
 		threadName = tname;
 		userName = uname;
 	}
