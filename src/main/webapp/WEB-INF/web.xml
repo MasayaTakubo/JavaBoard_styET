@@ -9,8 +9,19 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-
-
+  
+ <!-- 0211 takeuchi -->
+	<servlet>
+   		<servlet-name>ThreadList</servlet-name>
+    	<jsp-file>/thread_List.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>ThreadList</servlet-name>
+    	<url-pattern>/threadlist</url-pattern>
+    </servlet-mapping>
+    
+    
+<!--  satou-->
 
   <servlet>
    		<servlet-name>create_New_Thread</servlet-name>
