@@ -11,7 +11,7 @@
   </welcome-file-list>
   
  <!-- 0211 takeuchi -->
-	<servlet>
+<servlet>
     <servlet-name>ThreadList</servlet-name>
     <jsp-file>/WEB-INF/jsp/thread_List.jsp</jsp-file>
 </servlet>
