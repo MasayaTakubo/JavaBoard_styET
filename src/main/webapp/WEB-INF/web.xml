@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
     	<servlet-name>ThreadList</servlet-name>
-    	<url-pattern>/threadlist</url-pattern>
+    	<url-pattern>WEB-INF/threadlist</url-pattern>
     </servlet-mapping>
     
     
