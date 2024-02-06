@@ -11,15 +11,15 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     
 </head>
-<body>
+<body class="body-createTable">
   <h1 id="page_top">あああ(仮)</h1>
-<div class="container">
+<div class="container-createTable">
     <form action='createThreadServlet' method='post'>
-        <table>
-            <tr><th>スレッド名</th><td><input type='text' name='threadName'></td></tr>
-            <tr><th>ユーザー名</th><td><input type='text' name='userName'></td></tr>
-            <tr><th>投稿内容</th><td><input type='text' name='postText'></td></tr>
-            <tr><td></td><td><input type='submit' value='作成'></td></tr>
+        <table class="table-createTable">
+            <tr><th class="th-createTable">スレッド名</th><td class="td-createTable"><input type='text' name='threadName'></td></tr>
+            <tr><th class="th-createTable">ユーザー名</th><td class="td-createTable"><input type='text' name='userName'></td></tr>
+            <tr><th class="th-createTable">投稿内容</th><td class="td-createTable"><input type='text' name='postText'></td></tr>
+            <tr><td></td><td class="td-createTable"><input type='submit' value='作成'></td></tr>
         </table>
     </form>
 </div>
