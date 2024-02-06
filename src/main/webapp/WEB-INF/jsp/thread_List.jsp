@@ -173,7 +173,7 @@ SP
                     <li><a href="#">Single Child</a></li>
                   </ul>
                 </li>
-                <li class="wide">
+                <li class="single">
                   <a href="#">Menu Wide</a>
                   <ul class="menu-second">
                     <li><a href="#">Wide Child</a></li>
@@ -182,10 +182,7 @@ SP
                     <li><a href="#">Wide Child</a></li>
                     <li><a href="#">Wide Child</a></li>
                     <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
+                    
                   </ul>
                 </li>
                 <li class="single">
@@ -196,7 +193,7 @@ SP
                     <li><a href="#">Single Child</a></li>
                   </ul>
                 </li>
-                <li class="wide">
+                <li class="single">
                   <a href="#">Menu Wide</a>
                   <ul class="menu-second">
                     <li><a href="#">Wide Child</a></li>
@@ -216,6 +213,7 @@ SP
       
       </body>
       </html>
+      
           <li class="wide">
             <a href="#">Menu Wide</a>
             <ul class="menu-second">
@@ -227,7 +225,7 @@ SP
               <li><a href="#">Wide Child</a></li>
             </ul>
           </li>
-        </ul>
+        
       </nav>
 
     </header>
@@ -252,6 +250,7 @@ SP
   </body>
 
   </header>
+  
 <table>
 	
     <%for(int i = 0; i < DTOlist.size(); i++){%>
@@ -267,6 +266,5 @@ SP
 </table>
 </body>
 
-<footer></footer>
 
 </html>
