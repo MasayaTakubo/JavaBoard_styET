@@ -13,7 +13,7 @@
         System.out.println("DTOlist size: " + DTOlist.size()); // ログにDTOlistのサイズを出力
     }
 %>	
-<!-- takeuchi0201 -->    
+  
 
 
 
@@ -148,17 +148,16 @@ SP
 }
  
  </style>
+ 
 </head>
+
 <body>
 
 
 
-      <!DOCTYPE html>
+      
       <html>
-      <head>
-      <meta charset="UTF-8">
-      <title>Insert title here</title>
-      </head>
+      
       <body id="page_top">
       
         <header>
@@ -209,50 +208,9 @@ SP
         </header>
         
         
-      
-      
-      </body>
-      </html>
-      
-          <li class="wide">
-            <a href="#">Menu Wide</a>
-            <ul class="menu-second">
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-            </ul>
-          </li>
-        
-      </nav>
-
-    </header>
-
+    <%--テーブル takubo --%>
     <table>
-      <tr><td><a href>ここにスレッド</a></td></tr>
-    </table>
     
-    <form>
-        <td><tr></tr></td>
-    </form>
-    
-    
-    <footer>
-        <span class="s1">
-        <a href="サイトのリンク" target="_top">Web</a>
-          
-        <a href="サイトのリンク" target="_top">きりしま式</a>
-
-        </span>
-      </footer>
-  </body>
-
-  </header>
-  
-<table>
-	
     <%for(int i = 0; i < DTOlist.size(); i++){%>
         <%TopThreadDTO dto = (TopThreadDTO)DTOlist.get(i);%>
         <tr>
@@ -263,8 +221,17 @@ SP
         </tr>
     <% } %>
     
-</table>
-</body>
+    </table>
+      
+     
+      
+      <footer>
+        <span class="s1">
+        <a href="サイトのリンク" target="_top">Web</a>
+          
+        <a href="サイトのリンク" target="_top">きりしま式</a>
 
-
+        </span>
+      </footer>
+      
 </html>
