@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>掲示板</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
     
 </head>
 <body>
