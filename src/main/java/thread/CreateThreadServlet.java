@@ -1,55 +1,34 @@
 package thread;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.CreateThreadDAO;
 
 public class CreateThreadServlet extends HttpServlet {
-    private ArrayList<CreateThreadServlet> sendThread = new ArrayList<>();
-    private String threadName;
-    private String userName;
-    private String postText;
-    private int threadId;
-
-	public String getThreadName() {
-		return threadName;
-	}
-
-	public void setThreadName(String threadname) {
-		this.threadName = threadname;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String username) {
-		this.userName = username;
-	}
-    
-	public CreateThreadServlet(String tname, String uname) {
-		threadName = tname;
-		userName = uname;
-	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		threadName = request.getParameter("threadname");
-		userName = request.getParameter("username");
-
-		CreateThreadServlet createThread = new CreateThreadServlet(threadName,userName);
-		sendThread.add(createThread);
-
-		request.setAttribute("contents", createThread);
-		request.setAttribute("name", threadName);
-		request.setAttribute("text", userName);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("sendDB");
-		dispatcher.forward(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	request.setCharacterEncoding("UTF-8");        
+	// フォームから入力されたデータを取得
+        String threadName = request.getParameter("threadName");
+        String userName = request.getParameter("userName");
+        String postText = request.getParameter("postText");
+        
+        // DAOを使用してThreadを作成し、Postを投稿
+        CreateThreadDAO dao = new CreateThreadDAO();
+        try {
+            int threadID = dao.createThreadAndPost(threadName, userName, postText);
+            // ThreadIDと投稿内容をログに記録
+            System.out.println("ThreadID: " + threadID + ", Post Text: " + postText);
+            // 成功した場合は適切なレスポンスを返す
+            response.getWriter().write("Thread and Post created successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            // エラー時の処理
+            response.getWriter().write("Error: Thread and Post creation failed.");
+        }
     }
 }
