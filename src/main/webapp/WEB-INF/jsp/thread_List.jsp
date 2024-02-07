@@ -139,7 +139,8 @@ Menu Single
         background-color: #f2f2f2;
     }
     tr:nth-child(even) {
-        background-color: #f2f2f2;
+       color: black;
+       background-color: #f2f2f2;
     }
 /*-------------------------------------------
 SP
@@ -212,7 +213,7 @@ SP
 
 
 
-<table border ="2"  bgcolor="white" >
+<table >
 	<!-- ここにスレッド-->
     <% for(int i = 0; i < DTOlist.size(); i++) { %>
     <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
