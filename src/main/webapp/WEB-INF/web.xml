@@ -41,5 +41,15 @@
 </servlet-mapping>
 
 
+<servlet>
+    <servlet-name>ViewThreadServlet</servlet-name>
+    <servlet-class>thread.ViewThreadServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViewThreadServlet</servlet-name>
+    <url-pattern>/thread</url-pattern>
+</servlet-mapping>
+
+
 
 </web-app>
