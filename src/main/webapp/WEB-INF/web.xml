@@ -12,22 +12,15 @@
   
  <!-- 0211 takeuchi -->
 <servlet>
-    <servlet-name>ThreadList</servlet-name>
-    <jsp-file>/WEB-INF/jsp/thread_List.jsp</jsp-file>
-</servlet>
-<servlet-mapping>
-    <servlet-name>ThreadList</servlet-name>
-    <url-pattern>/threadlist</url-pattern>
-</servlet-mapping>
-
-<servlet>
     <servlet-name>TopServlet</servlet-name>
     <servlet-class>thread.TopServlet</servlet-class>
 </servlet>
+
 <servlet-mapping>
     <servlet-name>TopServlet</servlet-name>
-    <url-pattern>/TopDisplay</url-pattern>
+    <url-pattern>/TopServlet</url-pattern>
 </servlet-mapping>
+
 
 <servlet>
     <servlet-name>createNewThread</servlet-name>
@@ -45,6 +38,16 @@
 <servlet-mapping>
     <servlet-name>createThreadServlet</servlet-name>
     <url-pattern>/createThreadServlet</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>ViewThreadServlet</servlet-name>
+    <servlet-class>thread.ViewThreadServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViewThreadServlet</servlet-name>
+    <url-pattern>/thread</url-pattern>
 </servlet-mapping>
 
 

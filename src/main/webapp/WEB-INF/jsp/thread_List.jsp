@@ -219,7 +219,7 @@ SP
     <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
     <tr>
         <td><%= dto.getThread_ID() %></td>
-        <td><a href="/thread.jsp?id=<%= dto.getThread_ID() %>"><%= dto.getThread_Name() %></a></td>
+        <td><a href="thread?id=<%= dto.getThread_ID() %>"><%= dto.getThread_Name() %></a></td>
         <td><%= dto.getCreator_Name() %></td>
     </tr>
 <% } %>
