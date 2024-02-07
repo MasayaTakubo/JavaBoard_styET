@@ -40,7 +40,5 @@
     	<servlet-name>create_Thread_Servlet</servlet-name>
     	<url-pattern>/create_Thread_Servlet</url-pattern>
     </servlet-mapping>
-	
-
 
 </web-app>
