@@ -13,7 +13,7 @@
         System.out.println("DTOlist size: " + DTOlist.size()); // ログにDTOlistのサイズを出力
     }
 %>	
-  
+<!-- takeuchi0201 -->    
 
 
 
@@ -148,16 +148,17 @@ SP
 }
  
  </style>
- 
 </head>
-
 <body>
 
 
 
-      
+      <!DOCTYPE html>
       <html>
-      
+      <head>
+      <meta charset="UTF-8">
+      <title>Insert title here</title>
+      </head>
       <body id="page_top">
       
         <header>
@@ -172,7 +173,7 @@ SP
                     <li><a href="#">Single Child</a></li>
                   </ul>
                 </li>
-                <li class="single">
+                <li class="wide">
                   <a href="#">Menu Wide</a>
                   <ul class="menu-second">
                     <li><a href="#">Wide Child</a></li>
@@ -181,7 +182,10 @@ SP
                     <li><a href="#">Wide Child</a></li>
                     <li><a href="#">Wide Child</a></li>
                     <li><a href="#">Wide Child</a></li>
-                    
+                    <li><a href="#">Wide Child</a></li>
+                    <li><a href="#">Wide Child</a></li>
+                    <li><a href="#">Wide Child</a></li>
+                    <li><a href="#">Wide Child</a></li>
                   </ul>
                 </li>
                 <li class="single">
@@ -192,7 +196,7 @@ SP
                     <li><a href="#">Single Child</a></li>
                   </ul>
                 </li>
-                <li class="single">
+                <li class="wide">
                   <a href="#">Menu Wide</a>
                   <ul class="menu-second">
                     <li><a href="#">Wide Child</a></li>
@@ -208,24 +212,36 @@ SP
         </header>
         
         
-    <%--テーブル takubo --%>
+      
+      
+      </body>
+      </html>
+          <li class="wide">
+            <a href="#">Menu Wide</a>
+            <ul class="menu-second">
+              <li><a href="#">Wide Child</a></li>
+              <li><a href="#">Wide Child</a></li>
+              <li><a href="#">Wide Child</a></li>
+              <li><a href="#">Wide Child</a></li>
+              <li><a href="#">Wide Child</a></li>
+              <li><a href="#">Wide Child</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
     <table>
-    
-    <%for(int i = 0; i < DTOlist.size(); i++){%>
-        <%TopThreadDTO dto = (TopThreadDTO)DTOlist.get(i);%>
-        <tr>
-            <td><%=dto.getThread_ID()%></td>
-            <td><%=dto.getThread_Name()%></td>
-            <td><%=dto.getCreator_Name()%></td>
-           
-        </tr>
-    <% } %>
-    
+      <tr><td><a href>ここにスレッド</a></td></tr>
     </table>
-      
-     
-      
-      <footer>
+    
+    <form>
+        <td><tr></tr></td>
+    </form>
+    
+    
+    <footer>
         <span class="s1">
         <a href="サイトのリンク" target="_top">Web</a>
           
@@ -233,5 +249,23 @@ SP
 
         </span>
       </footer>
-      
+  </body>
+
+  </header>
+<table>
+	
+    <% for(int i = 0; i < DTOlist.size(); i++) { %>
+    <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
+    <tr>
+        <td><%= dto.getThread_ID() %></td>
+        <td><a href="/thread.jsp?id=<%= dto.getThread_ID() %>"><%= dto.getThread_Name() %></a></td>
+        <td><%= dto.getCreator_Name() %></td>
+    </tr>
+<% } %>
+    
+</table>
+</body>
+
+<footer></footer>
+
 </html>
