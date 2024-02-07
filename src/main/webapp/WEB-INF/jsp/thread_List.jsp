@@ -15,8 +15,8 @@
 %>	
 <!-- takeuchi0201 -->    
 
-
-
+<html>
+<head>
  <style>
 @charset "UTF-8";
 
@@ -50,6 +50,12 @@ nav {
   background-color: #121212;
 }
 
+footer{
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 20px;
+}
 /*
 グローバルナビゲーション
 「position: relative;」で、サブメニュー（Wide）の基準位置として設定
@@ -106,38 +112,35 @@ Menu Single
 }
 /*
 ホバー時にサブメニュー（Single）を表示する
-*/
 .single:hover .menu-second {
   visibility: visible;
-}
+}*/
 
-/*
-Menu Wide
-「position: absolute;」で、menuクラスを基準に所定の位置に配置する
-*/
-.wide .menu-second {
-  width: 100%;
-  background-color: #3c3636;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 50px;
-  left: 0;
-}
-.wide .menu-second li {
-  width: 25%;
-}
-.wide .menu-second li a:hover {
-  opacity: 0.7;
-}
-/*
-ホバー時にサブメニュー（Wide）を表示する
-*/
-.wide:hover .menu-second {
-  visibility: visible;
-}
 
+/*  content
+----------------------------*/
+  .content{
+    flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
+    padding: 20px;
+  }
+/*
+テーブル機能
+-----------------*/
+  table {
+        border-collapse: collapse;
+        width: 100%;
+  }
+  th, td {
+       border: 1px solid black;
+       padding: 8px;
+       text-align: left;
+  }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 /*-------------------------------------------
 SP
 -------------------------------------------*/
@@ -145,57 +148,44 @@ SP
   body {
     font-size: 0.75rem;
   }
+
 }
  
  </style>
-</head>
-<body>
+ </head>
+ 
+<body id="page_top">
 
 
 
-      <!DOCTYPE html>
-      <html>
-      <head>
-      <meta charset="UTF-8">
-      <title>Insert title here</title>
-      </head>
-      <body id="page_top">
+
+      
+      
       
         <header>
             <h1>掲示板サイト</h1>
+            
             <nav>
+              <!-- 1つめ -->
               <ul class="menu">
-                <li class="single">
-                  <a href="#">Menu Single</a>
+               <li> 
+                  <a href="#">スレッドを書き込む</a>
                   <ul class="menu-second">
-                    <li><a href="#">Single Child</a></li>
-                    <li><a href="#">Single Child</a></li>
-                    <li><a href="#">Single Child</a></li>
+                    <%--書き込む --%>
+                    <liclass="single"><a href="create_New_thread.jsp">書き込む</a></li>
+                    
                   </ul>
                 </li>
-                <li class="wide">
-                  <a href="#">Menu Wide</a>
+                <!-- 2 -->
+                <li>
+                  <a href="#">スレッドを検索する</a>
                   <ul class="menu-second">
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
+                  <%--検索 --%>
+                    <li class="single"><a href="serchThread.html">検索する</a></li>
+                    
                   </ul>
                 </li>
-                <li class="single">
-                  <a href="#">Menu Single</a>
-                  <ul class="menu-second">
-                    <li><a href="#">Single Child</a></li>
-                    <li><a href="#">Single Child</a></li>
-                    <li><a href="#">Single Child</a></li>
-                  </ul>
-                </li>
+                <!-- 
                 <li class="wide">
                   <a href="#">Menu Wide</a>
                   <ul class="menu-second">
@@ -206,54 +196,24 @@ SP
                     <li><a href="#">Wide Child</a></li>
                     <li><a href="#">Wide Child</a></li>
                   </ul>
-                </li>
+                </li>-->
               </ul>
+              
             </nav>
         </header>
         
-        
+      <!-- ここにリストや、コンテンツをいれる -->  
+      <div class="content">
       
       
-      </body>
-      </html>
-          <li class="wide">
-            <a href="#">Menu Wide</a>
-            <ul class="menu-second">
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-              <li><a href="#">Wide Child</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
 
-    </header>
 
-    <table>
-      <tr><td><a href>ここにスレッド</a></td></tr>
-    </table>
     
-    <form>
-        <td><tr></tr></td>
-    </form>
-    
-    
-    <footer>
-        <span class="s1">
-        <a href="サイトのリンク" target="_top">Web</a>
-          
-        <a href="サイトのリンク" target="_top">きりしま式</a>
 
-        </span>
-      </footer>
-  </body>
 
-  </header>
-<table>
-	
+
+<table border ="2"  bgcolor="white" >
+	<!-- ここにスレッド-->
     <% for(int i = 0; i < DTOlist.size(); i++) { %>
     <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
     <tr>
@@ -263,9 +223,17 @@ SP
     </tr>
 <% } %>
     
+
 </table>
-</body>
 
-<footer></footer>
+</div>
+    <footer >
+        <span class="s1">
+        <a href="サイトのリンク" target="_top">Web</a>
+          
+        <a href="サイトのリンク" target="_top">きりしま式</a>
 
-</html>
+        </span>
+      </footer>
+      
+</body></html>
