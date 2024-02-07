@@ -40,6 +40,16 @@
     	<servlet-name>create_Thread_Servlet</servlet-name>
     	<url-pattern>/create_Thread_Servlet</url-pattern>
     </servlet-mapping>
+	
+<!-- エンドウ -->
+	<servlet>
+		<servlet-name>ViewThread</servlet-name>
+		<jsp-file>/view_Thread.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewThread</servlet-name>
+		<url-pattern>/view_Thread</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>
