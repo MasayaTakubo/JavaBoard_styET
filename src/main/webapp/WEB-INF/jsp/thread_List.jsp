@@ -238,7 +238,7 @@ SP
     <footer >
     
         <span class="s1">
-        <a href="http://www.kent-web.com/"  target="_top">Web</a>
+        <a href="サイトのリンク"  target="_top">Web</a>
           
         <a href="サイトのリンク"  target="_top">きりしま式</a>
 
