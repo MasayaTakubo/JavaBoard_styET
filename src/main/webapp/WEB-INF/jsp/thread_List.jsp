@@ -14,7 +14,7 @@
     }
 %>	
 <!-- takeuchi0201 -->    
-
+<!DOCTYPE =html>
 <html>
 <head>
  <style>
@@ -115,8 +115,15 @@ Menu Single
 .single:hover .menu-second {
   visibility: visible;
 }*/
+/*ヘッダーのリンク*/
+.link1 {
+        color: glay; /* 灰色のリンク */
+}
 
-
+/*ヘッダーのリンク*/
+.link2 {
+	color: 101;
+}
 /*  content
 ----------------------------*/
   .content{
@@ -156,10 +163,6 @@ SP
  </head>
  
 <body id="page_top">
-
-
-
-
       
       
       
@@ -167,22 +170,25 @@ SP
             <h1>掲示板サイト</h1>
             
             <nav>
-              <!-- 1つめ -->
               <ul class="menu">
+              <!-- 1つめ -->
                <li> 
-                  <a href="#">スレッドを書き込む</a>
+                 <%--書き込む --%>
+                  <a href="create_New_thread.jsp"  class="link1">スレッドを書き込む</a>
                   <ul class="menu-second">
-                    <%--書き込む --%>
-                    <liclass="single"><a href="create_New_thread.jsp">書き込む</a></li>
+                    
+                    <li class="single"><a href="">書き込む</a></li>
                     
                   </ul>
                 </li>
+                
                 <!-- 2 -->
                 <li>
-                  <a href="#">スレッドを検索する</a>
+                <%--検索 --%>
+                  <a href="serchThread.html"  class="link1">スレッドを検索する</a>
                   <ul class="menu-second">
-                  <%--検索 --%>
-                    <li class="single"><a href="serchThread.html">検索する</a></li>
+                  
+                    <li class="single"><a href="">検索する</a></li>
                     
                   </ul>
                 </li>
@@ -205,11 +211,7 @@ SP
         
       <!-- ここにリストや、コンテンツをいれる -->  
       <div class="content">
-      
-      
 
-
-    
 
 
 
@@ -219,7 +221,7 @@ SP
     <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
     <tr>
         <td><%= dto.getThread_ID() %></td>
-        <td><a href="thread?id=<%= dto.getThread_ID() %>"><%= dto.getThread_Name() %></a></td>
+        <td><a href="thread?id=<%= dto.getThread_ID() %>" class="link2"><%= dto.getThread_Name() %></a></td>
         <td><%= dto.getCreator_Name() %></td>
     </tr>
 <% } %>
@@ -228,11 +230,13 @@ SP
 </table>
 
 </div>
+    <!-- フッター -->
     <footer >
+    
         <span class="s1">
-        <a href="サイトのリンク" target="_top">Web</a>
+        <a href="サイトのリンク"  target="_top">Web</a>
           
-        <a href="サイトのリンク" target="_top">きりしま式</a>
+        <a href="サイトのリンク"  target="_top">きりしま式</a>
 
         </span>
       </footer>
