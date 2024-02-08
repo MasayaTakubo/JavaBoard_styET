@@ -17,6 +17,7 @@
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
+    @charset "UTF-8";
         body {
             padding: 5px 30px;
         }

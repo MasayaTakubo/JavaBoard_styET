@@ -17,8 +17,15 @@ public class CreatePostDAO {
                 // パラメータをセット
                 statement.setInt(1, createPostDTO.getThreadId());
                 statement.setString(2, createPostDTO.getContent());
-                statement.setString(3, createPostDTO.getPostUserName());
                 
+                // post_user_nameがnullまたは空の場合はデフォルト値を使用
+                String postUserName = createPostDTO.getPostUserName();
+                if (postUserName == null || postUserName.isEmpty()) {
+                    postUserName = "名無しさん";
+                }
+                statement.setString(3, postUserName);
+                
+                // post_reply_idが1以上の場合は存在するか確認し、存在しなければnullをセット
                 int postReplyId = createPostDTO.getPostReplyId();
                 if (postReplyId >= 1) {
                     if (doesPostExist(postReplyId)) {
@@ -35,6 +42,7 @@ public class CreatePostDAO {
             }
         }
     }
+    
     public boolean doesPostExist(int postId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT 1 FROM Post WHERE Post_ID = ?";
         Connection connection = DatabaseConnection.getConnection();
