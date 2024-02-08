@@ -6,7 +6,6 @@ public class CreateThreadDTO {
     private String thread_Name;
     private String user_Name;
 
-    // コンストラクタ、ゲッター、セッターなどを省略
 
     public int getThread_ID() {
         return thread_ID;
