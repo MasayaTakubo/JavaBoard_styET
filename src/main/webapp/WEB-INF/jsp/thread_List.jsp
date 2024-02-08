@@ -167,7 +167,7 @@ SP
       
       
         <header>
-            <h1>掲示板サイト</h1>
+            <h1 id=""page_top">掲示板サイト</h1>
             
             <nav>
               <ul class="menu">
@@ -209,14 +209,19 @@ SP
             </nav>
         </header>
         
-      <!-- ここにリストや、コンテンツをいれる -->  
-      <div class="content">
 
+      <div class="content">
 
 
 
 <table >
 	<!-- ここにスレッド-->
+	<!--  -->
+	<tr>
+	<td><b>スレNo</b></td>
+	<td><b>スレッド名</b></td>
+	<td><b>作者名</b></td>
+	</tr>
     <% for(int i = 0; i < DTOlist.size(); i++) { %>
     <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
     <tr>
@@ -226,7 +231,6 @@ SP
     </tr>
 <% } %>
     
-
 </table>
 
 </div>
@@ -234,7 +238,7 @@ SP
     <footer >
     
         <span class="s1">
-        <a href="サイトのリンク"  target="_top">Web</a>
+        <a href="http://www.kent-web.com/"  target="_top">Web</a>
           
         <a href="サイトのリンク"  target="_top">きりしま式</a>
 
