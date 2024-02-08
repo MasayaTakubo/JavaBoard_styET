@@ -1,17 +1,19 @@
 package DAO;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import connect.DatabaseConnection;
+import DTO.CreateThreadDTO;
 
 public class CreateThreadDAO {
     // Threadを作成し、Postを投稿するメソッド
-    public int createThreadAndPost(String threadName, String userName, String postText) throws SQLException, ClassNotFoundException {
-        String createThreadSQL = "INSERT INTO Thread (thread_name, user_name) VALUES (threadName, userName)";
-        String createPostSQL = "INSERT INTO Post (thread_id, post_text) VALUES (threadID, postText)";
+    public int createThreadAndPost(CreateThreadDTO threadDTO) throws SQLException, ClassNotFoundException {
+    	String createThreadSQL = "INSERT INTO Thread (thread_name, creator_name) VALUES (?, ?)";
+    	String createPostSQL = "INSERT INTO Post (thread_id, content) VALUES (?, ?)";
+
         
         Connection connection = null;
         PreparedStatement createThreadPS = null;
@@ -20,13 +22,15 @@ public class CreateThreadDAO {
         int threadID = -1;
         
         try {
-            connection = DatabaseConnection.getConnection();
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
             connection.setAutoCommit(false); // トランザクションを開始
             
             // Threadを作成
             createThreadPS = connection.prepareStatement(createThreadSQL, new String[]{"thread_id"});
-            createThreadPS.setString(1, threadName);
-            createThreadPS.setString(2, userName);
+            createThreadPS.setString(1, threadDTO.getThreadName());
+            createThreadPS.setString(2, threadDTO.getUserName());
             createThreadPS.executeUpdate();
             generatedKeys = createThreadPS.getGeneratedKeys();
             if (generatedKeys.next()) {
@@ -38,7 +42,7 @@ public class CreateThreadDAO {
             // Postを投稿
             createPostPS = connection.prepareStatement(createPostSQL);
             createPostPS.setInt(1, threadID);
-            createPostPS.setString(2, postText);
+            createPostPS.setString(2, threadDTO.getPostText());
             createPostPS.executeUpdate();
             
             connection.commit(); // トランザクションをコミット
