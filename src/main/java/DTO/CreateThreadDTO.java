@@ -1,33 +1,31 @@
 package DTO;
 
-
 public class CreateThreadDTO {
-    private int thread_ID;
-    private String thread_Name;
-    private String user_Name;
+    private String threadName;
+    private String userName;
+    private String postText;
 
-
-    public int getThread_ID() {
-        return thread_ID;
+    public String getThreadName() {
+        return threadName;
     }
 
-    public void setThread_ID(int thread_ID) {
-        this.thread_ID = thread_ID;
+    public void setThreadName(String threadName) {
+        this.threadName = threadName;
     }
 
-    public String getThread_Name() {
-        return thread_Name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setThread_Name(String thread_Name) {
-        this.thread_Name = thread_Name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUser_Name() {
-        return user_Name;
+    public String getPostText() {
+        return postText;
     }
 
-    public void setUser_Name(String user_Name) {
-        this.user_Name = user_Name;
+    public void setPostText(String postText) {
+        this.postText = postText;
     }
 }
