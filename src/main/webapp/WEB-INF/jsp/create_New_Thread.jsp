@@ -14,7 +14,7 @@
 <body class="body-createTable">
   <h1 id="page_top">あああ(仮)</h1>
 <div class="container-createTable">
-    <form action='createThreadServlet' method='post'>
+    <form action='createThreadServlet' method='get'>
         <table class="table-createTable">
             <tr><th class="th-createTable">スレッド名</th><td class="td-createTable"><input type='text' name='threadName'></td></tr>
             <tr><th class="th-createTable">ユーザー名</th><td class="td-createTable"><input type='text' name='userName'></td></tr>

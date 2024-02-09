@@ -2,15 +2,18 @@ package thread;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.CreateThreadDAO;
 import DTO.CreateThreadDTO;
 
 public class CreateThreadServlet extends HttpServlet {
+		int threadID=0;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         
@@ -28,16 +31,30 @@ public class CreateThreadServlet extends HttpServlet {
         // DAOを使用してThreadを作成し、Postを投稿
         CreateThreadDAO dao = new CreateThreadDAO();
         try {
-            int threadID = dao.createThreadAndPost(threadDTO);
+            threadID = dao.createThreadAndPost(threadDTO);
             // ThreadIDと投稿内容をログに記録
-            System.out.println("ThreadID: " + threadID + ", Post Text: " + postText);
-            // 成功した場合は適切なレスポンスを返す
-            request.setAttribute("id", threadID);
-            request.getRequestDispatcher("/postthread").forward(request, response);
+            System.out.println("ThreadID: " + threadID + ", Post Text: " + postText); //セッションスコープにデータ登録
+            HttpSession session = request.getSession();
+	        session.setAttribute("threadID", threadID);
+            //this.doGet(request,response);
+	        response.sendRedirect(request.getContextPath() + "/ThreadInfoServlet?id=" + threadID);
+	        RequestDispatcher dispatcher = request.getRequestDispatcher("/ThreadInfoServlet");
+            dispatcher.forward(request, response);
+            // ViewThreadServlet にリダイレクト
+	        //response.sendRedirect(request.getContextPath() + "/ThreadInfoServlet?id=" + threadID);
+            //response.sendRedirect("/JavaBoard_styET//ThreadInfoServlet?id=" + threadID);
         } catch (Exception e) {
             e.printStackTrace();
             // エラー時の処理
             response.getWriter().write("Error: Thread and Post creation failed.");
         }
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /*request.setCharacterEncoding("UTF-8");
+        request.setAttribute("threadID", threadID);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/ThreadInfoServlet");
+        dispatcher.forward(request, response);*/
+    	doPost(request,response);
+    
     }
 }
