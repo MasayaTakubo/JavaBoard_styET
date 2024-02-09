@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>掲示板検索</title>
+</head>
+<body>
+    <h1>掲示板検索</h1>
+	<form action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get">
+        <input type="text" name="keyword" placeholder="検索キーワードを入力してください">
+        <br>
+        <input type="radio" id="threadTitle" name="searchType" value="threadTitle">
+        <label for="threadTitle">スレッド名で検索</label>
+        <br>
+        <input type="radio" id="creatorName" name="searchType" value="creatorName">
+        <label for="creatorName">スレッド作成者名で検索</label>
+        <br>
+        <input type="radio" id="postUserName" name="searchType" value="postUserName">
+        <label for="postUserName">投稿者名で検索</label>
+        <br>
+        <input type="radio" id="threadId" name="searchType" value="threadId">
+        <label for="threadId">スレッドIDで検索</label>
+        <br>
+        <input type="radio" id="content" name="searchType" value="content">
+        <label for="content">本文で検索</label>
+        <br>
+        <button type="submit">検索</button>
+    </form>
+</body>
+</html>
