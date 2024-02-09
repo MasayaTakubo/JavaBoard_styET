@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!-- ここに必要なCSSやJavaScriptのリンクを追加 -->
-
 <%-- スレッド名の表示 --%>
 <c:set var="threadName" value="" />
 <c:forEach var="threadInfo" items="${threadInfoList}">
@@ -15,75 +13,92 @@
     <meta charset="UTF-8">
     <title>${threadName}</title>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
-    <link rel="stylesheet" href="../CSS/style.css">
-    <style>
-    @charset "UTF-8";
-        body {
-            padding: 5px 30px;
-        }
-        table {
-            margin: auto;
-        }
-        form {
-            margin: auto;
-        }
-        label {
-            display: inline-block;
-            width: 200px;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-        textarea {
-            height: 200px;
-            width: 90%;
-        }
-        .form-group {
-            display: flex;
-            align-items: flex;
-        }
-    </style>
-    <script>
-        function convertEmptyToZero() {
-            var postIdInput = document.getElementById('postId');
-            if (postIdInput.value.trim() === '') { // 入力内容が空の場合
-                postIdInput.value = '0'; // 0に変換
-            }
-        }
-    </script>
+	<link rel="stylesheet" href="../CSS/style.css">
+	<style>
+		body {
+			padding: 5px 30px;
+		}
+		table {
+			margin: auto;
+			width: 100%;
+		}
+		form {
+			margin: 0 auto; /* 左右のマージンを自動調整して中央に配置 */
+			width: fit-content; /* コンテンツの幅に合わせる */
+		}
+		label {
+			display: inline-block;
+			width: 200px;
+			text-align: center;
+			mergin-bottom: 5px;
+		}
+		textarea {
+			height: 75px;
+			width: 300px;
+		}
+		.form-group {
+			display: flex;
+			align-items: flex;
+		}
+		hr.double {
+			text-decoration: underline overline;
+		}
+		td.hr-double {
+			border-bottom: 2px double black; /* 下線を2重線に変更 */
+			padding-bottom: 5px; /* 下部の余白を追加 */
+			width: 100%;
+		}
+		#mainText {
+			width: 80%;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-<h2>スレッド名: ${threadName}</h2>
 
-<table border="1">
+<h2>スレッド名: ${threadName}</h2>
+<hr class="double">
+
+<table id="sample">
     <thead>
         <tr>
-            <th>投稿ID</th>
-            <th>本文</th>
-            <th>投稿者名</th>
-            <th>投稿時間</th>
-            <th><button>👍</button></th>
+            <th>投稿ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>投稿者名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>投稿時間&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>イイね</th>
+        <tr>
+            <th class="hr-double">本文</th>
         </tr>
     </thead>
+</table>
+<hr class="double">
+<br><br>
+<!-- スレッド情報を表示 -->
+<c:forEach var="threadInfo" items="${threadInfoList}">
+<table id="text">
     <tbody>
-        <!-- スレッド情報を表示 -->
-        <c:forEach var="threadInfo" items="${threadInfoList}">
-            <tr>
-                <td>${threadInfo.postId}</td>
-                <td>${threadInfo.content}</td>
-                <td>${threadInfo.postUserName}</td>
-                <td>${threadInfo.createTime}</td>
-                <td>${threadInfo.likes}</td>
-            </tr>
-        </c:forEach>
+        <tr>
+            <td>${threadInfo.postId}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>${threadInfo.postUserName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>${threadInfo.createTime}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><button>👍</button>${threadInfo.likes}</td>
+        </tr>
     </tbody>
 </table>
-<br>
-<br>
+<table id="text">
+    <tbody>
+        <tr>
+            <td class="hr-double" id="mainText">${threadInfo.content}</td>
+        </tr>
+        <br>
+    </tbody>
+</table>
+</c:forEach>
+<br><br>
 
-<form action="CreatePostServlet" method="post" onsubmit="convertEmptyToZero()">
-    <label for="threadId">スレッドID</label>
-    <input type="text" name="threadId" value="${threadId}">
-    
+<hr class="double">
+<form action="CreatePostServlet" method="post">
+    <input type="hidden" name="threadId" value="${threadId}">
     
     <label for="postUserName">　　　投 稿 者 名　　　</label>
     <input type="text" id="postUserName" name="postUserName"><br>
@@ -92,10 +107,10 @@
     <textarea id="content" name="content"></textarea><br>
     
     <label for="postId">返信の場合はIDを入力</label>
-    <input type="text" id="postId" name="postId"><br>
-    
+    <input type="text" id="postId" name="postId">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button type="submit">投稿</button>
 </form>
-
+<hr class="double">
 </body>
 </html>
