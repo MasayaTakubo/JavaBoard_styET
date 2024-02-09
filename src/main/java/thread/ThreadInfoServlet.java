@@ -23,7 +23,7 @@ public class ThreadInfoServlet extends HttpServlet {
 
         // スレッドのIDをもとに、スレッドの情報を取得するDAOを呼び出し
         ThreadInfoDAO threadInfoDAO = new ThreadInfoDAO();
-        try {	
+        try {
             List<ThreadInfoDTO> threadInfoList = threadInfoDAO.getThreadInfo(threadId);
 
             // 取得したスレッドの情報をリクエストスコープにセット

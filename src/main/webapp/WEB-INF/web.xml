@@ -24,7 +24,7 @@
 
 <servlet>
     <servlet-name>createNewThread</servlet-name>
-    <jsp-file>/WEB-INF/jsp/create_New_Thread.jsp</jsp-file>
+    <jsp-file>/WEB-INF/jsp/createNewThread.jsp</jsp-file>
 </servlet>
 <servlet-mapping>
     <servlet-name>createNewThread</servlet-name>
@@ -50,14 +50,6 @@
     <url-pattern>/thread</url-pattern>
 </servlet-mapping>
 
-<servlet>
-    <servlet-name>ViewPostThreadServlet</servlet-name>
-    <servlet-class>thread.ViewPostThreadServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>ViewPostThreadServlet</servlet-name>
-    <url-pattern>/postthread</url-pattern>
-</servlet-mapping>
 
 <servlet>
     <servlet-name>ThreadInfoServlet</servlet-name>
@@ -87,18 +79,6 @@
     <servlet-mapping>
         <servlet-name>CreatePostServlet</servlet-name>
         <url-pattern>/CreatePostServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!-- サーブレットの定義 -->
-    <servlet>
-        <servlet-name>ThreadSearchServlet</servlet-name>
-        <servlet-class>thread.ThreadSearchServlet</servlet-class>
-    </servlet>
-
-    <!-- サーブレットの URL マッピング -->
-    <servlet-mapping>
-        <servlet-name>ThreadSearchServlet</servlet-name>
-        <url-pattern>/thread/ThreadSearchServlet</url-pattern>
     </servlet-mapping>
 
 

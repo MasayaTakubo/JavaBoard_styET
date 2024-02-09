@@ -34,7 +34,7 @@ public class CreatePostServlet extends HttpServlet {
         try {
             createPostDAO.createPost(createPostDTO);
             // 投稿が成功したらスレッドの詳細ページにリダイレクト
-            response.sendRedirect("/JavaBoard_styET/thread?id=" + threadId);
+            response.sendRedirect("ThreadInfoServlet?threadId=" + threadId);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             // エラーが発生した場合はエラーページにリダイレクト

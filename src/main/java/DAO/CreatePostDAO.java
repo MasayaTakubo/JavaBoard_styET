@@ -2,7 +2,6 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import DTO.CreatePostDTO;
@@ -17,39 +16,11 @@ public class CreatePostDAO {
                 // パラメータをセット
                 statement.setInt(1, createPostDTO.getThreadId());
                 statement.setString(2, createPostDTO.getContent());
-                
-                // post_user_nameがnullまたは空の場合はデフォルト値を使用
-                String postUserName = createPostDTO.getPostUserName();
-                if (postUserName == null || postUserName.isEmpty()) {
-                    postUserName = "名無しさん";
-                }
-                statement.setString(3, postUserName);
-                
-                // post_reply_idが1以上の場合は存在するか確認し、存在しなければnullをセット
-                int postReplyId = createPostDTO.getPostReplyId();
-                if (postReplyId >= 1) {
-                    if (doesPostExist(postReplyId)) {
-                        statement.setInt(4, postReplyId);
-                    } else {
-                        statement.setNull(4, java.sql.Types.INTEGER);
-                    }
-                } else {
-                    statement.setNull(4, java.sql.Types.INTEGER);
-                }
+                statement.setString(3, createPostDTO.getPostUserName());
+                statement.setInt(4, createPostDTO.getPostReplyId());
 
                 // SQL文を実行
                 statement.executeUpdate();
-            }
-        }
-    }
-    
-    public boolean doesPostExist(int postId) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT 1 FROM Post WHERE Post_ID = ?";
-        Connection connection = DatabaseConnection.getConnection();
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, postId);
-            try (ResultSet rs = stmt.executeQuery()) {
-                return rs.next();  // Post_IDが存在すればtrue、存在しなければfalse
             }
         }
     }
