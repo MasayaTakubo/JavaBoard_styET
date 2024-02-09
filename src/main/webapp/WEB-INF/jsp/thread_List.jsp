@@ -51,8 +51,11 @@ nav {
 }
 
 footer{
+   position: fixed;
+   bottom: 0;
+   width: 100%;
    background-color: #333;
-   color: #fff;
+   color:#121212;
    text-align: center;
    padding: 20px;
 }
@@ -120,10 +123,21 @@ Menu Single
         color: glay; /* 灰色のリンク */
 }
 
-/*ヘッダーのリンク*/
+/*スレッドのリンク*/
 .link2 {
-	color: 101;
+	color: #004d25;
+	font-weight: bold;
+	text-decoration: underline;/*常に下線追加*/
 }
+
+/*スレッド名のカーソルを合わせると色が変わる*/
+a.link2:hover{
+	color: #00a33a; /*森グリーン*/
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;/*下線消す*/
+}
+
 /*  content
 ----------------------------*/
   .content{
@@ -136,6 +150,7 @@ Menu Single
   table {
         border-collapse: collapse;
         width: 100%;
+        background-color: d4d9df;
   }
   th, td {
        border: 1px solid black;
@@ -149,6 +164,12 @@ Menu Single
        color: black;
        background-color: #f2f2f2;
     }
+/*---------
+フッター
+------------------------*/
+ span{
+ 
+ }
 /*-------------------------------------------
 SP
 -------------------------------------------*/
@@ -174,10 +195,10 @@ SP
               <!-- 1つめ -->
                <li> 
                  <%--書き込む --%>
-                  <a href="create_New_thread.jsp"  class="link1">スレッドを書き込む</a>
+                  <a href="createNewThread"  class="link1">スレッドを書き込む</a>
                   <ul class="menu-second">
-                    
-                    <li class="single"><a href="">書き込む</a></li>
+                    <%--意味ないコードけど消すの怖すぎ 
+                    <li class="single"><a href="">書き込む</a></li> --%>
                     
                   </ul>
                 </li>
@@ -185,10 +206,10 @@ SP
                 <!-- 2 -->
                 <li>
                 <%--検索 --%>
-                  <a href="serchThread.html"  class="link1">スレッドを検索する</a>
+                  <a href="HTML/ThreaeSerch.html"  class="link1">スレッドを検索する</a>
                   <ul class="menu-second">
-                  
-                    <li class="single"><a href="">検索する</a></li>
+                    <%--意味ないコードけど消すの怖すぎ 
+                    <li class="single"><a href="">検索する</a></li> --%>
                     
                   </ul>
                 </li>
@@ -237,7 +258,7 @@ SP
     <!-- フッター -->
     <footer >
     
-        <span class="s1">
+        <span  style="color:white;'">
         <a href="サイトのリンク"  target="_top">Web</a>
           
         <a href="サイトのリンク"  target="_top">きりしま式</a>
