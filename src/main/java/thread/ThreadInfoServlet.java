@@ -9,22 +9,37 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import DAO.ThreadInfoDAO;
 import DTO.ThreadInfoDTO;
 
 public class ThreadInfoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    int threadID = 0;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    	doGet(request,response);
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // リクエストパラメータからスレッドのIDを取得
-        int threadId = Integer.parseInt(request.getAttribute("threadId").toString());
+    	String referer = request.getHeader("referer");
+    	System.out.println(referer);
+    	if (referer != null && referer.contains(request.getContextPath() + "/ThreadInfoServlet")) {
+    		// セッションを取得
+	    	HttpSession session = request.getSession();
+	    	// セッションスコープから"threadID"を取得
+	    	threadID = (int) session.getAttribute("threadID");
+    	}else {
+	    	threadID = Integer.parseInt(request.getAttribute("threadID").toString());
 
+	    }
+    	 
         // スレッドのIDをもとに、スレッドの情報を取得するDAOを呼び出し
         ThreadInfoDAO threadInfoDAO = new ThreadInfoDAO();
         try {	
-            List<ThreadInfoDTO> threadInfoList = threadInfoDAO.getThreadInfo(threadId);
+            List<ThreadInfoDTO> threadInfoList = threadInfoDAO.getThreadInfo(threadID);
 
             // 取得したスレッドの情報をリクエストスコープにセット
             request.setAttribute("threadInfoList", threadInfoList);
