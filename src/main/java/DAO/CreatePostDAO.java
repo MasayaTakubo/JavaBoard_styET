@@ -16,8 +16,7 @@ public class CreatePostDAO {
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 // パラメータをセット
                 statement.setInt(1, createPostDTO.getThreadId());
-                statement.setString(2, createPostDTO.getContent());
-                
+                statement.setString(2, createPostDTO.getContent());     
                 // post_user_nameがnullまたは空の場合はデフォルト値を使用
                 String postUserName = createPostDTO.getPostUserName();
                 if (postUserName == null || postUserName.isEmpty()) {

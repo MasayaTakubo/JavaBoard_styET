@@ -32,8 +32,8 @@ public class ThreadSearchDAO {
             while (rs.next()) {
                 ThreadSearchDTO dto = new ThreadSearchDTO();
                 dto.setThreadId(rs.getInt("thread_id"));
-                dto.setThreadTitle(rs.getString("thread_title"));
-                dto.setCreatorName(rs.getString("creator_name"));
+                dto.setThreadTitle(rs.getString("thread_name"));
+                dto.setCreatorName(rs.getString("creatname"));
                 dto.setPosterName(rs.getString("poster_name"));
                 dto.setContent(rs.getString("content"));
                 searchResults.add(dto);
@@ -140,7 +140,7 @@ public class ThreadSearchDAO {
         return searchResults;
     }
     
-    public static List<ThreadSearchDTO> searchByThreadId(int threadId) throws ClassNotFoundException {
+    public static List<ThreadSearchDTO> searchByThreadId(int keyword) throws ClassNotFoundException {
         List<ThreadSearchDTO> searchResults = new ArrayList<>();
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -152,7 +152,7 @@ public class ThreadSearchDAO {
             // SQLクエリを準備
             String sql = "SELECT * FROM thread WHERE thread_id = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, threadId);
+            pstmt.setInt(1, keyword);
             
             // SQLクエリを実行し、結果を取得
             rs = pstmt.executeQuery();
@@ -161,7 +161,7 @@ public class ThreadSearchDAO {
             while (rs.next()) {
                 ThreadSearchDTO dto = new ThreadSearchDTO();
                 dto.setThreadId(rs.getInt("thread_id"));
-                dto.setThreadTitle(rs.getString("thread_title"));
+                dto.setThreadTitle(rs.getString("thread_name"));
                 dto.setCreatorName(rs.getString("creator_name"));
                 dto.setPosterName(rs.getString("poster_name"));
                 dto.setContent(rs.getString("content"));
