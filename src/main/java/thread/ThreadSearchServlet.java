@@ -17,6 +17,7 @@ public class ThreadSearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // フォームからの入力を取得
         String keyword = request.getParameter("keyword");
+        System.out.println(keyword);
         String searchType = request.getParameter("searchType");
         
         // 検索結果を格納するリスト

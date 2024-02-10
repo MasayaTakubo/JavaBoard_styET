@@ -26,7 +26,7 @@ public class CreateThreadServlet extends HttpServlet {
         CreateThreadDTO threadDTO = new CreateThreadDTO();
         threadDTO.setThreadName(threadName);
         threadDTO.setUserName(userName);
-        threadDTO.setPostText(postText);
+        threadDTO.setPostText(postText);   
         
         // DAOを使用してThreadを作成し、Postを投稿
         CreateThreadDAO dao = new CreateThreadDAO();
