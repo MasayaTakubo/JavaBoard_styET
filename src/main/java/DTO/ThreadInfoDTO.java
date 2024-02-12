@@ -1,7 +1,7 @@
 package DTO;
 
-
 import java.sql.Timestamp;
+import java.util.List;
 
 public class ThreadInfoDTO {
     private int postId;
@@ -13,6 +13,15 @@ public class ThreadInfoDTO {
     private int postReplyId;
     
     private String threadName;
+    private List<ThreadInfoDTO> childPosts; // 子投稿のリストを追加
+
+    // getterとsetterも追加
+    public List<ThreadInfoDTO> getChildPosts() {
+        return childPosts;
+    }
+    public void setChildPosts(List<ThreadInfoDTO> childPosts) {
+        this.childPosts = childPosts;
+    }
     
     public int getPostId() {
 		return postId;
@@ -63,5 +72,6 @@ public class ThreadInfoDTO {
 		this.threadName = threadName;
 	}
 	
-    
+
+    // 他のgetterとsetterは省略
 }

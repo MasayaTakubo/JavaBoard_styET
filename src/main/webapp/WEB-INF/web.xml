@@ -95,4 +95,14 @@
     </servlet-mapping>
 
 
+	<servlet>
+	    <servlet-name>LikeServlet</servlet-name>
+	    <servlet-class>thread.LikeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>LikeServlet</servlet-name>
+	    <url-pattern>/LikeServlet</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

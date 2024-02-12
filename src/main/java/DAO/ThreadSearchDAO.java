@@ -13,9 +13,9 @@ import connect.DatabaseConnection;
 
 /*searchByThreadTitle...OK
   searchByCreatorName...OK
-  searchByPostUserName...
+  searchByPostUserName...OK
   searchByThreadId...OK
-  searchByContent...
+  searchByContent...OK
 */
 public class ThreadSearchDAO {
 	public static List<ThreadSearchDTO> searchByThreadTitle(String keyword) throws ClassNotFoundException {
