@@ -151,6 +151,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<hr class="double">
+<form action="CreatePostServlet" method="post">
+    <input type="hidden" name="threadId" value="${threadId}">
+    
+    <label for="postUserName">　　　投 稿 者 名　　　</label>
+    <input type="text" id="postUserName" name="postUserName"><br>
+    
+    <label for="content">　　　本　   　文　　　</label>
+    <textarea id="content" name="content"></textarea><br>
+    
+    <label for="postId">返信の場合はIDを入力</label>
+    <input type="text" id="postId" name="postId">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit">投稿</button>
+</form>
+<hr class="double">
+
+
 
 
 </body>
