@@ -11,15 +11,22 @@
 <head>
     <meta charset="UTF-8">
     <title>${threadName}</title>
+    <a  id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
+        .topNav {
+            text-align: center; /* テキストを中央揃えにする */
+            color: black; /* リンクの文字色を白にする */
+            text-decoration: none; /* リンクの下線を削除する */
+            background-color: transparent; /* リンクの背景色を透明にする */
+        }
         body {
             padding: 5px 30px;
         }
         table {
             margin: auto;
-            width: 100%;
+            width: 80%;
         }
         form {
             margin: 0 auto; /* 左右のマージンを自動調整して中央に配置 */
@@ -34,6 +41,7 @@
         textarea {
             height: 75px;
             width: 300px;
+            font-size: 20px;
         }
         .form-group {
             display: flex;
@@ -49,8 +57,23 @@
         }
         #mainText {
             width: 80%;
-            text-align: center;
+            text-align: left;
+            font-size: 24px;
         }
+        .subText {
+            margin: 5px 0px 0px 150px;
+        }
+        footer {
+            text-align: center; /* テキストを中央揃えにする */
+            color: black; /* リンクの文字色を白にする */
+            text-decoration: none; /* リンクの下線を削除する */
+            background-color: transparent; /* リンクの背景色を透明にする */
+        }
+        a:hover {
+        background-color: powderblue;
+        transition: background-color 0.5s;
+        }
+        
     </style>
 
     
@@ -61,6 +84,8 @@
 <h2>スレッド名: ${threadName}</h2>
 <hr class="double">
 
+    <!--
+
 <table id="sample">
     <thead>
         <tr>
@@ -68,11 +93,18 @@
             <th>投稿者名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
             <th>投稿時間&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
             <th>イイね</th>
-        <tr>
             <th class="hr-double">本文</th>
         </tr>
     </thead>
 </table>
+
+    -->
+<div class="topNav">
+    <nav>
+        <a href="TopServlet">スレッド一覧へ<a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#POST">投稿欄へ</a>
+    </nav>
+</div>
 <hr class="double">
 <br><br>
 <!-- スレッド情報を表示 -->
@@ -83,11 +115,11 @@
         <tbody>
             <tr>
                 <td>${parentPost.postId}     </td>
-                <td>${parentPost.postUserName}     </td>
-                <td>${parentPost.createTime}     </td>
+                <td>名前：${parentPost.postUserName}     </td>
+                <td>投稿時間：${parentPost.createTime}     </td>
                 <td>
                     <!-- いいねボタン -->
-                    <button class="like-button" data-post-id="${parentPost.postId}">👍</button>
+                    <button class="like-button" data-post-id="${parentPost.postId}">いいね👍</button>
                     <span id="likes-count-${parentPost.postId}">${parentPost.likes}</span>
                 </td>
             </tr>
@@ -103,21 +135,21 @@
     </table>
     <!-- 返信の表示 -->
     <c:forEach var="childPost" items="${parentPost.childPosts}">
-        <table id="text">
+        <table class="subText">
             <tbody>
                 <tr>
-                    <td>${childPost.postId}     </td>
-                    <td>${childPost.postUserName}     </td>
-                    <td>${childPost.createTime}     </td>
+                    <td>↳${childPost.postId}     </td>
+                    <td>名前：${childPost.postUserName}     </td>
+                    <td>投稿時間：${childPost.createTime}     </td>
                     <td>
                         <!-- いいねボタン -->
-                        <button class="like-button" data-post-id="${childPost.postId}">👍</button>
+                        <button class="like-button" data-post-id="${childPost.postId}">いいね👍</button>
                         <span id="likes-count-${childPost.postId}">${childPost.likes}</span>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <table id="text">
+        <table class="subText">
             <tbody>
                 <tr>
                     <td class="hr-double" id="mainText">${childPost.content}</td>
@@ -151,7 +183,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<hr class="double">
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<hr class="double" id="POST">
 <form action="CreatePostServlet" method="post">
     <input type="hidden" name="threadId" value="${threadId}">
     
@@ -168,8 +204,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </form>
 <hr class="double">
 
-
-
-
 </body>
+
+<footer>
+    <nav class="footerNav">
+        <tr>
+            <a href="TopServlet">スレッド一覧へ</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#TOP">ページ上部へ</a>
+        </tr>
+    </nav>
+</footer>
 </html>
