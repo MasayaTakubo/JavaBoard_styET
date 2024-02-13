@@ -24,17 +24,12 @@ public class ThreadInfoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	String referer = request.getHeader("referer");
-    	System.out.println(referer);
-    	if (referer != null && referer.contains(request.getContextPath() + "/ThreadInfoServlet")) {
-    		// セッションを取得
-	    	HttpSession session = request.getSession();
-	    	// セッションスコープから"threadID"を取得
-	    	threadID = (int) session.getAttribute("threadID");
-    	}else {
-	    	threadID = Integer.parseInt(request.getAttribute("threadID").toString());
+    	    // セッションを取得
+    	    HttpSession session = request.getSession();
+    	    // セッションスコープから"threadID"を取得
+    	    threadID = (int) session.getAttribute("threadID");
+    	
 
-	    }
     	 
         // スレッドのIDをもとに、スレッドの情報を取得するDAOを呼び出し
         ThreadInfoDAO threadInfoDAO = new ThreadInfoDAO();
