@@ -12,7 +12,7 @@ public class CreateThreadDAO {
     // Threadを作成し、Postを投稿するメソッド
     public int createThreadAndPost(CreateThreadDTO threadDTO) throws SQLException, ClassNotFoundException {
     	String createThreadSQL = "INSERT INTO Thread (thread_name, creator_name) VALUES (?, ?)";
-    	String createPostSQL = "INSERT INTO Post (thread_id, content) VALUES (?, ?)";
+    	String createPostSQL = "INSERT INTO Post (thread_id, content,post_user_name) VALUES (?, ?, ?)";
 
         
         Connection connection = null;
@@ -43,6 +43,7 @@ public class CreateThreadDAO {
             createPostPS = connection.prepareStatement(createPostSQL);
             createPostPS.setInt(1, threadID);
             createPostPS.setString(2, threadDTO.getPostText());
+            createPostPS.setString(3, threadDTO.getUserName());
             createPostPS.executeUpdate();
             
             connection.commit(); // トランザクションをコミット
