@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>掲示板検索</title>
+    <script>
+        function validateForm() {
+            var keyword = document.forms["searchForm"]["keyword"].value;
+            var searchType = document.querySelector('input[name="searchType"]:checked');
+
+            // 検索キーワードのバリデーション
+            if (keyword.trim() === "") {
+                alert("検索キーワードを入力してください。");
+                return false;
+            }
+
+            // ラジオボタンの選択を確認
+            if (searchType === null) {
+                alert("検索タイプを選択してください。");
+                return false;
+            }
+
+            // スレッドIDで検索が選択されている場合のバリデーション
+            if (searchType.value === "threadId") {
+                // 数値のみを受け入れる正規表現パターン
+                var numericPattern = /^[0-9]+$/;
+
+                // 入力値が数値のみかどうかをチェック
+                if (!numericPattern.test(keyword)) {
+                    alert("スレッドIDで検索する場合は数値データを入力してください。");
+                    return false;
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>掲示板検索</h1>
-	<form action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get">
+    <form name="searchForm" action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get" onsubmit="return validateForm()">
         <input type="text" name="keyword" placeholder="検索キーワードを入力してください">
         <br>
         <input type="radio" id="threadTitle" name="searchType" value="threadTitle">

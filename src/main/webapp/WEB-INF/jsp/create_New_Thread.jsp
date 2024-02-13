@@ -12,16 +12,29 @@
     
 </head>
 <body class="body-createTable">
+
+<script>
+function validateForm() {
+    var threadName = document.forms["threadForm"]["threadName"].value;
+    var postText = document.forms["threadForm"]["postText"].value;
+    
+    if (threadName === "" || postText === "") {
+        alert("スレッド名と投稿内容を入力してください。");
+        return false;
+    }
+}
+</script>
+
   <h1 id="page_top">あああ(仮)</h1>
 <div class="container-createTable">
-    <form action='createThreadServlet' method='get'>
-        <table class="table-createTable">
-            <tr><th class="th-createTable">スレッド名</th><td class="td-createTable"><input type='text' name='threadName'></td></tr>
-            <tr><th class="th-createTable">ユーザー名</th><td class="td-createTable"><input type='text' name='userName'></td></tr>
-            <tr><th class="th-createTable">投稿内容</th><td class="td-createTable"><input type='text' name='postText'></td></tr>
-            <tr><td></td><td class="td-createTable"><input type='submit' value='作成'></td></tr>
-        </table>
-    </form>
+    <form name="threadForm" action='createThreadServlet' method='get' onsubmit="return validateForm()">
+    <table class="table-createTable">
+        <tr><th class="th-createTable">スレッド名</th><td class="td-createTable"><input type='text' name='threadName'></td></tr>
+        <tr><th class="th-createTable">ユーザー名</th><td class="td-createTable"><input type='text' name='userName'></td></tr>
+        <tr><th class="th-createTable">投稿内容</th><td class="td-createTable"><input type='text' name='postText'></td></tr>
+        <tr><td></td><td class="td-createTable"><input type='submit' value='作成'></td></tr>
+    </table>
+</form>
 </div>
 
 </body>
