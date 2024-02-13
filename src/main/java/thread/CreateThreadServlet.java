@@ -2,7 +2,6 @@ package thread;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,12 +36,7 @@ public class CreateThreadServlet extends HttpServlet {
             HttpSession session = request.getSession();
 	        session.setAttribute("threadID", threadID);
             //this.doGet(request,response);
-	        response.sendRedirect(request.getContextPath() + "/ThreadInfoServlet?id=" + threadID);
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("/ThreadInfoServlet");
-            dispatcher.forward(request, response);
-            // ViewThreadServlet にリダイレクト
-	        //response.sendRedirect(request.getContextPath() + "/ThreadInfoServlet?id=" + threadID);
-            //response.sendRedirect("/JavaBoard_styET//ThreadInfoServlet?id=" + threadID);
+	        response.sendRedirect(request.getContextPath() + "/ThreadInfoServlet?id=" + threadID);            
         } catch (Exception e) {
             e.printStackTrace();
             // エラー時の処理

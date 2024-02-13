@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <hr class="double" id="POST">
 <form action="CreatePostServlet" method="post">
-    <input type="hidden" name="threadId" value="${threadId}">
+    <input type="text" name="threadId" value="${threadID}">
     
     <label for="postUserName">　　　投 稿 者 名　　　</label>
     <input type="text" id="postUserName" name="postUserName"><br>
