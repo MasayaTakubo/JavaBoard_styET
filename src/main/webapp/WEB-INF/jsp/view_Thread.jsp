@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>${threadName}</title>
-    <a  id="TOP"></a>
+    <a id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
@@ -22,15 +22,72 @@
             background-color: transparent; /* リンクの背景色を透明にする */
         }
         body {
-            padding: 5px 30px;
+            padding: 0px 0px 30px 0px;
         }
+        /* navタグのcss */
+        nav {
+            background-color: #121212;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+        }
+        .menu {
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            position: relative;
+        }
+        .menu > li {
+            width: 25%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .menu > li:hover {
+            background-color: #3c3636;
+        }
+        .menu > li a {
+            display: block;
+        }
+        .menu-second {
+            visibility: hidden;
+        }
+        .menu > .single {
+            position: relative;
+        }
+        .single .menu-second {
+            width: 100%;
+            background-color: #3c3636;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+        .single .menu-second li a:hover {
+            opacity: 0.7;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 0.75rem;
+            }
+        }
+        /* navのcssここまで */
         table {
             margin: auto;
             width: 80%;
         }
+        /* フォームのcss部分始まり */
         form {
             margin: 0 auto; /* 左右のマージンを自動調整して中央に配置 */
             width: fit-content; /* コンテンツの幅に合わせる */
+        }
+        .form-group {
+            display: flex;
+            align-items: flex;
         }
         label {
             display: inline-block;
@@ -43,10 +100,8 @@
             width: 300px;
             font-size: 20px;
         }
-        .form-group {
-            display: flex;
-            align-items: flex;
-        }
+        /* フォームのcss終わり */
+        /* 下線のcss始まり */
         hr.double {
             text-decoration: underline overline;
         }
@@ -55,13 +110,13 @@
             padding-bottom: 5px; /* 下部の余白を追加 */
             width: 100%;
         }
+        /* 下線のcss 終わり*/
         #mainText {
             width: 80%;
             text-align: left;
-            font-size: 24px;
         }
         .subText {
-            margin: 5px 0px 0px 150px;
+            margin: 5px 0 0 15%;
         }
         footer {
             text-align: center; /* テキストを中央揃えにする */
@@ -69,42 +124,31 @@
             text-decoration: none; /* リンクの下線を削除する */
             background-color: transparent; /* リンクの背景色を透明にする */
         }
-        a:hover {
-        background-color: powderblue;
-        transition: background-color 0.5s;
-        }
-        
     </style>
-
-    
-    
 </head>
 <body>
-
 <h2>スレッド名: ${threadName}</h2>
 <hr class="double">
-
-    <!--
-
-<table id="sample">
-    <thead>
-        <tr>
-            <th>投稿ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th>投稿者名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th>投稿時間&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th>イイね</th>
-            <th class="hr-double">本文</th>
-        </tr>
-    </thead>
-</table>
-
-    -->
-<div class="topNav">
-    <nav>
-        <a href="TopServlet">スレッド一覧へ<a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#POST">投稿欄へ</a>
-    </nav>
-</div>
+<nav>
+    <ul class="menu">
+        <li> 
+            <a href="TopServlet" class="link1">スレッド一覧へ</a>
+            <ul class="menu-second"></ul>
+        </li>
+        <li>
+            <a href="createNewThread" class="link1">新規スレッド作成</a>
+            <ul class="menu-second"></ul>
+        </li>
+        <li>
+            <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
+            <ul class="menu-second"></ul>
+        </li>
+        <li>
+            <a href="#POST" class="link1">投稿欄へ</a>
+            <ul class="menu-second"></ul>
+        </li>
+    </ul>
+</nav>
 <hr class="double">
 <br><br>
 <!-- スレッド情報を表示 -->
@@ -138,7 +182,7 @@
         <table class="subText">
             <tbody>
                 <tr>
-                    <td>↳${childPost.postId}     </td>
+                    <td> ↳ ${childPost.postId}     </td>
                     <td>名前：${childPost.postUserName}     </td>
                     <td>投稿時間：${childPost.createTime}     </td>
                     <td>
@@ -159,45 +203,39 @@
         </table>
     </c:forEach>
 </c:forEach>
-
 <script>
-// すべての「いいね」ボタンに対してイベントリスナーを追加
-document.addEventListener('DOMContentLoaded', function() {
     // すべての「いいね」ボタンに対してイベントリスナーを追加
-    document.querySelectorAll('.like-button').forEach(function(button) {
-        button.addEventListener('click', function() {
-            var postId = this.getAttribute('data-post-id');
-            // サーバーにリクエストを送信
-            fetch('LikeServlet?postId=' + postId, { method: 'POST' })
-                .then(function(response) {
-                    if (response.ok) {
-                        // レスポンスが成功した場合、いいねの数を更新
-                        var likesCountElement = document.getElementById('likes-count-' + postId);
-                        likesCountElement.textContent = parseInt(likesCountElement.textContent) + 1;
-                    } else {
-                        console.error('Request failed: ' + response.status);
-                    }
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        // すべての「いいね」ボタンに対してイベントリスナーを追加
+        document.querySelectorAll('.like-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var postId = this.getAttribute('data-post-id');
+                // サーバーにリクエストを送信
+                fetch('LikeServlet?postId=' + postId, { method: 'POST' })
+                    .then(function(response) {
+                        if (response.ok) {
+                            // レスポンスが成功した場合、いいねの数を更新
+                            var likesCountElement = document.getElementById('likes-count-' + postId);
+                            likesCountElement.textContent = parseInt(likesCountElement.textContent) + 1;
+                        } else {
+                            console.error('Request failed: ' + response.status);
+                        }
+                    });
+            });
         });
     });
-});
 </script>
-
-<hr class="double"id="POST">
+<hr class="double" id="POST">
 <form action="CreatePostServlet" method="post" onsubmit="return validateForm()">
-    <input type="text" name="threadId" value="${threadID}">
-    
-    <label for="postUserName">　　　投 稿 者 名　　　</label>
+    <input type="hidden" name="threadId" value="${threadID}">
+    <label for="postUserName">　　　投稿者名　　　</label>
     <input type="text" id="postUserName" name="postUserName"><br>
-    
-    <label for="content">　　　本　   　文　　　</label>
+    <label for="content">　　　本　　　文　　　</label>
     <textarea id="content" name="content"></textarea><br>
-    
     <label for="postId">返信の場合はIDを入力</label>
     <input type="text" id="postId" name="postId">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button type="submit">投稿</button>
-
     <script>
         function validateForm() {
             var content = document.getElementById("content").value;
@@ -210,17 +248,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     </script>
 </form>
-
 <hr class="double">
-
 </body>
-
 <footer>
-    <nav class="footerNav">
-        <tr>
-            <a href="TopServlet">スレッド一覧へ</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <nav>
+    <ul class="menu">
+        <li> 
+            <a href="TopServlet" class="link1">スレッド一覧へ</a>
+            <ul class="menu-second"></ul>
+        </li>
+        <li>
+            <a href="createNewThread" class="link1">新規スレッド作成</a>
+            <ul class="menu-second"></ul>
+        </li>
+        <li>
+            <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
+            <ul class="menu-second"></ul>
+        </li>
+        <li>
             <a href="#TOP">ページ上部へ</a>
-        </tr>
+            <ul class="menu-second"></ul>
+        </li>
+    </ul>
     </nav>
 </footer>
 </html>
