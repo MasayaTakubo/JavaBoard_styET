@@ -17,6 +17,7 @@
 <!DOCTYPE =html>
 <html>
 <head>
+<title>掲示板ページ</title>
  <style>
 @charset "UTF-8";
 
@@ -24,9 +25,11 @@ html {
   font-size: 100%;
 }
 body {
-  background-color: #f1f1f1;
+  background-color: #fff;               /*背景*/
   font-family: 'Poppins', sans-serif;
   font-size: 0.875rem;
+  flex-direction: column;/**/
+  min-height: 100vh;/**/
 }
 ul {
   list-style: none;
@@ -51,14 +54,17 @@ nav {
 }
 
 footer{
-   position: fixed;
+   position: fixed;/*fixed*/
    bottom: 0;
    width: 100%;
-   background-color: #333;
+   background-color: #000000;
    color:#121212;
    text-align: center;
    padding: 20px;
+   box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
+    z-index: 100;  /* 必要に応じて他の要素よりも上に表示 */
 }
+ 
 /*
 グローバルナビゲーション
 「position: relative;」で、サブメニュー（Wide）の基準位置として設定
@@ -138,12 +144,6 @@ a.link2:hover{
 	text-decoration: none;/*下線消す*/
 }
 
-/*  content
-----------------------------*/
-  .content{
-    flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
-    padding: 20px;
-  }
 /*
 テーブル機能
 -----------------*/
@@ -164,14 +164,27 @@ a.link2:hover{
        color: black;
        background-color: #f2f2f2;
     }
+    /*  content
+----------------------------*/
+  .content{
+    color:#fff;
+    flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
+    padding: 20px;
+    padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
+    flex:1px;
+  }
+  .wrapper {
+  	display: flex;
+  	flex-direction: column;
+  	min-height: 100vh;
+  }
+/*
 /*---------
 フッター
 ------------------------*/
- span{
- 
- }
+
 /*-------------------------------------------
-SP
+スマホ用
 -------------------------------------------*/
 @media screen and (max-width: 600px) {
   body {
@@ -181,14 +194,14 @@ SP
 }
  
  </style>
+ 
  </head>
  
-<body id="page_top">
-      
-      
-      
+<body >
+      <div class ="wrapper">
+		<main>
         <header>
-            <h1 id=""page_top">掲示板サイト</h1>
+            <h1 id="page_top">掲示板サイト</h1>
             
             <nav>
               <ul class="menu">
@@ -197,42 +210,27 @@ SP
                  <%--書き込む --%>
                   <a href="createNewThread"  class="link1">スレッドを書き込む</a>
                   <ul class="menu-second">
-                    <%--意味ないコードけど消すの怖すぎ 
-                    <li class="single"><a href="">書き込む</a></li> --%>
+                    
                     
                   </ul>
                 </li>
-                
+
                 <!-- 2 -->
                 <li>
                 <%--検索 --%>
                   <a href="HTML/ThreaeSerch.html"  class="link1">スレッドを検索する</a>
                   <ul class="menu-second">
-                    <%--意味ないコードけど消すの怖すぎ 
-                    <li class="single"><a href="">検索する</a></li> --%>
                     
                   </ul>
                 </li>
-                <!-- 
-                <li class="wide">
-                  <a href="#">Menu Wide</a>
-                  <ul class="menu-second">
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                    <li><a href="#">Wide Child</a></li>
-                  </ul>
-                </li>-->
+                
               </ul>
               
             </nav>
         </header>
         
 
-      <div class="content">
-
+ <div class="content">
 
 
 <table >
@@ -253,17 +251,19 @@ SP
 <% } %>
     
 </table>
-
+<!-- コンテンツ -->
 </div>
     <!-- フッター -->
     <footer >
     
-        <span  style="color:white;'">
+        <span  style="color:#ff0000; ">
         <a href="サイトのリンク"  target="_top">Web</a>
           
         <a href="サイトのリンク"  target="_top">きりしま式</a>
 
         </span>
-      </footer>
-      
+        
+    </footer>
+      </div>
+
 </body></html>
