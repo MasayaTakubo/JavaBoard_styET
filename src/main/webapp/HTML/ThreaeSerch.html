@@ -42,9 +42,153 @@
                 .replace(/'/g, "&#039;");
         }
     </script>
+    <!-- ここにCSSやJavaScriptのリンクを追加 -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        .topNav {
+            text-align: center; /* テキストを中央揃えにする */
+            color: black; /* リンクの文字色を白にする */
+            text-decoration: none; /* リンクの下線を削除する */
+            background-color: transparent; /* リンクの背景色を透明にする */
+        }
+        body {
+            padding: 0px 0px 30px 0px;
+        }
+        /* navタグのcss */
+        nav {
+            background-color: #121212;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+        }
+        .menu {
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            position: relative;
+        }
+        .menu > li {
+            width: 25%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .menu > li:hover {
+            background-color: #3c3636;
+        }
+        .menu > li a {
+            display: block;
+        }
+        .menu-second {
+            visibility: hidden;
+        }
+        .menu > .single {
+            position: relative;
+        }
+        .single .menu-second {
+            width: 100%;
+            background-color: #3c3636;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+        .single .menu-second li a:hover {
+            opacity: 0.7;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 0.75rem;
+            }
+        }
+        /* navのcssここまで */
+        table {
+            margin: auto;
+            width: 80%;
+        }
+        /* フォームのcss部分始まり */
+        form {
+            margin: 0 auto; /* 左右のマージンを自動調整して中央に配置 */
+            width: fit-content; /* コンテンツの幅に合わせる */
+            padding: 10px 0 10px 0;
+        }
+        .form-group {
+            display: flex;
+            align-items: flex;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+
+        }
+        textarea {
+            height: 75px;
+            width: 300px;
+            font-size: 20px;
+        }
+        /* フォームのcss終わり */
+        /* 下線のcss始まり */
+        hr.double {
+            text-decoration: underline overline;
+        }
+        td.hr-double {
+            border-bottom: 2px double black; /* 下線を2重線に変更 */
+            padding-bottom: 5px; /* 下部の余白を追加 */
+            width: 100%;
+        }
+        form {
+            width: 350px;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 150px 20px 0px 20px;
+        }
+        button[type="submit"] {
+            /* background-color: #9acd32; /* 背景色を黄緑に設定 */
+            /* color: #fff; /* 文字色を白に設定 */
+            /* border: none; /* ボーダーをなしに設定 */
+            padding: 10px 20px; /* パディングを設定 */
+            cursor: pointer; /* カーソルをポインターに設定 */
+            margin: 20px auto 0; /* 上に20px、左右中央に配置 */
+            display: block; /* ブロック要素に設定 */
+        }
+        /* 下線のcss 終わり*/
+        #mainText {
+            width: 80%;
+            text-align: left;
+        }
+        .subText {
+            margin: 5px 0 0 15%;
+        }
+        footer {
+            text-align: center; /* テキストを中央揃えにする */
+            color: black; /* リンクの文字色を白にする */
+            text-decoration: none; /* リンクの下線を削除する */
+            background-color: transparent; /* リンクの背景色を透明にする */
+        }
+        
+    </style>
+    
 </head>
 <body>
     <h1>掲示板検索</h1>
+    <a id="TOP"></a>
+    <nav>
+        <ul class="menu">
+            <li> 
+                <a href="/JavaBoard_styET/TopServlet" class="link1">スレッド一覧へ</a>
+                <ul class="menu-second"></ul>
+            </li>
+            <li>
+                <a href="/JavaBoard_styET/createNewThread" class="link1">新規スレッド作成</a>
+                <ul class="menu-second"></ul>
+            </li>
+        </ul>
+    </nav>
     <form name="searchForm" action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get" onsubmit="return validateForm()">
         <input type="text" name="keyword" placeholder="検索キーワードを入力してください">
         <br>
