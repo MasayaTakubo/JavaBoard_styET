@@ -83,7 +83,7 @@ public class ThreadSearchDAO {
             // SQLクエリを準備
             String sql = "SELECT t.thread_id, t.thread_name, t.creator_name, p.post_user_name, p.content " +
                     "FROM thread t JOIN post p ON t.thread_id = p.thread_id " +
-                    "WHERE t.CREATOR_NAME LIKE ?";
+                    "WHERE t.CREATOR_NAME LIKE ? ORDER BY t.thread_id";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "%" + keyword + "%");
             
@@ -134,7 +134,7 @@ public class ThreadSearchDAO {
             // SQLクエリを準備
             String sql = "SELECT t.thread_id, t.thread_name, t.creator_name, p.post_user_name, p.content " +
                     "FROM thread t JOIN post p ON t.thread_id = p.thread_id " +
-                    "WHERE p.POST_USER_NAME LIKE ?";
+                    "WHERE p.POST_USER_NAME LIKE ? ORDER BY t.thread_id";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, "%" + keyword + "%");
             
@@ -186,7 +186,7 @@ public class ThreadSearchDAO {
             // SQLクエリを準備
             String sql = "SELECT t.thread_id, t.thread_name, t.creator_name, p.post_user_name, p.content " +
                          "FROM thread t JOIN post p ON t.thread_id = p.thread_id " +
-                         "WHERE t.thread_id = ?";
+                         "WHERE t.thread_id = ? ORDER BY t.thread_id";
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, keyword);
             
@@ -232,7 +232,7 @@ public class ThreadSearchDAO {
 	            // SQLクエリを準備
 	            String sql = "SELECT t.thread_id, t.thread_name, t.creator_name, p.post_user_name, p.content " +
 	                    "FROM thread t JOIN post p ON t.thread_id = p.thread_id " +
-	                    "WHERE p.CONTENT LIKE ?";
+	                    "WHERE p.CONTENT LIKE ? ORDER BY t.thread_id";
 	            pstmt = conn.prepareStatement(sql);
 	            pstmt.setString(1, "%" + keyword + "%");
 	            
