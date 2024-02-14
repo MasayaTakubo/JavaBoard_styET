@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <%-- スレッド名の表示 --%>
 <c:set var="threadName" value="" />
 <c:forEach var="threadInfo" items="${threadInfoList}">
     <c:set var="threadName" value="${threadInfo.threadName}" />
 </c:forEach>
+
 
 <!DOCTYPE html>
 <html>
@@ -176,7 +179,8 @@
     <table id="text">
         <tbody>
             <tr>
-                <td class="hr-double" id="mainText"><c:out value="${parentPost.content}"/></td>
+            	<td class="hr-double" id="mainText"><pre><c:out value="${parentPost.content}"/></pre></td>
+
             </tr>
             <br>
         </tbody>
@@ -235,9 +239,9 @@
 <form action="CreatePostServlet" method="post" onsubmit="return validateForm()">
     <input type="hidden" name="threadId" value="${threadID}">
     <label for="postUserName">　　　投稿者名　　　</label>
-    <input type="text" id="postUserName" name="postUserName"><br>
+    <input type="text" id="postUserName" name="postUserName" maxlength=50><br>
     <label for="content">　　　本　　　文　　　</label>
-    <textarea id="content" name="content"></textarea><br>
+    <textarea id="content" name="content" maxlength=1000></textarea><br>
     <label for="postId">返信の場合はIDを入力</label>
     <input type="text" id="postId" name="postId">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
