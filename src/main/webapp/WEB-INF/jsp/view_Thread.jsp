@@ -10,8 +10,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>${threadName}</title>
-    <a id="TOP"></a>
+
+    <title><c:out value="${threadName}"/></title>
+    <a  id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link rel="stylesheet" href="../CSS/style.css">
     <style>
@@ -127,7 +128,10 @@
     </style>
 </head>
 <body>
-<h2>スレッド名: ${threadName}</h2>
+
+
+<h2>スレッド名: <c:out value="${threadName}"/></h2>
+
 <hr class="double">
 <nav>
     <ul class="menu">
@@ -151,7 +155,7 @@
 </nav>
 <hr class="double">
 <br><br>
-<!-- スレッド情報を表示 -->
+
 <!-- スレッド情報を表示 -->
 <c:forEach var="parentPost" items="${threadInfoList}">
     <!-- 親投稿の表示 -->
@@ -159,7 +163,7 @@
         <tbody>
             <tr>
                 <td>${parentPost.postId}     </td>
-                <td>名前：${parentPost.postUserName}     </td>
+                <td>名前：<c:out value="${parentPost.postUserName}"/>     </td>
                 <td>投稿時間：${parentPost.createTime}     </td>
                 <td>
                     <!-- いいねボタン -->
@@ -172,7 +176,7 @@
     <table id="text">
         <tbody>
             <tr>
-                <td class="hr-double" id="mainText">${parentPost.content}</td>
+                <td class="hr-double" id="mainText"><c:out value="${parentPost.content}"/></td>
             </tr>
             <br>
         </tbody>
@@ -182,8 +186,10 @@
         <table class="subText">
             <tbody>
                 <tr>
-                    <td> ↳ ${childPost.postId}     </td>
-                    <td>名前：${childPost.postUserName}     </td>
+
+                    <td>>>${childPost.postId}     </td>
+                    <td>名前：<c:out value="${childPost.postUserName}"/>     </td>
+
                     <td>投稿時間：${childPost.createTime}     </td>
                     <td>
                         <!-- いいねボタン -->
@@ -196,7 +202,7 @@
         <table class="subText">
             <tbody>
                 <tr>
-                    <td class="hr-double" id="mainText">${childPost.content}</td>
+                    <td class="hr-double" id="mainText"><c:out value="${childPost.content}"/></td>
                 </tr>
                 <br>
             </tbody>

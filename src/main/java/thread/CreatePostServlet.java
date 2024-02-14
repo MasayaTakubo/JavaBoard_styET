@@ -21,7 +21,9 @@ public class CreatePostServlet extends HttpServlet {
         int threadId = Integer.parseInt(request.getParameter("threadId"));
         String content = request.getParameter("content");
         String postUserName = request.getParameter("postUserName");
-        int postReplyId = Integer.parseInt(request.getParameter("postId"));
+        String postIdParam = request.getParameter("postId");
+        int postReplyId = (postIdParam != null && !postIdParam.isEmpty()) ? Integer.parseInt(postIdParam) : 0;
+        System.out.println(postReplyId);
 
         // 投稿情報をCreatePostDTOにセット
         CreatePostDTO createPostDTO = new CreatePostDTO();

@@ -22,10 +22,10 @@
         <c:forEach items="${searchResults}" var="thread">
             <tr>
                 <td>${thread.threadId}</td>
-                <td>${thread.threadTitle}</td>
-                <td>${thread.creatorName}</td>
-                <td>${thread.posterName}</td>
-                <td>${thread.content}</td>
+                <td><c:out value="${thread.threadTitle}"/></td>
+                <td><c:out value="${thread.creatorName}"/></td>
+                <td><c:out value="${thread.posterName}"/></td>
+                <td><c:out value="${thread.content}"/></td>
             </tr>
         </c:forEach>
     </table>
