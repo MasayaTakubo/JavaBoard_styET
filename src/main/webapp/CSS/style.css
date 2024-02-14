@@ -52,7 +52,7 @@ input[type="text"] {
 
 /* 送信ボタン */
 input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #696969; /* 既存の色 */
     color: #ffffff;
     padding: 12px;
     border: none;
@@ -65,5 +65,5 @@ input[type="submit"] {
 
 /* 送信ボタンホバー時 */
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #585858; /* ホバー時の色 */
 }

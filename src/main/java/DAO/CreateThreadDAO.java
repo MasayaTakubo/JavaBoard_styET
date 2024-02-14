@@ -30,7 +30,11 @@ public class CreateThreadDAO {
             // Threadを作成
             createThreadPS = connection.prepareStatement(createThreadSQL, new String[]{"thread_id"});
             createThreadPS.setString(1, threadDTO.getThreadName());
-            createThreadPS.setString(2, threadDTO.getUserName());
+            String userName = threadDTO.getUserName();
+            if (userName == null || userName.isEmpty()) {
+                userName = "名無しさん";
+            }
+            createThreadPS.setString(2, userName);
             createThreadPS.executeUpdate();
             generatedKeys = createThreadPS.getGeneratedKeys();
             if (generatedKeys.next()) {
