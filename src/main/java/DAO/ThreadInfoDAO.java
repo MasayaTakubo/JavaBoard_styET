@@ -37,7 +37,11 @@ public class ThreadInfoDAO {
                         threadInfoDTO.setPostId(resultSet.getInt("post_id"));
                         threadInfoDTO.setThreadName(resultSet.getString("thread_name"));
                         threadInfoDTO.setContent(resultSet.getString("content"));
-                        threadInfoDTO.setPostUserName(resultSet.getString("post_user_name"));
+                        String userName = resultSet.getString("post_user_name");
+                        if (userName == null || userName.isEmpty()) {
+                            userName = "名無しさん";
+                        }
+                        threadInfoDTO.setPostUserName(userName);
                         threadInfoDTO.setLikes(resultSet.getInt("likes"));
                         threadInfoDTO.setCreateTime(resultSet.getTimestamp("create_time"));
                         threadInfoDTO.setPostReplyId(resultSet.getInt("post_reply_id"));

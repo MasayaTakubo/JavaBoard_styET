@@ -30,7 +30,7 @@ public class ThreadSearchDAO {
 	        // SQLクエリを準備
 	        String sql = "SELECT t.thread_id, t.thread_name, t.creator_name, p.post_user_name, p.content " +
 	                     "FROM thread t JOIN post p ON t.thread_id = p.thread_id " +
-	                     "WHERE t.THREAD_NAME LIKE ?";
+	                     "WHERE t.THREAD_NAME LIKE ? ORDER BY t.thread_id";
 	        pstmt = conn.prepareStatement(sql);
 	        pstmt.setString(1, "%" + keyword + "%");
 	        

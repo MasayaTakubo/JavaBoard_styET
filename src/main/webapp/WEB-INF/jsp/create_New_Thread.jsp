@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>掲示板</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     
 </head>
 <body class="body-createTable">
@@ -25,7 +25,7 @@ function validateForm() {
 }
 </script>
 
-  <h1 id="page_top">あああ(仮)</h1>
+  <h1 id="page_top">あraああ(仮)</h1>
 <div class="container-createTable">
     <form name="threadForm" action='createThreadServlet' method='get' onsubmit="return validateForm()">
     <table class="table-createTable">

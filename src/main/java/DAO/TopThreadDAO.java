@@ -19,7 +19,7 @@ public class TopThreadDAO{
     	try(Connection connect = DatabaseConnection.getConnection()){
     	
         //データベースから氏名を取得するSQL文
-        String sql ="select thread_id, thread_name, creator_name from thread";
+        String sql ="select thread_id, thread_name, creator_name from thread ORDER BY thread_id";
         PreparedStatement ps = connect.prepareStatement(sql);
 
         //SQL文の実行
