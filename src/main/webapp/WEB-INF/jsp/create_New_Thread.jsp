@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <title>掲示板</title>
     
-    <link href="style.css" rel="stylesheet" type="text/css">
+	<link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     
 </head>
 <body class="body-createTable">
