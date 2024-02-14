@@ -21,6 +21,11 @@
  <style>
 @charset "UTF-8";
 
+/*下部h1タグの要素*/
+#page_top {
+ color: black;
+}
+
 html {
   font-size: 100%;
 }
@@ -28,8 +33,9 @@ body {
   background-color: #fff;               /*背景*/
   font-family: 'Poppins', sans-serif;
   font-size: 0.875rem;
-  flex-direction: column;/**/
-  min-height: 100vh;/**/
+  flex-direction: column;/*積み重ねる*/
+  min-height: 100vh;/*コンテンツの高さに合わせて自動*/
+ padding: 0; /* ここで四辺すべてを0に設定 */
 }
 ul {
   list-style: none;
@@ -54,13 +60,13 @@ nav {
 }
 
 footer{
-   position: fixed;/*fixed*/
-   bottom: 0;
-   width: 100%;
    background-color: #000000;
+   position: absolute;/*fixed*/
+   bottom: 0;
+   width: 99%;/*100%にすると右にはみでる*/
    color:#121212;
    text-align: center;
-   padding: 20px;
+   padding: 1em;
    box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
     z-index: 100;  /* 必要に応じて他の要素よりも上に表示 */
 }
@@ -169,7 +175,7 @@ a.link2:hover{
   .content{
     color:#fff;
     flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
-    padding: 20px;
+    padding: 5px 1em 0px 1em;
     padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
     flex:1px;
   }
@@ -177,8 +183,9 @@ a.link2:hover{
   	display: flex;
   	flex-direction: column;
   	min-height: 100vh;
+  	padding: 5px 1em 0 1em;
   }
-/*
+
 /*---------
 フッター
 ------------------------*/
@@ -198,62 +205,66 @@ a.link2:hover{
  </head>
  
 <body >
-      <div class ="wrapper">
+	<div class ="wrapper">
 		<main>
-        <header>
-            <h1 id="page_top">掲示板サイト</h1>
-            
-            <nav>
-              <ul class="menu">
-              <!-- 1つめ -->
-               <li> 
-                 <%--書き込む --%>
-                  <a href="createNewThread"  class="link1">スレッドを書き込む</a>
-                  <ul class="menu-second">
-                    
-                    
-                  </ul>
-                </li>
+		<header>
+			<h1 id="page_top">掲示板サイト</h1>
+			
+			<nav>
+				<ul class="menu">
+				<!-- 1つめ -->
+				<li>
+				<%--書き込む --%>
+				<a href="createNewThread"  class="link1">スレッドを書き込む</a>
+				<ul class="menu-second">
+				
+				
+				</ul>
+				</li>
 
-                <!-- 2 -->
-                <li>
-                <%--検索 --%>
-                  <a href="HTML/ThreaeSerch.html"  class="link1">スレッドを検索する</a>
-                  <ul class="menu-second">
-                    
-                  </ul>
-                </li>
-                
-              </ul>
-              
-            </nav>
-        </header>
-        
+				<!-- 2 -->
+				<li>
+				<%--検索 --%>
+				<a href="HTML/ThreaeSerch.html"  class="link1">スレッドを検索する</a>
+				<ul class="menu-second">
 
- <div class="content">
+				</ul>
+				</li>
+				
+				</ul>
+				
+			</nav>
+	</header>
 
 
-<table >
-	<!-- ここにスレッド-->
-	<!--  -->
+	<div class="content">
+
+	<table >
+		<!-- ここにスレッド-->
+		<!--  -->
 	<tr>
 	<td><b>スレNo</b></td>
 	<td><b>スレッド名</b></td>
 	<td><b>作者名</b></td>
 	</tr>
-    <% for(int i = 0; i < DTOlist.size(); i++) { %>
-    <% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
-    <tr>
-        <td><%= dto.getThread_ID() %></td>
-        <td><a href="thread?id=<%= dto.getThread_ID() %>" class="link2"><%= dto.getThread_Name() %></a></td>
-        <td><%= dto.getCreator_Name() %></td>
-    </tr>
-<% } %>
-    
-</table>
-<!-- コンテンツ -->
+	<% for(int i = 0; i < DTOlist.size(); i++) { %>
+		<% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
+	<tr>
+			<td><%= dto.getThread_ID() %></td>
+			<td><a href="thread?id=<%= dto.getThread_ID() %>" class="link2"><%= dto.getThread_Name() %>
+					</a></td>
+			<td><%= dto.getCreator_Name() %></td>
+	</tr>
+	<% } %>
+
+	</table>
+	
+	<%---- コンテンツのdiv -- --%>
+	</div>
+
+<%--wrapperのdiv --%>
 </div>
-    <!-- フッター -->
+    
     <footer >
     
         <span  style="color:#ff0000; ">
@@ -264,6 +275,8 @@ a.link2:hover{
         </span>
         
     </footer>
-      </div>
+      
 
-</body></html>
+
+</body>
+</html>
