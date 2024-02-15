@@ -1,25 +1,14 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="DTO.TopThreadDTO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List"%>
-<%
-    // セッションスコープに保存されたデータを取得
-    List<TopThreadDTO> DTOlist = (List<TopThreadDTO>)session.getAttribute("DTOlist");
-    if (DTOlist == null) {
-        System.out.println("DTOlist is null"); // ログにメッセージを出力
-    } else {
-        System.out.println("DTOlist size: " + DTOlist.size()); // ログにDTOlistのサイズを出力
-    }
-%>	
-<!-- takeuchi0201 -->    
-<!DOCTYPE =html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
- <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掲示板サイト</title>
+     <style>
 @charset "UTF-8";
 
 /*下部h1タグの要素*/
@@ -159,49 +148,7 @@ a.link2:hover{
     flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
     padding: 20px;
   }
-/*
-テーブル機能
------------------*/
-  table {
-        border-collapse: collapse;
-        width: 100%;
-        background-color: d4d9df;
-  }
-  th, td {
-       border: 1px solid black;
-       padding: 8px;
-       text-align: left;
-  }
-    th {
-        background-color: #f2f2f2;
-    }
-    tr:nth-child(even) {
-       color: black;
-       background-color: #f2f2f2;
-    }
 
-    /*  content
-----------------------------*/
-  .content{
-    color:#fff;
-    flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
-    padding: 5px 1em 0px 1em;
-    padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
-    flex:1px;
-  }
-  .wrapper {
-  	display: flex;
-  	flex-direction: column;
-  	min-height: 100vh;
-  	padding: 5px 1em 0 1em;
-  }
-
-/*---------
-フッター
-------------------------*/
- span{
- 
- }
 /*-------------------------------------------
 SP
 -------------------------------------------*/
@@ -213,86 +160,35 @@ SP
 }
  
  </style>
- <title>
- スレッド一覧
- </title>
- </head>
- 
-
-<body >
-	<div class ="wrapper">
-		<main>
-		<header>
-			<h1 id="page_top">掲示板サイト</h1>
-			
-			<nav>
-				<ul class="menu">
-				<!-- 1つめ -->
-				<li>
-				<%--書き込む --%>
-				<a href="createNewThread"  class="link1">スレッドを書き込む</a>
-				<ul class="menu-second">
-				
-				
-				</ul>
-				</li>
-
-				<!-- 2 -->
-				<li>
-				<%--検索 --%>
-				<a href="HTML/ThreaeSerch.html"  class="link1">スレッドを検索する</a>
-				<ul class="menu-second">
-
-				</ul>
-				</li>
-				
-				</ul>
-				
-			</nav>
-	</header>
-
-
-	<div class="content">
-
-	<table >
-		<!-- ここにスレッド-->
-		<!--  -->
-	<tr>
-	<td><b>スレッドNo.</b></td>
-	<td><b>スレッド名</b></td>
-	<td><b>作者名</b></td>
-	</tr>
-	<c:forEach var="dto" items="${DTOlist}">
-    <tr>
-        <td><c:out value="${dto.thread_ID}" /></td>
-        <td><a href="thread?id=<c:out value='${dto.thread_ID}' />" class="link2"><c:out value="${dto.thread_Name}" /></a></td>
-        <td><c:out value="${dto.creator_Name}" /></td>
-    </tr>
-</c:forEach>
-
-
-
-	</table>
-	
-	<%---- コンテンツのdiv -- --%>
-	</div>
-
-<%--wrapperのdiv --%>
-</div>
+</head>
+<body>
+<header>
+    <h1 id="page_top">掲示板サイト</h1>
     
-    <footer >
-    
-        <span  style="color:white;'">
-        <a href="サイトのリンク"  target="_top">Web</a>
-          
-        <a href="サイトのリンク"  target="_top">きりしま式</a>
-
-        </span>
-
-        
-    </footer>
-      
+    <nav>
+        <ul class="menu">
+            <!-- 1つめ -->
+            <li>
+                <%--書き込む --%>
+                <a href="TopServlet" class="link1">スレッド一覧へ</a>
+                <ul class="menu-second">
 
 
+                </ul>
+            </li>
+
+            <!-- 2 -->
+            <li>
+                <%--検索 --%>
+                <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
+                <ul class="menu-second">
+
+                </ul>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
 </body>
 </html>

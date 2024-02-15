@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="header.jsp" %>
 
 
 
@@ -7,7 +8,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>掲示板</title>
+    <title>掲示板作成ページ</title>
     
 	<link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     
@@ -43,8 +44,6 @@
 
 
 
-
-  <h1 id="page_top">あああ(仮)</h1>
 <div class="container-createTable">
     <form name="threadForm" action='createThreadServlet' method='get' onsubmit="return validateForm()">
     <table class="table-createTable">

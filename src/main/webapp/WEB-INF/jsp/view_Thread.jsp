@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title><c:out value="${threadName}"/></title>
+    <title>スレッドページ</title>
     <a  id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link rel="stylesheet" href="../CSS/style.css">

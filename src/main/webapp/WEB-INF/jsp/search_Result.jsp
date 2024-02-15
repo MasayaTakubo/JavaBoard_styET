@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Results</title>
+<title>検索結果</title>
 <a id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link rel="stylesheet" href="../CSS/style.css">
