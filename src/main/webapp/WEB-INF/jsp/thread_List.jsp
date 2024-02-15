@@ -35,7 +35,7 @@ body {
   flex-direction: column;/*積み重ねる*/
   min-height: 100vh;/*コンテンツの高さに合わせて自動*/
  padding: 0; /* ここで四辺すべてを0に設定 */
-
+ font-family: Meiryo,sans-serif;/*フォント*/
 }
 ul {
   list-style: none;
@@ -60,10 +60,10 @@ nav {
 }
 
 footer{
-
+    
+       position: sticky; /**/
+   bottom: 0; /*最下部*/
    background-color: #000000;
-   position: absolute;/*fixed*/
-   bottom: 0;
    width: 99%;/*100%にすると右にはみでる*/
    color:#121212;
    text-align: center;
@@ -200,8 +200,40 @@ a.link2:hover{
  span{
  
  }
+ /*トップに戻る矢印↑*/
+ .pagetop {
+    position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 24px 14px;
+  border-color: transparent transparent #000000 transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+/*   デフォルトは非表示 
+  opacity: 0; */
+}
+
+.pagetop:hover {
+    filter: brightness(1.2);
+}
+
+.pagetop:hover::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 10px);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 17.32px 10px; /* 三角形のサイズと形状を調整 */
+  border-color: transparent transparent #00A6C4 transparent; /* 三角形の色を指定 */
+  transform: rotate(180deg); /* 三角形を下向きに配置 */
+}
 /*-------------------------------------------
-SP
+スマホ用の切り替え
 -------------------------------------------*/
 @media screen and (max-width: 600px) {
   body {
@@ -211,13 +243,16 @@ SP
 }
  
  </style>
+ 		<!-- JavaScript -->
+	<script src="../JavaScript/script.js"></script>
  </head>
  
 
 <body >
 	<div class ="wrapper">
-		<main>
+		
 		<header>
+			
 			<h1 id="page_top">掲示板サイト</h1>
 			
 			<nav>
@@ -248,7 +283,9 @@ SP
 
 
 	<div class="content">
-
+		<main >
+		<%--やじるし　↑ --%>
+		<div class ="pagetop"></div>
 	<table >
 		<!-- ここにスレッド-->
 		<!--  -->
@@ -271,14 +308,16 @@ SP
 	
 	<%---- コンテンツのdiv -- --%>
 	</div>
-
-<%--wrapperのdiv --%>
+	</main>
+	
+	
+	<%--wrapperのdiv --%>
 </div>
     
     <footer >
     
         <span  style="color:white;'">
-        <a href="サイトのリンク"  target="_top">Web</a>
+        <a href="サイトのリンク"  target="_top">sty_ET'sWeb</a>
           
         <a href="サイトのリンク"  target="_top">きりしま式</a>
 
