@@ -43,7 +43,7 @@ public class CreatePostServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             // エラーが発生した場合はエラーページにリダイレクト
-            response.sendRedirect(request.getContextPath() + "/error.jsp");
+            response.sendRedirect(request.getContextPath() + "../webapp/HTML/createPostError.html");
         }
     }
 }
