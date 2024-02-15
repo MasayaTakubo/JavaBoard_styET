@@ -25,16 +25,17 @@ public class CreatePostDAO {
                 }
                 statement.setString(3, postUserName);
                 
-                // post_reply_idが1以上の場合は存在するか確認し、存在しなければnullをセット
+                // post_reply_idが1以上の場合は存在するか確認し、存在しなければ、0と同じか確認。0と同じでなければException
                 int postReplyId = createPostDTO.getPostReplyId();
+                System.out.println(postReplyId);
                 if (postReplyId >= 1) {
                     if (doesPostExist(postReplyId)) {
                         statement.setInt(4, postReplyId);
                     } else {
-                        throw new SQLException();
-                    }
-                } else {
-                    throw new SQLException();
+                    	throw new SQLException();
+                    }	
+                }else if (postReplyId == 0) {
+                	statement.setNull(4, java.sql.Types.INTEGER);   
                 }
 
                 // SQL文を実行
