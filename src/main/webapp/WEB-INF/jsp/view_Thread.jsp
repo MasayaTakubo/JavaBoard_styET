@@ -247,16 +247,26 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button type="submit">投稿</button>
     <script>
-        function validateForm() {
-            var content = document.getElementById("content").value;
-            if (content.trim() === "") {
-                alert("本文が入力されていません。");
-                return false; // フォームの送信をキャンセル
-            } else {
-                return true; // フォームの送信を継続
-            }
+    function validateForm() {
+        var content = document.getElementById("content").value;
+        var postId = document.getElementById("postId").value;
+
+        // 本文が空の場合
+        if (content.trim() === "") {
+            alert("本文が入力されていません。");
+            return false; // フォームの送信をキャンセル
         }
-    </script>
+
+        // 返信IDが数値でない場合
+        if (isNaN(postId)) {
+            alert("返信IDは数値で入力してください。");
+            return false; // フォームの送信をキャンセル
+        }
+
+        return true; // フォームの送信を継続
+    }
+</script>
+
 </form>
 <hr class="double">
 </body>
