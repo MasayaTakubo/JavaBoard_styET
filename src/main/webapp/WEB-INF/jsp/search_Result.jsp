@@ -176,7 +176,7 @@
         <c:forEach items="${searchResults}" var="thread">
             <tr>
                 <td>${thread.threadId}</td>
-                <td><c:out value="${thread.threadTitle}"/></td>
+                <td><a href="/JavaBoard_styET/thread?id=${thread.threadId}"><c:out value="${thread.threadTitle}"/></a></td>
                 <td><c:out value="${thread.creatorName}"/></td>
                 <td><c:out value="${thread.posterName}"/></td>
                 <td><c:out value="${thread.content}"/></td>

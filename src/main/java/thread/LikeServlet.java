@@ -19,7 +19,8 @@ public class LikeServlet extends HttpServlet {
             response.sendRedirect("ThreadInfoServlet?threadId=" + threadId);
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect(request.getContextPath() + "/error.jsp");
+            response.sendRedirect("/HTML/unknownError.html");
+
         }
     }
 }

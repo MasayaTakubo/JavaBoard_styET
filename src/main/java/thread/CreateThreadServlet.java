@@ -39,8 +39,8 @@ public class CreateThreadServlet extends HttpServlet {
 	        response.sendRedirect(request.getContextPath() + "/ThreadInfoServlet?id=" + threadID);            
         } catch (Exception e) {
             e.printStackTrace();
-            // エラー時の処理
-            response.getWriter().write("Error: Thread and Post creation failed.");
+            // エラーが発生した場合はエラーページにリダイレクト
+            response.sendRedirect(request.getContextPath() + "/HTML/createThreadError.html");
         }
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

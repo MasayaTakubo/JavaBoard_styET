@@ -1,6 +1,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page import="DTO.TopThreadDTO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List"%>
@@ -253,19 +255,19 @@ SP
 		<!-- ここにスレッド-->
 		<!--  -->
 	<tr>
-	<td><b>スレNo</b></td>
+	<td><b>スレッドNo.</b></td>
 	<td><b>スレッド名</b></td>
 	<td><b>作者名</b></td>
 	</tr>
-	<% for(int i = 0; i < DTOlist.size(); i++) { %>
-		<% TopThreadDTO dto = (TopThreadDTO) DTOlist.get(i); %>
-	<tr>
-			<td><%= dto.getThread_ID() %></td>
-			<td><a href="thread?id=<%= dto.getThread_ID() %>" class="link2"><%= dto.getThread_Name() %>
-					</a></td>
-			<td><%= dto.getCreator_Name() %></td>
-	</tr>
-	<% } %>
+	<c:forEach var="dto" items="${DTOlist}">
+    <tr>
+        <td><c:out value="${dto.thread_ID}" /></td>
+        <td><a href="thread?id=<c:out value='${dto.thread_ID}' />" class="link2"><c:out value="${dto.thread_Name}" /></a></td>
+        <td><c:out value="${dto.creator_Name}" /></td>
+    </tr>
+</c:forEach>
+
+
 
 	</table>
 	
