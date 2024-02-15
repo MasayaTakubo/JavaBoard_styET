@@ -45,7 +45,7 @@ public class ThreadInfoServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             // エラーが発生した場合はエラーページにリダイレクトするなどの処理を行う
-            response.sendRedirect("/HTML/createThreadError.html");
+            response.sendRedirect("/JavaBoard_styET/HTML/createPostError.html");
 
         }
     }

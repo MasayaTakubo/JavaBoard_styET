@@ -9,6 +9,7 @@ import DTO.CreatePostDTO;
 import connect.DatabaseConnection;
 
 public class CreatePostDAO {
+
     public void createPost(CreatePostDTO createPostDTO) throws ClassNotFoundException, SQLException {
         try (Connection connection = DatabaseConnection.getConnection()) {
             // SQL文を準備
@@ -30,10 +31,10 @@ public class CreatePostDAO {
                     if (doesPostExist(postReplyId)) {
                         statement.setInt(4, postReplyId);
                     } else {
-                        statement.setNull(4, java.sql.Types.INTEGER);
+                        throw new SQLException();
                     }
                 } else {
-                    statement.setNull(4, java.sql.Types.INTEGER);
+                    throw new SQLException();
                 }
 
                 // SQL文を実行
@@ -42,10 +43,11 @@ public class CreatePostDAO {
         }
     }
     
+    // post_idが存在するか確認するメソッド
     public boolean doesPostExist(int postId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT 1 FROM Post WHERE Post_ID = ?";
-        Connection connection = DatabaseConnection.getConnection();
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, postId);
             try (ResultSet rs = stmt.executeQuery()) {
                 return rs.next();  // Post_IDが存在すればtrue、存在しなければfalse

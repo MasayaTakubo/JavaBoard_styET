@@ -30,7 +30,7 @@ public class ViewThreadServlet extends HttpServlet {
         } else {
             // リクエストパラメータ "id" が存在しない場合の処理
             // 例えば、エラーページにリダイレクトするなどの処理を記述する
-            response.sendRedirect(request.getContextPath() + "/error.jsp");
+            response.sendRedirect("/HTML/unknownError.html");
         }
     }
 }
