@@ -8,7 +8,7 @@ CREATE TABLE Post (
 Post_ID NUMBER(5, 0) DEFAULT Post_ID_Sequence.NEXTVAL PRIMARY KEY ,
 Thread_ID NUMBER(4, 0) NOT NULL,
 Content VARCHAR2(2000) NOT NULL,
-Post_User_Name VARCHAR2(100) DEFAULT 'ÂêçÁÑ°„Åó„Åï„Çì',
+Post_User_Name VARCHAR2(100) DEFAULT 'ñºñ≥ÇµÇ≥ÇÒ',
 Create_time TIMESTAMP(0) DEFAULT SYSDATE,
 Likes NUMBER(2, 0) DEFAULT 0,
 Post_Reply_ID NUMBER(5, 0) NULL,

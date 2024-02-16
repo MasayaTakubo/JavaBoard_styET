@@ -191,7 +191,7 @@
             <tbody>
                 <tr>
 
-                    <td>>>${childPost.postId}     </td>
+                    <td>↪${childPost.postId}     </td>
                     <td>名前：<c:out value="${childPost.postUserName}"/>     </td>
 
                     <td>投稿時間：${childPost.createTime}     </td>
