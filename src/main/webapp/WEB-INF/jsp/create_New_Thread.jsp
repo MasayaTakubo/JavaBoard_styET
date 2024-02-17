@@ -57,6 +57,10 @@
 
 </body>
 
-<footer></footer>
+<footer>
+        <span  style="color:white;'">
+            <a href="createNewThread"  target="_top">JavaBoard_styET</a>
+        </span>
+</footer>
 
 </html>

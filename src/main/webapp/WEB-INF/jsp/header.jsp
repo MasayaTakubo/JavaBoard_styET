@@ -163,7 +163,7 @@ SP
 </head>
 <body>
 <header>
-    <h1 id="page_top">掲示板サイト</h1>
+    <h1 id="page_top">JavaBoard_styET</h1>
     
     <nav>
         <ul class="menu">
