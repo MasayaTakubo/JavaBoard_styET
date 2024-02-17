@@ -27,7 +27,26 @@
         a {
             text-decoration: none;
             color: #fff;
+            
         }
+        /*aタグリンクの*/
+        .link1{
+          color:#fff;
+          font-weight: ;
+        }
+
+        .link2{
+        color: #004d25;
+        font-weight: bold;
+        text-decoration: underline;
+        }
+        
+        a.link2:hover{
+	color: #00a33a; /*森グリーン*/
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;/*下線消す*/
+	}
         ul {
             list-style: none;
         }
@@ -137,6 +156,7 @@
         .subText {
             margin: 5px 0 0 15%;
         }
+
         footer {
             text-align: center; /* テキストを中央揃えにする */
             color: black; /* リンクの文字色を白にする */
@@ -176,7 +196,7 @@
         <c:forEach items="${searchResults}" var="thread">
             <tr>
                 <td>${thread.threadId}</td>
-                <td><a href="/JavaBoard_styET/thread?id=${thread.threadId}"><c:out value="${thread.threadTitle}"/></a></td>
+                <td><a href="/JavaBoard_styET/thread?id=${thread.threadId}"  class="link2"><c:out value="${thread.threadTitle}"/></a></td>
                 <td><c:out value="${thread.creatorName}"/></td>
                 <td><c:out value="${thread.posterName}"/></td>
                 <td><c:out value="${thread.content}"/></td>
