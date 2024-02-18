@@ -18,7 +18,7 @@
 <html>
 <head>
     <style>
-        @charset "UTF-8";
+       @charset "UTF-8";
 
         /*下部h1タグの要素*/
         #title {
@@ -349,7 +349,8 @@ footer {
  <title>
  スレッド一覧
  </title>
- 		<!--  <script src="../script.js"></script>-->
+ 		<!--  Javascript -->
+ 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  	<script src="JavaScript/script.js"></script>
  </head>
  
