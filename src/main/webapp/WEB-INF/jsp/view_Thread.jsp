@@ -206,7 +206,7 @@
         <table class="subText">
             <tbody>
                 <tr>
-                    <td class="hr-double" id="mainText"><c:out value="${childPost.content}"/></td>
+                    <td class="hr-double" id="mainText"><pre><c:out value="${childPost.content}"/></pre></td>
                 </tr>
                 <br>
             </tbody>
