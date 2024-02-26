@@ -206,7 +206,8 @@
         <c:forEach items="${searchResults}" var="thread">
             <tr>
                 <td>${thread.threadId}</td>
-                <td class="ellipsis"><a href="/JavaBoard_styET/thread?id=${thread.threadId}"><c:out value="${thread.threadTitle}"/></a></td>
+
+                <td class="ellipsis"><a href="/JavaBoard_styET/thread?id=${thread.threadId}" class="link2"><c:out value="${thread.threadTitle}"/></a></td>
                 <td class="ellipsis"><c:out value="${thread.creatorName}"/></td>
                 <td class="ellipsis"><c:out value="${thread.posterName}"/></td>
                 <td class="ellipsis"><c:out value="${thread.content}"/></td>
