@@ -77,14 +77,17 @@
         table {
             margin: auto;
             border-collapse: collapse; /* セルの境界線を結合 */
-            width: 80%; /* テーブルの幅を設定 */
+            width: 1200px; /* テーブルの幅を設定 */
             background-color: #d4d9df;
+            table-layout: fixed;
         }
 
         th, td {
             border: 1px solid black; /* セルの境界線を設定 */
             padding: 8px; /* セル内の余白を設定 */
             text-align: left;
+            overflow: hidden;
+            white-space: nowrap; /* テキストの折り返しを無効にする */
         }
         th {
            background-color: #d4d9df;
@@ -92,6 +95,13 @@
         tr:nth-child(even) {
             color: black;
             background-color: #f2f2f2; /* 偶数行の背景色を設定 */
+        }
+        
+        
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* tr:hover {
@@ -176,13 +186,22 @@
         <c:forEach items="${searchResults}" var="thread">
             <tr>
                 <td>${thread.threadId}</td>
-                <td><a href="/JavaBoard_styET/thread?id=${thread.threadId}"><c:out value="${thread.threadTitle}"/></a></td>
-                <td><c:out value="${thread.creatorName}"/></td>
-                <td><c:out value="${thread.posterName}"/></td>
-                <td><c:out value="${thread.content}"/></td>
+                <td class="ellipsis"><a href="/JavaBoard_styET/thread?id=${thread.threadId}"><c:out value="${thread.threadTitle}"/></a></td>
+                <td class="ellipsis"><c:out value="${thread.creatorName}"/></td>
+                <td class="ellipsis"><c:out value="${thread.posterName}"/></td>
+                <td class="ellipsis"><c:out value="${thread.content}"/></td>
             </tr>
         </c:forEach>
     </table>
+    <script>
+        // JavaScriptを使用してテキストが幅を超えた場合に省略記号を追加する
+        var cells = document.querySelectorAll('td.ellipsis');
+        cells.forEach(function(cell) {
+            if (cell.scrollWidth > cell.offsetWidth) {
+                cell.title = cell.innerText;
+            }
+        });
+    </script>
 </body>
 <br><br><br>
 <footer>
