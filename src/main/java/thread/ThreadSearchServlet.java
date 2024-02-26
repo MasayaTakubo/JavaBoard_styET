@@ -29,14 +29,12 @@ public class ThreadSearchServlet extends HttpServlet {
                 try {
 					searchResults = ThreadSearchDAO.searchByThreadTitle(keyword);
 				} catch (ClassNotFoundException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
             } else if (searchType.equals("creatorName")) {
                 try {
 					searchResults = ThreadSearchDAO.searchByCreatorName(keyword);
 				} catch (ClassNotFoundException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
             } else if (searchType.equals("posterName")) {
@@ -50,21 +48,17 @@ public class ThreadSearchServlet extends HttpServlet {
                 try {
 					searchResults = ThreadSearchDAO.searchByThreadId(Integer.parseInt(keyword));
 				} catch (NumberFormatException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				} catch (ClassNotFoundException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
             } else if (searchType.equals("content")) {
                 try {
 					searchResults = ThreadSearchDAO.searchByContent(keyword);
 				} catch (ClassNotFoundException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
             } else {
-                // 何もしないか、エラー処理を行う
             }
         }
         

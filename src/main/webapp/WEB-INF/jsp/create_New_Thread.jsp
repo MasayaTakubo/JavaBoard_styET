@@ -48,7 +48,7 @@
     <form name="threadForm" action='createThreadServlet' method='get' onsubmit="return validateForm()">
     <table class="table-createTable">
         <tr><th class="th-createTable">スレッド名</th><td class="td-createTable"><input type='text' name='threadName' maxlength=30></td></tr>
-        <tr><th class="th-createTable">ユーザー名</th><td class="td-createTable"><input type='text' name='userName'maxlength=30></td></tr>
+        <tr><th class="th-createTable">ユーザー名</th><td class="td-createTable"><input type='text' name='userName'maxlength=50></td></tr>
         <tr><th class="th-createTable">投稿内容</th><td class="td-createTable"><input type='text' name='postText'maxlength=1000></td></tr>
         <tr><td></td><td class="td-createTable"><input type='submit' value='作成'></td></tr>
     </table>

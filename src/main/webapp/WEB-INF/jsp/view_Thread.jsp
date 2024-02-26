@@ -250,7 +250,7 @@
 </script>
 <hr class="double" id="POST">
 <form action="CreatePostServlet" method="post" onsubmit="return validateForm()">
-    <input type="hidden" name="threadId" value="${threadID}">
+    <input type="hidden" name="threadId" value="${threadID}" maxlength=30>
     <label for="postUserName">　　　投稿者名　　　</label>
     <input type="text" id="postUserName" name="postUserName" maxlength=50><br>
     <label for="content">　　　本　　　文　　　</label>
