@@ -18,10 +18,10 @@
 <html>
 <head>
     <style>
-        @charset "UTF-8";
+       @charset "UTF-8";
 
         /*下部h1タグの要素*/
-        #page_top {
+        #title {
             color: black;
         }
 
@@ -37,6 +37,7 @@
             flex-direction: column;/*積み重ねる*/
             min-height: 100vh;/*コンテンツの高さに合わせて自動*/
             padding: 10px 0 10px 0; /* ここで四辺すべてを0に設定 */
+            font-family: Meiryo,sans-serif;/*フォント*/
         }
 
         ul {
@@ -85,14 +86,7 @@ a.link2:hover{
     flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
     padding: 20px;
   }
-/*
-テーブル機能
------------------*/
-  table {
-        border-collapse: collapse;
-        width: 100%;
-        background-color: d4d9df;
-  }
+
   th, td {
        border: 1px solid black;
        padding: 8px;
@@ -141,12 +135,12 @@ SP
 footer {
             background-color: #000000;
             bottom: 0;
-            width: 99%;
+            width: 100%;
             color: #121212;
             text-align: center;
             padding: 5px;
             box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
-        }
+           }
 
 
         /*
@@ -300,11 +294,64 @@ footer {
                 font-size: 0.75rem;
             }
         }
+        /*矢印*/
+.main {
+    padding-bottom: 500px;
+    margin-bottom: 500px;
+}
+.title {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    background-color: #000066;
+}
+.page-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #000066;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: opacity 1s,visibility 1s, transform 1s;
+}
+.page-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.page-top:hover {
+    opacity: .7 ;
+}
+.page-top__arrow {
+    height: 15px;
+    width: 15px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: translateY(3px) rotate(45deg);
+}
+        
+        
+        
  
  </style>
  <title>
  スレッド一覧
  </title>
+ 		<!--  Javascript -->
+ 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 	<script src="JavaScript/script.js"></script>
  </head>
  
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -312,9 +359,9 @@ footer {
 
 <body>
 <div class="wrapper">
-    <main>
+    <main class="main">
         <header>
-            <h1 id="page_top">JavaBoard_styET</h1>
+            <h1 id="title">JavaBoard_styET</h1>
             <nav>
                 <ul class="menu">
                     <!-- 1つめ -->
@@ -337,7 +384,11 @@ footer {
                 </ul>
             </nav>
         </header>
-
+        <!-- page_top -->
+        <%--ここからが矢印の範囲 --%>
+          <a href="#" class="page-top">
+              <div class="page-top__arrow"></div>
+         </a>
         <div class="content">
             <table>
                 <!-- ここにスレッド-->
@@ -347,15 +398,16 @@ footer {
                     <td><b>スレッド名</b></td>
                     <td><b>作者名</b></td>
                 </tr>
-                <c:forEach var="dto" items="${DTOlist}">
-                    <tr>
-                        <td><c:out value="${dto.thread_ID}" /></td>
-                        <td><a href="thread?id=<c:out value='${dto.thread_ID}' />" class="link2"><c:out value="${dto.thread_Name}" /></a></td>
-                        <td><c:out value="${dto.creator_Name}" /></td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </div>
+                
+                   <c:forEach var="dto" items="${DTOlist}">
+                        <tr>
+                            <td><c:out value="${dto.thread_ID}" /></td>
+                            <td><a href="thread?id=<c:out value='${dto.thread_ID}' />" class="link2"><c:out value="${dto.thread_Name}" /></a></td>
+                            <td><c:out value="${dto.creator_Name}" /></td>
+                        </tr>
+                   </c:forEach>
+                </table>
+            </div>
     </main>
 
     <footer>
