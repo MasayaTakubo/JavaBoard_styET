@@ -50,7 +50,7 @@
 
         header {
             width: 100%;
-            background-color: #fff;
+            /*background-color: #fff;*/
         }
 
         h1 {
