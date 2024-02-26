@@ -82,7 +82,20 @@
         /* navのcssここまで */
         table {
             margin: auto;
-            width: 80%;
+            width: 1000px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            /*word-wrap: break-word;*/ /* テキストの折り返しを有効にする */
+            word-break: break-all; /* テーブル幅に合わせて改行する */
+            white-space: pre-wrap; /* テキストの折り返しを有効にする */
+        }
+        td.time{
+        	 width: 400px;
         }
         /* フォームのcss部分始まり */
         form {
@@ -167,7 +180,7 @@
             <tr>
                 <td>${parentPost.postId}     </td>
                 <td>名前：<c:out value="${parentPost.postUserName}"/>     </td>
-                <td>投稿時間：${parentPost.createTime}     </td>
+                <td class="time">投稿時間：${parentPost.createTime}     </td>
                 <td>
                     <!-- いいねボタン -->
                     <button class="like-button" data-post-id="${parentPost.postId}">いいね👍</button>
@@ -179,7 +192,7 @@
     <table id="text">
         <tbody>
             <tr>
-            	<td class="hr-double" id="mainText"><pre><c:out value="${parentPost.content}"/></pre></td>
+            	<td class="hr-double" id="mainText"><c:out value="${parentPost.content}"/></td>
 
             </tr>
             <br>
@@ -194,7 +207,7 @@
                     <td>>>${childPost.postId}     </td>
                     <td>名前：<c:out value="${childPost.postUserName}"/>     </td>
 
-                    <td>投稿時間：${childPost.createTime}     </td>
+                    <td class="time">投稿時間：${childPost.createTime}     </td>
                     <td>
                         <!-- いいねボタン -->
                         <button class="like-button" data-post-id="${childPost.postId}">いいね👍</button>
