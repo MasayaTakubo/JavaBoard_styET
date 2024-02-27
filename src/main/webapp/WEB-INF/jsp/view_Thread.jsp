@@ -28,17 +28,6 @@
         body {
             padding: 0px 0px 30px 0px;
         }
-        /* navタグのcss */
-        nav {
-            background-color: #121212;
-        }
-
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 0.75rem;
-            }
-        }
-        /* navのcssここまで */
         table {
             margin: auto;
             width: 1000px;
@@ -87,18 +76,12 @@
             width: 100%;
         }
         /* 下線のcss 終わり*/
-        #mainText {
-            width: 80%;
+        .mainText {
+            margin: 5px 0 0 10%;
             text-align: left;
         }
         .subText {
             margin: 5px 0 0 15%;
-        }
-        footer {
-            text-align: center; /* テキストを中央揃えにする */
-            color: black; /* リンクの文字色を白にする */
-            text-decoration: none; /* リンクの下線を削除する */
-            background-color: transparent; /* リンクの背景色を透明にする */
         }
     </style>
 </head>
@@ -135,7 +118,7 @@
 <!-- スレッド情報を表示 -->
 <c:forEach var="parentPost" items="${threadInfoList}">
     <!-- 親投稿の表示 -->
-    <table id="text">
+    <table class="mainText">
         <tbody>
             <tr>
                 <td>${parentPost.postId}     </td>
@@ -149,10 +132,10 @@
             </tr>
         </tbody>
     </table>
-    <table id="text">
+    <table class="mainText">
         <tbody>
             <tr>
-            	<td class="hr-double" id="mainText"><c:out value="${parentPost.content}"/></td>
+            	<td class="hr-double mainText"><c:out value="${parentPost.content}"/></td>
 
             </tr>
             <br>
@@ -179,7 +162,7 @@
         <table class="subText">
             <tbody>
                 <tr>
-                    <td class="hr-double" id="mainText"><c:out value="${childPost.content}"/></td>
+                    <td class="hr-double mainText"><c:out value="${childPost.content}"/></td>
                 </tr>
                 <br>
             </tbody>
@@ -210,13 +193,13 @@
 </script>
 <hr class="double" id="POST">
 <form action="CreatePostServlet" method="post" onsubmit="return validateForm()">
-    <input type="hidden" name="threadId" value="${threadID}" maxlength=30>
+    <input type="hidden" name="threadId" value="${threadID}"  maxlength=30>
     <label for="postUserName">　　　投稿者名　　　</label>
-    <input type="text" id="postUserName" name="postUserName" maxlength=50><br>
+    <input type="text" id="postUserName" name="postUserName" maxlength=50 style="width: 400px;"><br>
     <label for="content">　　　本　　　文　　　</label>
-    <textarea id="content" name="content" maxlength=1000></textarea><br>
+    <textarea id="content" name="content" maxlength=1000 style="width: 500px; height: 150px; border: 1px solid #ddd; border-radius: 4px;"></textarea><br>
     <label for="postId">返信の場合はIDを入力</label>
-    <input type="text" id="postId" name="postId">
+    <input type="text" id="postId" name="postId" style="width: 100px;">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button type="submit">投稿</button>
     <script>
