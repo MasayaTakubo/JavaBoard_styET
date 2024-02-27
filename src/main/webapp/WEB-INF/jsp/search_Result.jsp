@@ -114,7 +114,7 @@
 </head>
 <body>
 <header>
-    <h1>検索結果</h1>
+    <h1 id="page_top">検索結果</h1>
 	<nav>
 	    <ul class="menu">
 	        <li> 
