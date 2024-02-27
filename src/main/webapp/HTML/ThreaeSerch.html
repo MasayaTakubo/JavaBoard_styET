@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>掲示板検索</title>
+    <title>スレッド検索</title>
     <script>
         function validateForm() {
             var keyword = escapeHtml(document.forms["searchForm"]["keyword"].value);
@@ -43,7 +43,7 @@
         }
     </script>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css">
     <style>
         .topNav {
             text-align: center; /* テキストを中央揃えにする */
@@ -52,6 +52,7 @@
             background-color: transparent; /* リンクの背景色を透明にする */
         }
         body {
+			
             padding: 0px 0px 30px 0px;
         }
         /* navタグのcss */
@@ -142,20 +143,12 @@
             width: 100%;
         }
         form {
-            width: 350px;
+            width: 325px;
             margin: auto;
             box-sizing: border-box;
-            padding: 150px 20px 0px 20px;
+            margin: 0 auto;
         }
-        button[type="submit"] {
-            /* background-color: #9acd32; /* 背景色を黄緑に設定 */
-            /* color: #fff; /* 文字色を白に設定 */
-            /* border: none; /* ボーダーをなしに設定 */
-            padding: 10px 20px; /* パディングを設定 */
-            cursor: pointer; /* カーソルをポインターに設定 */
-            margin: 20px auto 0; /* 上に20px、左右中央に配置 */
-            display: block; /* ブロック要素に設定 */
-        }
+        
         /* 下線のcss 終わり*/
         #mainText {
             width: 80%;
@@ -163,19 +156,13 @@
         }
         .subText {
             margin: 5px 0 0 15%;
-        }
-        footer {
-            text-align: center; /* テキストを中央揃えにする */
-            color: black; /* リンクの文字色を白にする */
-            text-decoration: none; /* リンクの下線を削除する */
-            background-color: transparent; /* リンクの背景色を透明にする */
-        }
-        
+        }        
     </style>
     
 </head>
 <body>
-    <h1>掲示板検索</h1>
+<header>
+    <h1>スレッド検索</h1>
     <a id="TOP"></a>
     <nav>
         <ul class="menu">
@@ -189,15 +176,16 @@
             </li>
         </ul>
     </nav>
+</header>
+<div class="container-createTable">
     <form name="searchForm" action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get" onsubmit="return validateForm()">
-
-<table class="table-createTable">
+    <table class="table-createTable">
         <tr>
             <td class="td-createTable"><input type="text" name="keyword" placeholder="検索キーワードを入力してください"></td>
         </tr>
         <tr>
             <td class="td-createTable">
-                <input type="radio" id="threadTitle" name="searchType" value="threadTitle">
+                <input type="radio" id="threadTitle" name="searchType" value="threadTitle" checked>
                 <label for="threadTitle">スレッド名で検索</label>
             </td>
         </tr>
@@ -226,14 +214,17 @@
             </td>
         </tr>
         <tr>
-            <td class="td-createTable"><button type="submit">検索</button></td>
+            <td class="td-createTable">
+				<button type="submit">検索</button>
+			</td>
         </tr>
     </table>
 </form>
+</div>
 </body>
 <footer>
     <span  style="color:white;">
-        <a href="TopServlet"  target="_top">JavaBoard_styET</a>
+        <a href="../TopServlet"  target="_top">JavaBoard_styET</a>
     </span>
 </footer>
 </html>

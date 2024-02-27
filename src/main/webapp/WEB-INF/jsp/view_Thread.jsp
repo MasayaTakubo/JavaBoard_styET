@@ -17,7 +17,7 @@
     <title>スレッドページ</title>
     <a  id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     <style>
         .topNav {
             text-align: center; /* テキストを中央揃えにする */
@@ -103,31 +103,32 @@
     </style>
 </head>
 <body>
+<header>
+	<h1>スレッド名: <c:out value="${threadName}"/></h2>
+	
+	<hr class="double">
+	<nav>
+	    <ul class="menu">
+	        <li> 
+	            <a href="TopServlet" class="link1">スレッド一覧へ</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	        <li>
+	            <a href="createNewThread" class="link1">新規スレッド作成</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	        <li>
+	            <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	        <li>
+	            <a href="#POST" class="link1">投稿欄へ</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	    </ul>
+	</nav>
+</header>
 
-
-<h2>スレッド名: <c:out value="${threadName}"/></h2>
-
-<hr class="double">
-<nav>
-    <ul class="menu">
-        <li> 
-            <a href="TopServlet" class="link1">スレッド一覧へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="createNewThread" class="link1">新規スレッド作成</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="#POST" class="link1">投稿欄へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-    </ul>
-</nav>
 <hr class="double">
 <br><br>
 
