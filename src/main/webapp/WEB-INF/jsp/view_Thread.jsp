@@ -25,9 +25,6 @@
             text-decoration: none; /* リンクの下線を削除する */
             background-color: transparent; /* リンクの背景色を透明にする */
         }
-        body {
-            padding: 0px 0px 30px 0px;
-        }
         table {
             margin: auto;
             width: 1000px;

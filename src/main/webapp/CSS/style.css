@@ -209,7 +209,6 @@ Menu Single
 /*スレッド名のカーソルを合わせると色が変わる*/
 a.link2:hover{
 	color: #00a33a; /*森グリーン*/
-	font-size: 16px;
 	font-weight: bold;
 	text-decoration: none;/*下線消す*/
 }
@@ -279,6 +278,3 @@ SP
   }
 
 }
-
-
- 
