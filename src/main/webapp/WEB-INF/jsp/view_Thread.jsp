@@ -84,7 +84,7 @@
 </head>
 <body>
 <header>
-	<h1>スレッド名: <c:out value="${threadName}"/></h2>
+	<h1 id="title">スレッド名: <c:out value="${threadName}"/></h1>
 	
 	<hr class="double">
 	<nav>

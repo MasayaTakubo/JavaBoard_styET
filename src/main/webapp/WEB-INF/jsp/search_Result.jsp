@@ -102,7 +102,7 @@
 </head>
 <body>
 <header>
-    <h1>検索結果</h1>
+    <h1 id="title">検索結果</h1>
     <nav>
         <ul class="menu">
             <li>
