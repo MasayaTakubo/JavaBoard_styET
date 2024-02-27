@@ -210,6 +210,55 @@ a.link2:hover{
     padding: 20px;
   }
 
+  /*矢印系の*/
+.main {
+    padding-bottom: 500px;
+    margin-bottom: 500px;
+}
+.title {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    background-color: #000066;
+}
+.page-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #999999;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: opacity 1s,visibility 1s, transform 1s;
+}
+.page-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.page-top:hover {
+    opacity: .7 ;
+}
+.page-top__arrow {
+    height: 15px;
+    width: 15px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: translateY(3px) rotate(45deg);
+}
+
+
 /*-------------------------------------------
 SP
 -------------------------------------------*/
@@ -219,4 +268,6 @@ SP
   }
 
 }
+
+
  
