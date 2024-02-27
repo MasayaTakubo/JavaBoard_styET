@@ -44,7 +44,7 @@
         
         header {
             width: 100%;
-            background-color: #fff;
+            /*background-color: #f1f1f1;*/
         }
         nav {
             background-color: #121212;
@@ -69,7 +69,8 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            background-color: #d4d9df;
+            background-color:f1f1f1 ;
+            border: none; /* テーブルのボーダーを除去します */
         }
     /*  content
 ----------------------------*/

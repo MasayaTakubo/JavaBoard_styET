@@ -60,6 +60,7 @@
               <div class="page-top__arrow"></div>
          </a>
          
+         
         <div class="content">
             <table >
                 <!-- ここにスレッド-->
@@ -79,6 +80,7 @@
                    </c:forEach>
                 </table>
             </div>
+            
     </main>
 
     <footer>
