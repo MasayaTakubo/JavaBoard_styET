@@ -10,7 +10,7 @@
 	<link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     
 </head>
-<body>
+<body class="body-createTable">
 
 <script>
     function validateForm() {
