@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
-
-
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>掲示板作成ページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スレッド作成</title>
     
 	<link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     
@@ -42,7 +39,27 @@
     }
 </script>
 
-
+<header>
+    <h1 id="page_top">スレッド作成</h1>
+    <nav>
+        <ul class="menu">
+            <!-- 1つめ -->
+            <li>
+                <%--書き込む --%>
+                <a href="TopServlet" class="link1">スレッド一覧へ</a>
+                <ul class="menu-second">
+                </ul>
+            </li>
+            <!-- 2 -->
+            <li>
+                <%--検索 --%>
+                <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
+                <ul class="menu-second">
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 <div class="container-createTable">
     <form name="threadForm" action='createThreadServlet' method='get' onsubmit="return validateForm()">
@@ -52,15 +69,12 @@
         <tr><th class="th-createTable">投稿内容</th><td class="td-createTable"><input type='text' name='postText'maxlength=1000></td></tr>
         <tr><td></td><td class="td-createTable"><input type='submit' value='作成'></td></tr>
     </table>
-</form>
+    </form>
 </div>
-
 </body>
-
 <footer>
     <span  style="color:white;">
         <a href="TopServlet"  target="_top">JavaBoard_styET</a>
     </span>
 </footer>
-
 </html>

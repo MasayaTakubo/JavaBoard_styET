@@ -9,7 +9,7 @@
 <title>検索結果</title>
 <a id="TOP"></a>
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     <style>
         .topNav {
             text-align: center; /* テキストを中央揃えにする */
@@ -166,35 +166,29 @@
         .subText {
             margin: 5px 0 0 15%;
         }
-
-        footer {
-            text-align: center; /* テキストを中央揃えにする */
-            color: black; /* リンクの文字色を白にする */
-            text-decoration: none; /* リンクの下線を削除する */
-            background-color: transparent; /* リンクの背景色を透明にする */
-        }
     </style>
-    <h1>検索結果</h1>
-<nav>
-    <ul class="menu">
-        <li> 
-            <a href="/JavaBoard_styET/TopServlet" class="link1">スレッド一覧へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="/JavaBoard_styET/createNewThread" class="link1">新規スレッド作成</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="/JavaBoard_styET/HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
-            <ul class="menu-second"></ul>
-        </li>
-    </ul>
-</nav>
-<br><br><br>
 </head>
 <body>
-    
+<header>
+    <h1>検索結果</h1>
+	<nav>
+	    <ul class="menu">
+	        <li> 
+	            <a href="/JavaBoard_styET/TopServlet" class="link1">スレッド一覧へ</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	        <li>
+	            <a href="/JavaBoard_styET/createNewThread" class="link1">新規スレッド作成</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	        <li>
+	            <a href="/JavaBoard_styET/HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
+	            <ul class="menu-second"></ul>
+	        </li>
+	    </ul>
+</nav>
+</header>
+<br><br><br>
     <table border="1">
         <tr>
             <th>スレッドID</th>
@@ -227,7 +221,7 @@
 <br><br>
 <footer>
     <span  style="color:white;">
-        <a href="TopServlet"  target="_top">JavaBoard_styET</a>
+        <a href="../TopServlet"  target="_top">JavaBoard_styET</a>
     </span>
 </footer>
 </html>
