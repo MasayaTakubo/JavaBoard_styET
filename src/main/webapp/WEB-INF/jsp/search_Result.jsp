@@ -17,18 +17,7 @@
             text-decoration: none; /* リンクの下線を削除する */
             background-color: transparent; /* リンクの背景色を透明にする */
         }
-        body {
-            padding: 0px 0px 30px 0px;
-        }
-        /* navタグの始まり */
-        nav {
-            background-color: #121212;
-        }
-        a {
-            text-decoration: none;
-            color: #fff;
-            
-        }
+
         /*aタグリンクの*/
         .link1{
           color:#fff;
@@ -39,51 +28,6 @@
         color: #004d25;
         font-weight: bold;
         text-decoration: underline;
-        }
-        
-        a.link2:hover{
-	color: #00a33a; /*森グリーン*/
-	font-size: 16px;
-	font-weight: bold;
-	text-decoration: none;/*下線消す*/
-	}
-        ul {
-            list-style: none;
-        }
-        .menu {
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            position: relative;
-        }
-        .menu > li {
-            width: 25%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-        }
-        .menu > li:hover {
-            background-color: #3c3636;
-        }
-        .menu > li a {
-            display: block;
-        }
-        .menu-second {
-            visibility: hidden;
-        }
-        .menu > .single {
-            position: relative;
-        }
-        .single .menu-second {
-            width: 100%;
-            background-color: #3c3636;
-            position: absolute;
-            top: 50px;
-            left: 0;
-        }
-        .single .menu-second li a:hover {
-            opacity: 0.7;
         }
         @media screen and (max-width: 600px) {
             body {
