@@ -58,9 +58,9 @@
 </body>
 
 <footer>
-        <span  style="color:white;'">
-            <a href="createNewThread"  target="_top">JavaBoard_styET</a>
-        </span>
+    <span  style="color:white;">
+        <a href="TopServlet"  target="_top">JavaBoard_styET</a>
+    </span>
 </footer>
 
 </html>

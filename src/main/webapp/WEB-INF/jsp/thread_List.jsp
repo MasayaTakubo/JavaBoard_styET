@@ -411,7 +411,7 @@ footer {
     </main>
 
     <footer>
-        <span  style="color:white;'">
+        <span  style="color:white;">
             <a href="TopServlet"  target="_top">JavaBoard_styET</a>
         </span>
     </footer>
