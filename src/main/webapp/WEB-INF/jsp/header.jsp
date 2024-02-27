@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-    <h1 id="page_top">JavaBoard_styET</h1>
+    <h1 id="page_top">スレッド検索結果</h1>
     
     <nav>
         <ul class="menu">
