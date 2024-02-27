@@ -224,27 +224,10 @@
         });
     </script>
 </body>
-<br><br><br>
+<br><br>
 <footer>
-    <nav>
-    <ul class="menu">
-        <li> 
-            <a href="/JavaBoard_styET/TopServlet" class="link1">スレッド一覧へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="/JavaBoard_styET/createNewThread" class="link1">新規スレッド作成</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="/JavaBoard_styET/HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="#TOP">ページ上部へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-    </ul>
-    </nav>
+    <span  style="color:white;">
+        <a href="TopServlet"  target="_top">JavaBoard_styET</a>
+    </span>
 </footer>
 </html>

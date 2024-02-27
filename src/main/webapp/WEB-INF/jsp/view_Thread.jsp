@@ -32,48 +32,7 @@
         nav {
             background-color: #121212;
         }
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-        ul {
-            list-style: none;
-        }
-        .menu {
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            position: relative;
-        }
-        .menu > li {
-            width: 25%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-        }
-        .menu > li:hover {
-            background-color: #3c3636;
-        }
-        .menu > li a {
-            display: block;
-        }
-        .menu-second {
-            visibility: hidden;
-        }
-        .menu > .single {
-            position: relative;
-        }
-        .single .menu-second {
-            width: 100%;
-            background-color: #3c3636;
-            position: absolute;
-            top: 50px;
-            left: 0;
-        }
-        .single .menu-second li a:hover {
-            opacity: 0.7;
-        }
+
         @media screen and (max-width: 600px) {
             body {
                 font-size: 0.75rem;
@@ -284,25 +243,8 @@
 <hr class="double">
 </body>
 <footer>
-    <nav>
-    <ul class="menu">
-        <li> 
-            <a href="TopServlet" class="link1">スレッド一覧へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="createNewThread" class="link1">新規スレッド作成</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
-            <ul class="menu-second"></ul>
-        </li>
-        <li>
-            <a href="#TOP">ページ上部へ</a>
-            <ul class="menu-second"></ul>
-        </li>
-    </ul>
-    </nav>
+    <span  style="color:white;">
+        <a href="TopServlet"  target="_top">JavaBoard_styET</a>
+    </span>
 </footer>
 </html>
