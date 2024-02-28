@@ -1,41 +1,35 @@
+INSERT INTO Thread (thread_name, creator_name)
+VALUES ('<h1></h1>タグについて討論したい', 'takubo');
+INSERT INTO Thread (thread_name, creator_name)
+VALUES ('ぼくはかに座です。7月生まれだよ22日までかに座らしいね。2','たくぼです。たくぼは千葉にたくさんいるらしいです。珍しい苗字ですが、簡単な漢字です。ただし田窪ではな');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('<h1>タグ文字のエスケープ</h1>', '<h1>スレッド作成者名のタグ文字エスケープ</h1>');
-      INSERT INTO Thread (thread_name, creator_name)
-VALUES ('にぎやかし','わいわい');
-      INSERT INTO Thread (thread_name, creator_name)
-VALUES ('枯れ木も','山の賑わい');
+VALUES ('きょう風つよくね','やまだ');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('住めば','都');
+VALUES ('履修判定試験','比嘉');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('虎穴に入らずんば','虎子を得ず');
+VALUES ('1年を振り返って','たけうち');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('猿も','木から落ちる');
+VALUES ('好きな女の子のタイプ','えんどう');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('のどから','手が出る');
+VALUES ('春夏秋冬どれが好き？','さとう');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('案ずるより','産むが易し');
+VALUES ('<br>って改行らしいよ。俺てっきり','たくぼ');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('七転び','八起き');
+VALUES ('今日の晩御飯','えんどう');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('河童の','川流れ');
+VALUES ('おいしい水','名無しさん');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('石の上にも','三年');
+VALUES ('今日のファッション','かさこう');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('転ばぬ','先の杖');
+VALUES ('牛丼は何が好き？','いときん');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('鳶が','鷹を生む');
+VALUES ('バイト何してる','ITOKINTV');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('馬の耳に','念仏');
+VALUES ('好きなのりもの','たんちゃう');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('一寸先は','闇');
+VALUES ('東京テクニカルカレッジのいいとこあげてみた','みちこ');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('豚に','真珠');
+VALUES ('乗り鉄と撮り鉄って何が違うの？','あきら');
        INSERT INTO Thread (thread_name, creator_name)
-VALUES ('一石','二鳥');
-       INSERT INTO Thread (thread_name, creator_name)
-VALUES ('渡る世間に','鬼はなし');
-       INSERT INTO Thread (thread_name, creator_name)
-VALUES ('蛙の子は', '蛙');
-       INSERT INTO Thread (thread_name, creator_name)
-VALUES ('塞翁が','馬');
+VALUES ('おすすめ打つ台','ぱちんこ');
 exit;

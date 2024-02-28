@@ -1,79 +1,78 @@
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (1, 'テスト', '<h1>スレッド作成者名のタグ文字エスケープ</h1>', NULL);
+VALUES (1, '<h1></h1>タグって文字大きくなるらしいね', 'たくぼ', NULL);
        
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES(1, '本文の改行'||CHR(10)||'改行'||CHR(10)||'改行'||CHR(10)||'改行', '改行テスト', NULL);
+VALUES(1, 'HTMLタグって覚えるのむずいよな。'||CHR(10)||'宮川先生には悪いけど忘れたわ'||CHR(10)||'てへ'||CHR(10)||'ぺろ', 'たけうち', NULL);
       
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (1, '<h1>本文のタグ文字のエスケープ<h1>', '<h1>投稿者名のタグ文字のエスケープ</h1>', NULL);
+VALUES (1, 'CSSも何も覚えてないわ', 'ひが', NULL);
+      
+INSERT INTO Post (thread_id, content, post_user_name, post_reply_id,likes)
+VALUES (1, '君は何も覚えてないでしょ', 'たくぼ', 3,99);
       
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (1, '<h1>本文のタグ文字のエスケープ<h1>', '<h1>投稿者名のタグ文字のエスケープ</h1>', 3);
-      
-INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (1, '改行には制限はないよ'||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||'', '返信の改行テスト', 2);
+VALUES (1, 'そういえば。。。'||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||''||CHR(10)||'履修判定落としたわ', 'ひが', null);
       
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (1, '＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?', '横幅限界を超えた場合、自動で折り返される', NULL);
+VALUES (1, '＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?＼(゜ロ＼)ココハドコ? (／ロ゜)／アタシハダアレ?', 'ひが', NULL);
 
-INSERT INTO Post(thread_id, content, likes)
-VALUES(1, 'テスト投稿', 99);
-
-INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (2, 'テスト', 'わいわい', NULL);
+INSERT INTO Post(thread_id,content, post_user_name, post_reply_id)
+VALUES (2, '間違えてスレッドの作成ページで自己紹介しちゃった','たくぼです。たくぼは千葉にたくさんいるらしいです。珍しい苗字ですが、簡単な漢字です。ただし田窪ではな',NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (3, 'テスト','山の賑わい', NULL);
+VALUES (3, 'さむいよ', 'たくぼ', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (4, 'テスト', '都', NULL);
+VALUES (3, 'あたたかいです','うそつき', NULL);
+
+
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (5, 'テスト','虎子を得ず', NULL);
+VALUES (4, '8教科も落としちゃった', 'ひが', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (6, 'テスト', '木から落ちる', NULL);
+VALUES (4, '全教科満点だったわ','かねこ', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (7, 'テスト', '手が出る', NULL);
+VALUES (5, 'みんな一年の振り返りをしよう','たけうち', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (8, 'テスト', '産むが易し', NULL);
+VALUES (6, '黒髪ロングの子が好きかな', 'えんどう', NULL);
+INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
+VALUES (6, '俺は金髪のギャルが好き', 'たくぼ', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (9, 'テスト', '八起き', NULL);
+VALUES (7, '春はきらい花粉だから', 'さとう', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (10, 'テスト', '川流れ', NULL);
+VALUES (8, 'べあーの略かと思った', 'たくぼ', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (11, 'テスト', '三年', NULL);
-INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (12, 'テスト', '先の杖', NULL);
+VALUES (9, 'おでん', 'えんどう', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (13, 'テスト', '鷹を生む', NULL);
+VALUES (10, '荒しです', '名無しさん', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (14, 'テスト', '念仏', NULL);
-INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (15, 'テスト', '闇', NULL);
+VALUES (11, 'ワンピースをきます', 'かさこう', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (16, 'テスト', '真珠', NULL);
+VALUES (12, 'チーズ牛丼が好き', 'いときん', NULL);
+INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
+VALUES (13, 'ぶんぶんはろーゆーちゅーぶ', 'ITOKINTV', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (17, 'テスト', '二鳥', NULL);
+VALUES (14, 'おすしが好きです', 'たんちゃう', NULL);
+INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
+VALUES (15, '学食がおいしい', 'みちこ', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (18, 'テスト', '鬼はなし', NULL);
+VALUES (16, '鳥鉄がすきです', 'あきら', NULL);
 
 INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (19, 'テスト', '蛙', NULL);
+VALUES (17, '行かないのが一番期待値ある', 'ぱちんこ', NULL);
 
-INSERT INTO Post (thread_id, content, post_user_name, post_reply_id)
-VALUES (20, 'テスト', '馬', NULL);
 
 
 commit;
