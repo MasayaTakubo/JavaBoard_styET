@@ -16,7 +16,6 @@ import DTO.ThreadInfoDTO;
 
 public class ThreadInfoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    int threadID = 0;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -28,7 +27,7 @@ public class ThreadInfoServlet extends HttpServlet {
         // セッションを取得
         HttpSession session = request.getSession();
         // セッションスコープから"threadID"を取得
-        threadID = (int) session.getAttribute("threadID");
+        int threadID = (int) session.getAttribute("threadID");
 
         // スレッドのIDをもとに、スレッドの情報を取得するDAOを呼び出し
         ThreadInfoDAO threadInfoDAO = new ThreadInfoDAO();

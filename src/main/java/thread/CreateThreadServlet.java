@@ -12,8 +12,6 @@ import DAO.CreateThreadDAO;
 import DTO.CreateThreadDTO;
 
 public class CreateThreadServlet extends HttpServlet {
-    int threadID = 0;
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
@@ -31,7 +29,7 @@ public class CreateThreadServlet extends HttpServlet {
         // DAOを使用してThreadを作成し、Postを投稿
         CreateThreadDAO dao = new CreateThreadDAO();
         try {
-            threadID = dao.createThreadAndPost(threadDTO);
+            int threadID = dao.createThreadAndPost(threadDTO);
             // ThreadIDと投稿内容をログに記録
             System.out.println("ThreadID: " + threadID + ", Post Text: " + postText); //セッションスコープにデータ登録
             HttpSession session = request.getSession();
