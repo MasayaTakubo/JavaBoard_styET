@@ -9,9 +9,9 @@
 <body>
 <script>
     function validateForm() {
-        var threadName = document.forms["threadForm"]["threadName"].value;
-        var userName = document.forms["threadForm"]["userName"].value;
-        var postText = document.forms["threadForm"]["postText"].value;
+        let threadName = document.forms["threadForm"]["threadName"].value;
+        let userName = document.forms["threadForm"]["userName"].value;
+        let postText = document.forms["threadForm"]["postText"].value;
 
         // エスケープ処理
         threadName = escapeHtml(threadName);
