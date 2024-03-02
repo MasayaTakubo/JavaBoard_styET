@@ -1,12 +1,12 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import DTO.CreateThreadDTO;
+import connect.DatabaseConnection;
 
 public class CreateThreadDAO {
     /**
@@ -23,9 +23,7 @@ public class CreateThreadDAO {
         int threadID;
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "info", "pro");
+            connection = DatabaseConnection.getConnection();
             connection.setAutoCommit(false); // トランザクションを開始
 
             // Threadを作成
