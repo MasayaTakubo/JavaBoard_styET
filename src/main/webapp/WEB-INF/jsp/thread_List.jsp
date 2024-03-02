@@ -12,7 +12,7 @@
     }
 %>
 <!-- takeuchi0201 -->
-<!DOCTYPE =html>
+<!DOCTYPE html>
 <html>
 <head>
     <style>
