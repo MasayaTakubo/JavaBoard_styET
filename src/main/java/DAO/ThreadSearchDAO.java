@@ -68,7 +68,6 @@ public class ThreadSearchDAO {
         return searchResults;
     }
 
-
     public static List<ThreadSearchDTO> searchByCreatorName(String keyword) throws ClassNotFoundException {
         List<ThreadSearchDTO> searchResults = new ArrayList<>();
         Connection conn = null;
@@ -171,7 +170,6 @@ public class ThreadSearchDAO {
         return searchResults;
     }
 
-
     public static List<ThreadSearchDTO> searchByThreadId(int keyword) throws ClassNotFoundException {
         List<ThreadSearchDTO> searchResults = new ArrayList<>();
         Connection conn = null;
@@ -216,7 +214,6 @@ public class ThreadSearchDAO {
 
         return searchResults;
     }
-
 
     public static List<ThreadSearchDTO> searchByContent(String keyword) throws ClassNotFoundException {
         List<ThreadSearchDTO> searchResults = new ArrayList<>();

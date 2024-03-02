@@ -9,7 +9,9 @@ import java.sql.SQLException;
 import DTO.CreateThreadDTO;
 
 public class CreateThreadDAO {
-    // Threadを作成し、Postを投稿するメソッド
+    /**
+     * Threadを作成し、Postを投稿するメソッド
+     */
     public int createThreadAndPost(CreateThreadDTO threadDTO) throws SQLException, ClassNotFoundException {
         String createThreadSQL = "INSERT INTO Thread (thread_name, creator_name) VALUES (?, ?)";
         String createPostSQL = "INSERT INTO Post (thread_id, content,post_user_name) VALUES (?, ?, ?)";

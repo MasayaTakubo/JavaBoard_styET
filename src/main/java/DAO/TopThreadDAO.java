@@ -14,7 +14,9 @@ public class TopThreadDAO {
 
     private List<TopThreadDTO> DTOlist = new ArrayList<>();   //リストに格納
 
-    // データベース一覧表示メソッド
+    /**
+     * データベース一覧表示メソッド
+     */
     public List<TopThreadDTO> showAllList() throws ClassNotFoundException {
         try (Connection connect = DatabaseConnection.getConnection()) {
 

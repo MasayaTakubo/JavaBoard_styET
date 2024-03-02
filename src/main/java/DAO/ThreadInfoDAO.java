@@ -14,7 +14,9 @@ import connect.DatabaseConnection;
 
 public class ThreadInfoDAO {
 
-    // スレッドの情報を取得するメソッド
+    /**
+     * スレッドの情報を取得するメソッド
+     */
     public List<ThreadInfoDTO> getThreadInfo(int threadId) throws ClassNotFoundException, SQLException {
         List<ThreadInfoDTO> threadInfoList = new ArrayList<>();
         Map<Integer, ThreadInfoDTO> parentPostsMap = new HashMap<>();

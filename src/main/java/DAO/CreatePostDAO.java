@@ -44,7 +44,9 @@ public class CreatePostDAO {
         }
     }
 
-    // post_idが存在するか確認するメソッド
+    /**
+     * post_idが存在するか確認するメソッド
+     */
     public boolean doesPostExist(int postId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT 1 FROM Post WHERE Post_ID = ?";
         try (Connection connection = DatabaseConnection.getConnection();

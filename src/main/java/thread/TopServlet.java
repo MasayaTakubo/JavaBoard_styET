@@ -13,7 +13,9 @@ import javax.servlet.http.HttpSession;
 import DAO.TopThreadDAO;
 import DTO.TopThreadDTO;
 
-// 登録データを一覧表示するクラス
+/**
+ * 登録データを一覧表示するクラス
+ */
 public class TopServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
