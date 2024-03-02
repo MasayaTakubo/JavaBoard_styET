@@ -25,39 +25,28 @@ public class ThreadSearchServlet extends HttpServlet {
 
         // 適切な検索メソッドを呼び出す
         if (searchType != null && !searchType.isEmpty()) {
-            if (searchType.equals("threadTitle")) {
-                try {
-                    searchResults = ThreadSearchDAO.searchByThreadTitle(keyword);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+            try {
+                switch (searchType) {
+                    case "threadTitle":
+                        searchResults = ThreadSearchDAO.searchByThreadTitle(keyword);
+                        break;
+                    case "creatorName":
+                        searchResults = ThreadSearchDAO.searchByCreatorName(keyword);
+                        break;
+                    case "posterName":
+                        searchResults = ThreadSearchDAO.searchByPostUserName(keyword);
+                        break;
+                    case "threadId":
+                        searchResults = ThreadSearchDAO.searchByThreadId(Integer.parseInt(keyword));
+                        break;
+                    case "content":
+                        searchResults = ThreadSearchDAO.searchByContent(keyword);
+                        break;
+                    default:
+                        break;
                 }
-            } else if (searchType.equals("creatorName")) {
-                try {
-                    searchResults = ThreadSearchDAO.searchByCreatorName(keyword);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } else if (searchType.equals("posterName")) {
-                try {
-                    searchResults = ThreadSearchDAO.searchByPostUserName(keyword);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } else if (searchType.equals("threadId")) {
-                try {
-                    searchResults = ThreadSearchDAO.searchByThreadId(Integer.parseInt(keyword));
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } else if (searchType.equals("content")) {
-                try {
-                    searchResults = ThreadSearchDAO.searchByContent(keyword);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } else {
+            } catch (ClassNotFoundException | NumberFormatException e) {
+                e.printStackTrace();
             }
         }
 
