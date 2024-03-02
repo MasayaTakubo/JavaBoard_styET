@@ -1,19 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="DTO.TopThreadDTO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List"%>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>掲示板サイト</title>
-     <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
     <h1 id="page_top">JavaBoard_styET</h1>
-    
     <nav>
         <ul class="menu">
             <!-- 1つめ -->
@@ -25,7 +24,6 @@
 
                 </ul>
             </li>
-
             <!-- 2 -->
             <li>
                 <%--検索 --%>
@@ -34,9 +32,7 @@
 
                 </ul>
             </li>
-
         </ul>
-
     </nav>
 </header>
 </body>

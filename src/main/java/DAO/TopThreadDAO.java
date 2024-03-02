@@ -10,39 +10,37 @@ import java.util.List;
 import DTO.TopThreadDTO;
 import connect.DatabaseConnection;
 
-public class TopThreadDAO{
+public class TopThreadDAO {
 
     private List<TopThreadDTO> DTOlist = new ArrayList<>();   //リストに格納
 
-    //データベース一覧表示メソッド
+    // データベース一覧表示メソッド
     public List<TopThreadDTO> showAllList() throws ClassNotFoundException {
-    	try(Connection connect = DatabaseConnection.getConnection()){
-    	
-        //データベースから氏名を取得するSQL文
-        String sql ="select thread_id, thread_name, creator_name from thread ORDER BY thread_id";
-        PreparedStatement ps = connect.prepareStatement(sql);
+        try (Connection connect = DatabaseConnection.getConnection()) {
 
-        //SQL文の実行
-        ResultSet resultset = ps.executeQuery();
+            // データベースから氏名を取得するSQL文
+            String sql = "select thread_id, thread_name, creator_name from thread ORDER BY thread_id";
+            PreparedStatement ps = connect.prepareStatement(sql);
 
-        while(resultset.next()){
+            // SQL文の実行
+            ResultSet resultset = ps.executeQuery();
 
-            //データベースから取得した値をセット
-            TopThreadDTO dto = new TopThreadDTO();
+            while (resultset.next()) {
+                // データベースから取得した値をセット
+                TopThreadDTO dto = new TopThreadDTO();
 
-            //氏名の取得
-            dto.setThread_ID(resultset.getInt("thread_id"));
-            dto.setThread_Name(resultset.getString("thread_name"));
-            dto.setCreator_Name(resultset.getString("creator_name"));
-            
+                // 氏名の取得
+                dto.setThread_ID(resultset.getInt("thread_id"));
+                dto.setThread_Name(resultset.getString("thread_name"));
+                dto.setCreator_Name(resultset.getString("creator_name"));
 
-            DTOlist.add(dto);
-        }
+                DTOlist.add(dto);
+            }
 
-        resultset.close();
-        ps.close();
+            resultset.close();
+            ps.close();
 
-        }catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return DTOlist;

@@ -51,21 +51,25 @@
             text-decoration: none; /* リンクの下線を削除する */
             background-color: transparent; /* リンクの背景色を透明にする */
         }
+
         body {
-			
             padding: 0px 0px 30px 0px;
         }
+
         /* navタグのcss */
         nav {
             background-color: #121212;
         }
+
         a {
             text-decoration: none;
             color: #fff;
         }
+
         ul {
             list-style: none;
         }
+
         .menu {
             max-width: 1000px;
             display: flex;
@@ -73,24 +77,30 @@
             margin: 0 auto;
             position: relative;
         }
+
         .menu > li {
             width: 25%;
             height: 50px;
             line-height: 50px;
             text-align: center;
         }
+
         .menu > li:hover {
             background-color: #3c3636;
         }
+
         .menu > li a {
             display: block;
         }
+
         .menu-second {
             visibility: hidden;
         }
+
         .menu > .single {
             position: relative;
         }
+
         .single .menu-second {
             width: 100%;
             background-color: #3c3636;
@@ -98,67 +108,78 @@
             top: 50px;
             left: 0;
         }
+
         .single .menu-second li a:hover {
             opacity: 0.7;
         }
+
         @media screen and (max-width: 600px) {
             body {
                 font-size: 0.75rem;
             }
         }
+
         /* navのcssここまで */
         table {
             margin: auto;
             width: 80%;
         }
+
         /* フォームのcss部分始まり */
         form {
             margin: 0 auto; /* 左右のマージンを自動調整して中央に配置 */
             width: fit-content; /* コンテンツの幅に合わせる */
             padding: 10px 0 10px 0;
         }
+
         .form-group {
             display: flex;
             align-items: flex;
         }
+
         label {
             display: inline-block;
             width: 200px;
             text-align: center;
 
         }
+
         textarea {
             height: 75px;
             width: 300px;
             font-size: 20px;
         }
+
         /* フォームのcss終わり */
         /* 下線のcss始まり */
         hr.double {
             text-decoration: underline overline;
         }
+
         td.hr-double {
             border-bottom: 2px double black; /* 下線を2重線に変更 */
             padding-bottom: 5px; /* 下部の余白を追加 */
             width: 100%;
         }
+
         form {
             width: 325px;
             margin: auto;
             box-sizing: border-box;
             margin: 0 auto;
         }
-        
+
         /* 下線のcss 終わり*/
         #mainText {
             width: 80%;
             text-align: left;
         }
+
         .subText {
             margin: 5px 0 0 15%;
-        }        
+        }
     </style>
-    
+
 </head>
 <body>
 <header>
@@ -166,7 +187,7 @@
     <a id="TOP"></a>
     <nav>
         <ul class="menu">
-            <li> 
+            <li>
                 <a href="/JavaBoard_styET/TopServlet" class="link1">スレッド一覧へ</a>
                 <ul class="menu-second"></ul>
             </li>
@@ -178,53 +199,55 @@
     </nav>
 </header>
 <div class="container-createTable">
-    <form name="searchForm" action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get" onsubmit="return validateForm()">
-    <table class="table-createTable">
-        <tr>
-            <td class="td-createTable"><input type="text" name="keyword" placeholder="検索キーワードを入力してください"></td>
-        </tr>
-        <tr>
-            <td class="td-createTable">
-                <input type="radio" id="threadTitle" name="searchType" value="threadTitle" checked>
-                <label for="threadTitle">スレッド名で検索</label>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-createTable">
-                <input type="radio" id="creatorName" name="searchType" value="creatorName">
-                <label for="creatorName">スレッド作成者名で検索</label>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-createTable">
-                <input type="radio" id="postUserName" name="searchType" value="posterName">
-                <label for="postUserName">投稿者名で検索</label>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-createTable">
-                <input type="radio" id="threadId" name="searchType" value="threadId">
-                <label for="threadId">スレッドIDで検索</label>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-createTable">
-                <input type="radio" id="content" name="searchType" value="content">
-                <label for="content">本文で検索</label>
-            </td>
-        </tr>
-        <tr>
-            <td class="td-createTable">
-				<button type="submit">検索</button>
-			</td>
-        </tr>
-    </table>
-</form>
+    <form name="searchForm" action="/JavaBoard_styET/thread/ThreadSearchServlet" method="get"
+          onsubmit="return validateForm()">
+        <table class="table-createTable">
+            <tr>
+                <td class="td-createTable"><input type="text" name="keyword"
+                                                  placeholder="検索キーワードを入力してください"></td>
+            </tr>
+            <tr>
+                <td class="td-createTable">
+                    <input type="radio" id="threadTitle" name="searchType" value="threadTitle" checked>
+                    <label for="threadTitle">スレッド名で検索</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-createTable">
+                    <input type="radio" id="creatorName" name="searchType" value="creatorName">
+                    <label for="creatorName">スレッド作成者名で検索</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-createTable">
+                    <input type="radio" id="postUserName" name="searchType" value="posterName">
+                    <label for="postUserName">投稿者名で検索</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-createTable">
+                    <input type="radio" id="threadId" name="searchType" value="threadId">
+                    <label for="threadId">スレッドIDで検索</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-createTable">
+                    <input type="radio" id="content" name="searchType" value="content">
+                    <label for="content">本文で検索</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-createTable">
+                    <button type="submit">検索</button>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
 </body>
 <footer>
-    <span  style="color:white;">
-        <a href="../TopServlet"  target="_top">JavaBoard_styET</a>
+    <span style="color:white;">
+        <a href="../TopServlet" target="_top">JavaBoard_styET</a>
     </span>
 </footer>
 </html>
