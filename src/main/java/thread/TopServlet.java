@@ -26,13 +26,13 @@ public class TopServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // データベース一覧表示
         TopThreadDAO dao = new TopThreadDAO();
-        List<TopThreadDTO> DTOlist;
+        List<TopThreadDTO> dtoList;
         try {
-            DTOlist = dao.showAllList();
+            dtoList = dao.showAllList();
             // セッションの開始
             HttpSession session = request.getSession();
             // セッションスコープにデータ登録
-            session.setAttribute("DTOlist", DTOlist);
+            session.setAttribute("DTOlist", dtoList);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

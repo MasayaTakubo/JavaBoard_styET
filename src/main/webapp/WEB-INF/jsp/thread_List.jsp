@@ -4,11 +4,11 @@
 <%@ page import="java.util.List" %>
 <%
     // セッションスコープに保存されたデータを取得
-    List<TopThreadDTO> DTOlist = (List<TopThreadDTO>) session.getAttribute("DTOlist");
-    if (DTOlist == null) {
+    List<TopThreadDTO> dtoList = (List<TopThreadDTO>) session.getAttribute("DTOlist");
+    if (dtoList == null) {
         System.out.println("DTOlist is null"); // ログにメッセージを出力
     } else {
-        System.out.println("DTOlist size: " + DTOlist.size()); // ログにDTOlistのサイズを出力
+        System.out.println("DTOlist size: " + dtoList.size()); // ログにDTOlistのサイズを出力
     }
 %>
 <!-- takeuchi0201 -->
