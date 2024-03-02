@@ -14,15 +14,8 @@
     <!-- ここにCSSやJavaScriptのリンクを追加 -->
     <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">
     <style>
-        .topNav {
-            text-align: center; /* テキストを中央揃えにする */
-            color: black; /* リンクの文字色を白にする */
-            text-decoration: none; /* リンクの下線を削除する */
-            background-color: transparent; /* リンクの背景色を透明にする */
-        }
-
         body {
-            padding: 0px 0px 30px 0px;
+            padding: 0 0 30px 0;
         }
 
         table {
@@ -51,16 +44,10 @@
             width: fit-content; /* コンテンツの幅に合わせる */
         }
 
-        .form-group {
-            display: flex;
-            align-items: flex;
-        }
-
         label {
             display: inline-block;
             width: 200px;
             text-align: center;
-            mergin-bottom: 5px;
         }
 
         textarea {

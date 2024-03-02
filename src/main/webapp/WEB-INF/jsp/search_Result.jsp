@@ -19,7 +19,6 @@
         /*aタグリンクの*/
         .link1 {
             color: #fff;
-            font-weight: ;
         }
 
         .link2 {
@@ -82,7 +81,6 @@
 
         .form-group {
             display: flex;
-            align-items: flex;
         }
 
         label {
