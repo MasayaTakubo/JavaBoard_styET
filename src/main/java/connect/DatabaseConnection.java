@@ -13,17 +13,6 @@ public class DatabaseConnection {
         Class.forName("oracle.jdbc.driver.OracleDriver");  // JDBCドライバをロード
 
         // データベースに接続
-        Connection connection = DriverManager.getConnection(url, user, pass);
-        return connection;
-    }
-
-    public void closeConnection(Connection connection) {
-        if (connection != null) {
-            try {
-                connection.close();  // 接続を閉じる
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        return DriverManager.getConnection(url, user, pass);
     }
 }
