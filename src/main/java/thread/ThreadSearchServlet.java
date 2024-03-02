@@ -41,7 +41,6 @@ public class ThreadSearchServlet extends HttpServlet {
                 try {
                     searchResults = ThreadSearchDAO.searchByPostUserName(keyword);
                 } catch (ClassNotFoundException e) {
-                    // TODO 自動生成された catch ブロック
                     e.printStackTrace();
                 }
             } else if (searchType.equals("threadId")) {

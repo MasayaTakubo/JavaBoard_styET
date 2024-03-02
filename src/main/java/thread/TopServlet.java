@@ -35,7 +35,6 @@ public class TopServlet extends HttpServlet {
             session.setAttribute("DTOlist", DTOlist);
 
         } catch (ClassNotFoundException e) {
-            // TODO 自動生成された catch ブロック
             e.printStackTrace();
         }
 
