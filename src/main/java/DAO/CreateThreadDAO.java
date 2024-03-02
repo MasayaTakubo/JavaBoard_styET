@@ -20,7 +20,7 @@ public class CreateThreadDAO {
         PreparedStatement createThreadPS = null;
         PreparedStatement createPostPS = null;
         ResultSet generatedKeys = null;
-        int threadID = -1;
+        int threadID;
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
