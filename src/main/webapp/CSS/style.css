@@ -18,7 +18,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
-    margin:  0 auto;
+    margin: 0 auto;
 }
 
 /* テーブル */
@@ -91,82 +91,90 @@ button[type="submit"]:hover {
 /*header.jspのhtml*/
 /*下部h1タグの要素*/
 #page_top {
- color: black;
+    color: black;
 }
 
 html {
-  font-size: 100%;
+    font-size: 100%;
 }
-body {
-  background-color: #f1f1f1;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
-  flex-direction: column;/*積み重ねる*/
-  min-height: 100vh;/*コンテンツの高さに合わせて自動*/
- padding: 0; /* ここで四辺すべてを0に設定 */
 
+body {
+    background-color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    flex-direction: column; /*積み重ねる*/
+    min-height: 100vh; /*コンテンツの高さに合わせて自動*/
+    padding: 0; /* ここで四辺すべてを0に設定 */
 }
+
 ul {
-  list-style: none;
+    list-style: none;
 }
+
 a {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 header {
     width: 100%;
     /*background-color: #fff;*/
 }
+
 h1 {
-  text-align: center;
+    text-align: center;
 }
+
 nav {
-  background-color: #121212;
+    background-color: #121212;
 }
 
-footer{
-
-   background-color: #000000;
-   bottom: 0;
-   width: 99%;/*100%にすると右にはみでる*/
-   color:#121212;
-   text-align: center;
-   padding: 1em;
-   box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
+footer {
+    background-color: #000000;
+    bottom: 0;
+    width: 99%; /*100%にすると右にはみでる*/
+    color: #121212;
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
 }
+
 /*
 グローバルナビゲーション
 「position: relative;」で、サブメニュー（Wide）の基準位置として設定
 */
 .menu {
-  max-width: 1000px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  position: relative;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
 }
+
 .menu > li {
-  width: 25%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
 }
+
 .menu > li:hover {
-  background-color: #3c3636;
+    background-color: #3c3636;
 }
+
 /*
 「display: block;」でリンク範囲を親要素と同じ範囲まで広げる
 */
 .menu > li a {
-  display: block;
+    display: block;
 }
+
 /*
 ドロップダウン用のメニュー
 初期状態は表示しないため、「visibility: hidden;」で非表示にしておく
 */
 .menu-second {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 /*
@@ -174,21 +182,24 @@ Menu Single
 「position: relative;」で、サブメニュー（Single）の基準位置として設定
 */
 .menu > .single {
-  position: relative;
+    position: relative;
 }
+
 /*
 「position: absolute;」で、singleクラスを基準に所定の位置に配置する
 */
 .single .menu-second {
-  width: 100%;
-  background-color: #3c3636;
-  position: absolute;
-  top: 50px;
-  left: 0;
+    width: 100%;
+    background-color: #3c3636;
+    position: absolute;
+    top: 50px;
+    left: 0;
 }
+
 .single .menu-second li a:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
+
 /*
 ホバー時にサブメニュー（Single）を表示する
 .single:hover .menu-second {
@@ -196,35 +207,36 @@ Menu Single
 }*/
 /*ヘッダーのリンク*/
 .link1 {
-        color: glay; /* 灰色のリンク */
+    color: gray; /* 灰色のリンク */
 }
 
 /*スレッドのリンク*/
 .link2 {
-	color: #004d25;
-	font-weight: bold;
-	text-decoration: underline;/*常に下線追加*/
+    color: #004d25;
+    font-weight: bold;
+    text-decoration: underline; /*常に下線追加*/
 }
 
 /*スレッド名のカーソルを合わせると色が変わる*/
-a.link2:hover{
-	color: #00a33a; /*森グリーン*/
-	font-weight: bold;
-	text-decoration: none;/*下線消す*/
+a.link2:hover {
+    color: #00a33a; /*森グリーン*/
+    font-weight: bold;
+    text-decoration: none; /*下線消す*/
 }
 
 /*  content
 ----------------------------*/
-  .content{
+.content {
     flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
     padding: 20px;
-  }
+}
 
-  /*矢印系の*/
+/*矢印系の*/
 .main {
     padding-bottom: 500px;
     margin-bottom: 500px;
 }
+
 .title {
     color: #fff;
     font-size: 30px;
@@ -234,6 +246,7 @@ a.link2:hover{
     margin-bottom: 30px;
     background-color: #000066;
 }
+
 .page-top {
     display: flex;
     justify-content: center;
@@ -250,16 +263,19 @@ a.link2:hover{
     opacity: 0;
     visibility: hidden;
     transform: translateY(50px);
-    transition: opacity 1s,visibility 1s, transform 1s;
+    transition: opacity 1s, visibility 1s, transform 1s;
 }
+
 .page-top.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
 }
+
 .page-top:hover {
-    opacity: .7 ;
+    opacity: .7;
 }
+
 .page-top__arrow {
     height: 15px;
     width: 15px;
@@ -268,16 +284,12 @@ a.link2:hover{
     transform: translateY(3px) rotate(45deg);
 }
 
-
 /*-------------------------------------------
 SP
 -------------------------------------------*/
 @media screen and (max-width: 600px) {
-  body {
-    font-size: 0.75rem;
-  }
+    body {
+        font-size: 0.75rem;
+    }
 
 }
-
-
- 

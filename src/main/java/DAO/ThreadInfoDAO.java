@@ -14,7 +14,9 @@ import connect.DatabaseConnection;
 
 public class ThreadInfoDAO {
 
-    // スレッドの情報を取得するメソッド
+    /**
+     * スレッドの情報を取得するメソッド
+     */
     public List<ThreadInfoDTO> getThreadInfo(int threadId) throws ClassNotFoundException, SQLException {
         List<ThreadInfoDTO> threadInfoList = new ArrayList<>();
         Map<Integer, ThreadInfoDTO> parentPostsMap = new HashMap<>();
@@ -23,8 +25,8 @@ public class ThreadInfoDAO {
         try (Connection connection = DatabaseConnection.getConnection()) {
             // SQL文を準備（スレッド名を含む）
             String sql = "SELECT p.post_id, p.content, p.post_user_name, p.create_time, p.likes, p.post_reply_id, t.thread_name "
-                       + "FROM post p JOIN thread t ON p.thread_id = t.thread_id "
-                       + "WHERE p.thread_id = ? ORDER BY p.post_id";
+                    + "FROM post p JOIN thread t ON p.thread_id = t.thread_id "
+                    + "WHERE p.thread_id = ? ORDER BY p.post_id";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 // スレッドIDを設定
                 statement.setInt(1, threadId);
@@ -65,6 +67,7 @@ public class ThreadInfoDAO {
 
         return threadInfoList;
     }
+
     public void incrementLikes(int postId) throws ClassNotFoundException, SQLException {
         try (Connection connection = DatabaseConnection.getConnection()) {
             String sql = "UPDATE post SET likes = likes + 1 WHERE post_id = ?";
@@ -74,6 +77,7 @@ public class ThreadInfoDAO {
             }
         }
     }
+
     public int getThreadIdByPostId(int postId) throws ClassNotFoundException, SQLException {
         int threadId = 0;
         try (Connection connection = DatabaseConnection.getConnection()) {

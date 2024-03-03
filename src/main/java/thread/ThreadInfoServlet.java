@@ -16,24 +16,22 @@ import DTO.ThreadInfoDTO;
 
 public class ThreadInfoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    int threadID = 0;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	    // セッションを取得
-    	    HttpSession session = request.getSession();
-    	    // セッションスコープから"threadID"を取得
-    	    threadID = (int) session.getAttribute("threadID");
-    	
+        // セッションを取得
+        HttpSession session = request.getSession();
+        // セッションスコープから"threadID"を取得
+        int threadID = (int) session.getAttribute("threadID");
 
-    	 
         // スレッドのIDをもとに、スレッドの情報を取得するDAOを呼び出し
         ThreadInfoDAO threadInfoDAO = new ThreadInfoDAO();
-        try {	
+        try {
             List<ThreadInfoDTO> threadInfoList = threadInfoDAO.getThreadInfo(threadID);
 
             // 取得したスレッドの情報をリクエストスコープにセット
@@ -46,7 +44,6 @@ public class ThreadInfoServlet extends HttpServlet {
             e.printStackTrace();
             // エラーが発生した場合はエラーページにリダイレクトするなどの処理を行う
             response.sendRedirect("/JavaBoard_styET/HTML/createPostError.html");
-
         }
     }
 }

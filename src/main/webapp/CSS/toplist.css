@@ -1,218 +1,221 @@
 @charset "UTF-8";
 
 /*スレッド一覧*丸々*/
-   
 
-        /*下部h1タグの要素*/
-        #title {
-            color: black;
-        }
+/*下部h1タグの要素*/
+#title {
+    color: black;
+}
 
-        html {
-            font-size: 100%;
-            padding : 1px;
-        }
+html {
+    font-size: 100%;
+    padding: 1px;
+}
 
-        body {
-            background-color: #f1f1f1;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.875rem;
-            flex-direction: column;/*積み重ねる*/
-            min-height: 100vh;/*コンテンツの高さに合わせて自動*/
-            padding: 10px 0 10px 0; /* ここで四辺すべてを0に設定 */
-            font-family: Meiryo,sans-serif;/*フォント*/
-        }
+body {
+    background-color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    flex-direction: column; /*積み重ねる*/
+    min-height: 100vh; /*コンテンツの高さに合わせて自動*/
+    padding: 10px 0 10px 0; /* ここで四辺すべてを0に設定 */
+    font-family: Meiryo, sans-serif; /*フォント*/
+}
 
-        ul {
-            list-style: none;
-        }
+ul {
+    list-style: none;
+}
 
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-       
-       b{
-		   color :#121212;
-	   }
+a {
+    text-decoration: none;
+    color: #fff;
+}
 
-        h1 {
-            height: 140px;
-            line-height: 140px;
-            font-size: 1.625rem;
-            text-align: center;
-        }
-        
-        header {
-            width: 100%;
-            /*background-color: #f1f1f1;*/
-        }
-        nav {
-            background-color: #121212;
-        }
+b {
+    color: #121212;
+}
+
+h1 {
+    height: 140px;
+    line-height: 140px;
+    font-size: 1.625rem;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    /*background-color: #f1f1f1;*/
+}
+
+nav {
+    background-color: #121212;
+}
 
 
-  th, td {
-       border: 1px solid black;
-       padding: 8px;
-       text-align: left;
-  }
-     /*偶数行*/
-    .content tr:nth-child(even) {
-       color: black;
-       background-color:#f2f2f2;
-    }
-    /* 奇数行 */
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+/*偶数行*/
+.content tr:nth-child(even) {
+    color: black;
+    background-color: #f2f2f2;
+}
+
+/* 奇数行 */
 .content tr:nth-child(odd) {
     color: black;
     background-color: #dcdcdc; /* または適切な色 */
 }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            background-color:f1f1f1 ;
-            border: none; /* テーブルのボーダーを除去します */
-        }
-    /*  content
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: f1f1f1;
+    border: none; /* テーブルのボーダーを除去します */
+}
+
+/*  content
 ----------------------------*/
-  .content{
-    color:#fff;
+.content {
+    color: #fff;
     flex-grow: 1; /* フッターの手前までコンテンツを伸ばす */
     padding: 5px 1em 0px 1em;
     padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
-    flex:1px;
-  }
-  
-  .wrapper {
-  	display: flex;
-  	flex-direction: column;
-  	min-height: 100vh;
-  	padding: 5px 1em 0 1em;
-  }
+    flex: 1px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 5px 1em 0 1em;
+}
 
 /*---------
 フッター
 ------------------------*/
-
 footer {
-            background-color: #000000;
-            /*position: absolute;/fixed*/
-            bottom: 0;
-            width: 100%;
-            color: #121212;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
-           }
-
+    background-color: #000000;
+    /*position: absolute;/fixed*/
+    bottom: 0;
+    width: 100%;
+    color: #121212;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; /* パディングを含めた全体の幅と高さを指定 */
+}
 
 /*--------------------------------------
 SP
 -------------------------------------------*/
 @media screen and (max-width: 600px) {
-  body {
-    font-size: 0.75rem;
-  }
+    body {
+        font-size: 0.75rem;
+    }
 
 }
 
 /*headerのせってい*/
-        .menu {
-            max-width: 1000px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            position: relative;
-        }
+.menu {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+}
 
-        .menu > li {
-            width: 25%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-        }
+.menu > li {
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
 
-        .menu > li:hover {
-            background-color: #3c3636;
-        }
+.menu > li:hover {
+    background-color: #3c3636;
+}
 
-        /*
-        「display: block;」でリンク範囲を親要素と同じ範囲まで広げる
-        */
-        .menu > li a {
-            display: block;
-        }
+/*
+「display: block;」でリンク範囲を親要素と同じ範囲まで広げる
+*/
+.menu > li a {
+    display: block;
+}
 
-        /*
-        ドロップダウン用のメニュー
-        初期状態は表示しないため、「visibility: hidden;」で非表示にしておく
-        */
-        .menu-second {
-            visibility: hidden;
-        }
+/*
+ドロップダウン用のメニュー
+初期状態は表示しないため、「visibility: hidden;」で非表示にしておく
+*/
+.menu-second {
+    visibility: hidden;
+}
 
-        /*
-        Menu Single
-        「position: relative;」で、サブメニュー（Single）の基準位置として設定
-        */
-        .menu > .single {
-            position: relative;
-        }
+/*
+Menu Single
+「position: relative;」で、サブメニュー（Single）の基準位置として設定
+*/
+.menu > .single {
+    position: relative;
+}
 
-        /*
-        「position: absolute;」で、singleクラスを基準に所定の位置に配置する
-        */
-        .single .menu-second {
-            width: 100%;
-            background-color: #3c3636;
-            position: absolute;
-            top: 50px;
-            left: 0;
-        }
+/*
+「position: absolute;」で、singleクラスを基準に所定の位置に配置する
+*/
+.single .menu-second {
+    width: 100%;
+    background-color: #3c3636;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
 
-        .single .menu-second li a:hover {
-            opacity: 0.7;
-        }
+.single .menu-second li a:hover {
+    opacity: 0.7;
+}
 
-        /*
-        ヘッダーのリンク
-        */
-        .link1 {
-            color: glay; /* 灰色のリンク */
-        }
+/*
+ヘッダーのリンク
+*/
+.link1 {
+    color: glay; /* 灰色のリンク */
+}
 
-        /*
-        スレッドのリンク
-        */
-        .link2 {
-            color: #004d25;
-            font-weight: bold;
-            text-decoration: underline;/*常に下線追加*/
-        }
+/*
+スレッドのリンク
+*/
+.link2 {
+    color: #004d25;
+    font-weight: bold;
+    text-decoration: underline; /*常に下線追加*/
+}
 
-        /*
-        スレッド名のカーソルを合わせると色が変わる
-        */
-        a.link2:hover {
-            color: #00a33a; /*森グリーン*/
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;/*下線消す*/
-        }
+/*
+スレッド名のカーソルを合わせると色が変わる
+*/
+a.link2:hover {
+    color: #00a33a; /*森グリーン*/
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /*下線消す*/
+}
 
 /*全部つつむ*/
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding: 5px 1em 0 1em;
-        }
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 5px 1em 0 1em;
+}
 
-  /*JavaScript 矢印系の*/
+/*JavaScript 矢印系の*/
 .main {
     padding-bottom: 500px;
     margin-bottom: 500px;
 }
+
 .title {
     color: #fff;
     font-size: 30px;
@@ -222,6 +225,7 @@ SP
     margin-bottom: 30px;
     background-color: #000066;
 }
+
 .page-top {
     display: flex;
     justify-content: center;
@@ -238,16 +242,19 @@ SP
     opacity: 0;
     visibility: hidden;
     transform: translateY(50px);
-    transition: opacity 1s,visibility 1s, transform 1s;
+    transition: opacity 1s, visibility 1s, transform 1s;
 }
+
 .page-top.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
 }
+
 .page-top:hover {
-    opacity: .7 ;
+    opacity: .7;
 }
+
 .page-top__arrow {
     height: 15px;
     width: 15px;

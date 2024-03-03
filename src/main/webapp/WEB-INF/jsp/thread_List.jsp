@@ -1,38 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@ page import="DTO.TopThreadDTO" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List"%>
+<%@ page import="java.util.List" %>
 <%
     // セッションスコープに保存されたデータを取得
-    List<TopThreadDTO> DTOlist = (List<TopThreadDTO>)session.getAttribute("DTOlist");
-    if (DTOlist == null) {
+    List<TopThreadDTO> dtoList = (List<TopThreadDTO>) session.getAttribute("DTOlist");
+    if (dtoList == null) {
         System.out.println("DTOlist is null"); // ログにメッセージを出力
     } else {
-        System.out.println("DTOlist size: " + DTOlist.size()); // ログにDTOlistのサイズを出力
+        System.out.println("DTOlist size: " + dtoList.size()); // ログにDTOlistのサイズを出力
     }
 %>
 <!-- takeuchi0201 -->
-<!DOCTYPE =html>
+<!DOCTYPE html>
 <html>
 <head>
-    <style> 
+    <style>
 
- </style>
- <title>
- スレッド一覧
- </title>
- 		<!--  Javascript -->
- 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- 		<script src="${pageContext.request.contextPath}/JavaScript/script.js"></script>
-  		<link href="${pageContext.request.contextPath}/CSS/toplist.css" rel="stylesheet" type="text/css">
-  		<!--  <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">-->
- </head>
- 
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+    </style>
+    <title>
+        スレッド一覧
+    </title>
+    <!--  Javascript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/script.js"></script>
+    <link href="${pageContext.request.contextPath}/CSS/toplist.css" rel="stylesheet" type="text/css">
+    <!--  <link href="${pageContext.request.contextPath}/CSS/style.css" rel="stylesheet" type="text/css">-->
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <body>
 <div class="wrapper">
     <main class="main">
@@ -43,16 +38,15 @@
                     <!-- 1つめ -->
                     <li>
                         <%--書き込む --%>
-                        <a href="createNewThread"  class="link1">新規スレッド作成</a>
+                        <a href="createNewThread" class="link1">新規スレッド作成</a>
                         <ul class="menu-second">
 
                         </ul>
                     </li>
-
                     <!-- 2 -->
                     <li>
                         <%--検索 --%>
-                        <a href="HTML/ThreaeSerch.html"  class="link1">スレッドを検索する</a>
+                        <a href="HTML/ThreaeSerch.html" class="link1">スレッドを検索する</a>
                         <ul class="menu-second">
 
                         </ul>
@@ -62,9 +56,9 @@
         </header>
         <!-- page_top -->
         <%--ここからが矢印の範囲 --%>
-          <a href="#" class="page-top">
-              <div class="page-top__arrow"></div>
-         </a>
+        <a href="#" class="page-top">
+            <div class="page-top__arrow"></div>
+        </a>
         <div class="content">
             <table>
                 <!-- ここにスレッド-->
@@ -74,21 +68,21 @@
                     <td><b>スレッド名</b></td>
                     <td><b>作者名</b></td>
                 </tr>
-                
-                   <c:forEach var="dto" items="${DTOlist}">
-                        <tr>
-                            <td><c:out value="${dto.thread_ID}" /></td>
-                            <td><a href="thread?id=<c:out value='${dto.thread_ID}' />" class="link2"><c:out value="${dto.thread_Name}" /></a></td>
-                            <td><c:out value="${dto.creator_Name}" /></td>
-                        </tr>
-                   </c:forEach>
-                </table>
-            </div>
-    </main>
 
+                <c:forEach var="dto" items="${DTOlist}">
+                    <tr>
+                        <td><c:out value="${dto.thread_ID}"/></td>
+                        <td><a href="thread?id=<c:out value='${dto.thread_ID}' />" class="link2"><c:out
+                                value="${dto.thread_Name}"/></a></td>
+                        <td><c:out value="${dto.creator_Name}"/></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </main>
     <footer>
-        <span  style="color:white;">
-            <a href="TopServlet"  target="_top">JavaBoard_styET</a>
+        <span style="color:white;">
+            <a href="TopServlet" target="_top">JavaBoard_styET</a>
         </span>
     </footer>
 </div>

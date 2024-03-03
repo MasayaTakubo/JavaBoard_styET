@@ -20,7 +20,6 @@ public class LikeServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("/HTML/unknownError.html");
-
         }
     }
 }

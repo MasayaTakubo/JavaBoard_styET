@@ -17,14 +17,14 @@ public class CreatePostDAO {
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 // パラメータをセット
                 statement.setInt(1, createPostDTO.getThreadId());
-                statement.setString(2, createPostDTO.getContent());     
+                statement.setString(2, createPostDTO.getContent());
                 // post_user_nameがnullまたは空の場合はデフォルト値を使用
                 String postUserName = createPostDTO.getPostUserName();
                 if (postUserName == null || postUserName.isEmpty()) {
                     postUserName = "名無しさん";
                 }
                 statement.setString(3, postUserName);
-                
+
                 // post_reply_idが1以上の場合は存在するか確認し、存在しなければ、0と同じか確認。0と同じでなければException
                 int postReplyId = createPostDTO.getPostReplyId();
                 System.out.println(postReplyId);
@@ -32,10 +32,10 @@ public class CreatePostDAO {
                     if (doesPostExist(postReplyId)) {
                         statement.setInt(4, postReplyId);
                     } else {
-                    	throw new SQLException();
-                    }	
-                }else if (postReplyId == 0) {
-                	statement.setNull(4, java.sql.Types.INTEGER);   
+                        throw new SQLException();
+                    }
+                } else if (postReplyId == 0) {
+                    statement.setNull(4, java.sql.Types.INTEGER);
                 }
 
                 // SQL文を実行
@@ -43,8 +43,10 @@ public class CreatePostDAO {
             }
         }
     }
-    
-    // post_idが存在するか確認するメソッド
+
+    /**
+     * post_idが存在するか確認するメソッド
+     */
     public boolean doesPostExist(int postId) throws SQLException, ClassNotFoundException {
         String sql = "SELECT 1 FROM Post WHERE Post_ID = ?";
         try (Connection connection = DatabaseConnection.getConnection();

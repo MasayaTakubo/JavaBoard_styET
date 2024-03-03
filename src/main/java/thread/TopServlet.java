@@ -13,9 +13,10 @@ import javax.servlet.http.HttpSession;
 import DAO.TopThreadDAO;
 import DTO.TopThreadDTO;
 
-//登録データを一覧表示するクラス
-
-public class TopServlet extends HttpServlet{
+/**
+ * 登録データを一覧表示するクラス
+ */
+public class TopServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,23 +24,20 @@ public class TopServlet extends HttpServlet{
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        //データベース一覧表示
+        // データベース一覧表示
         TopThreadDAO dao = new TopThreadDAO();
-        List<TopThreadDTO> DTOlist;
-		try {
-			DTOlist = dao.showAllList();
-			//セッションの開始
-	        HttpSession session = request.getSession();
-	        //セッションスコープにデータ登録
-	        session.setAttribute("DTOlist",DTOlist);
+        List<TopThreadDTO> dtoList;
+        try {
+            dtoList = dao.showAllList();
+            // セッションの開始
+            HttpSession session = request.getSession();
+            // セッションスコープにデータ登録
+            session.setAttribute("DTOlist", dtoList);
 
-		} catch (ClassNotFoundException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
-        
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/thread_List.jsp");
         dispatcher.forward(request, response);
     }

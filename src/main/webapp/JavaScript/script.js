@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     $('.page-top').click(function () {
         $('body,html').animate({
             scrollTop: 0
@@ -7,10 +7,10 @@ $(function(){
     });
 });
 
-$(window).on('load scroll', function(){
-    if($(this).scrollTop() > 1) {
+$(window).on('load scroll', function () {
+    if ($(this).scrollTop() > 1) {
         $('.page-top').addClass('show');
-    }else{
+    } else {
         $('.page-top').removeClass('show');
     }
 });
